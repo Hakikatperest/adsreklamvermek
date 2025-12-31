@@ -639,7 +639,8 @@ footer {
 <!-- HERO SECTION -->
 <header>
   <div class="header-content">
-    <h1 class="typing">Profesyonal Google Ads Yönetimi<span>Reklam Bütçenizi Verimli Kullanın</span></h1>
+    <h1 class="typing">Profesyonal Google Ads Yönetimi</h1>
+    <span class="subtitle">Reklam Bütçenizi Verimli Kullanın</span>
     <p>Google Ads uzman ekibimizle reklam bütçenizi en yüksek getiriyi sağlayacak şekilde yönetiyor, işletmenize sürekli müşteri kazandırıyoruz.</p>
     <div class="cta-buttons">
       <a href="https://wa.me/905303158752" class="btn btn-primary"><i class="fab fa-whatsapp"></i> WhatsApp'tan Yazın</a>
@@ -649,13 +650,15 @@ footer {
 </header>
 
 <style>
-/* TYPING EFFECT */
+/* HERO SECTION TYPING EFFECT */
 .typing {
   display: inline-block;
   overflow: hidden; 
   border-right: .15em solid #000; /* İmleç */
   white-space: nowrap; 
-  animation: typing 3s steps(40, end), blink-caret .75s step-end infinite;
+  animation: typing 3s steps(35, end), blink-caret .75s step-end infinite;
+  font-size: 2.5rem;
+  line-height: 1.2;
 }
 
 /* Metin yazma animasyonu */
@@ -668,6 +671,22 @@ footer {
 @keyframes blink-caret {
   from, to { border-color: transparent; }
   50% { border-color: #000; }
+}
+
+/* Mobil uyum için satır atlama */
+@media (max-width: 768px) {
+  .typing {
+    display: block;
+    width: 100%;
+    font-size: 2rem;
+  }
+  .typing::after {
+    content: '';
+  }
+  /* Satırları manuel olarak ayır */
+  .typing {
+    white-space: normal;
+  }
 }
 </style>
 
