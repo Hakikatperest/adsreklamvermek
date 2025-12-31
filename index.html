@@ -177,61 +177,30 @@ header p {
   margin-top: 50px;
 }
 
-/* YENİ: GOOGLE RENKLİ KART ÇERÇEVELERİ */
-.package-card-wrapper {
-  position: relative;
+.package-card {
+  background: var(--white);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 40px 30px;
   width: 100%;
   max-width: 380px;
-  border-radius: var(--radius);
-  padding: 3px;
-  background: linear-gradient(135deg, 
-    #4285F4 0%,    /* Google Mavisi */
-    #EA4335 25%,   /* Google Kırmızısı */
-    #FBBC05 50%,   /* Google Sarısı */
-    #34A853 75%,   /* Google Yeşili */
-    #4285F4 100%   /* Tekrar Mavi */
-  );
-  background-size: 300% 300%;
-  animation: gradient-shift 8s ease infinite;
-  box-shadow: var(--shadow);
   transition: var(--transition);
+  position: relative;
+  overflow: hidden;
+  border: 1px solid var(--gray-light);
 }
 
-.package-card-wrapper:hover {
+.package-card:hover {
   transform: translateY(-15px);
   box-shadow: var(--shadow-hover);
 }
 
-.package-card-wrapper.popular {
+.package-card.popular {
+  border: 2px solid var(--primary);
   transform: scale(1.05);
 }
 
-.package-card-wrapper.popular:hover {
-  transform: scale(1.05) translateY(-15px);
-}
-
-@keyframes gradient-shift {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
-
-.package-card {
-  background: var(--white);
-  border-radius: calc(var(--radius) - 2px);
-  padding: 40px 30px;
-  width: 100%;
-  height: 100%;
-  transition: var(--transition);
-  position: relative;
-  overflow: hidden;
-}
-
-.package-card-wrapper.popular .package-card {
-  border: none;
-}
-
-.package-card-wrapper.popular::before {
+.package-card.popular::before {
   content: 'POPÜLER';
   position: absolute;
   top: 20px;
@@ -242,7 +211,6 @@ header p {
   font-size: 0.8rem;
   font-weight: 700;
   transform: rotate(45deg);
-  z-index: 2;
 }
 
 .package-badge {
@@ -497,7 +465,7 @@ header p {
 }
 
 .floating-phone {
-  background: linear-gradient(135deg, var(--primary), var(--primary-dark);
+  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
   color: white;
 }
 
@@ -595,12 +563,8 @@ footer {
     font-size: 1.6rem;
   }
   
-  .package-card-wrapper.popular {
+  .package-card.popular {
     transform: none;
-  }
-  
-  .package-card-wrapper.popular:hover {
-    transform: translateY(-15px);
   }
   
   .packages-container {
@@ -691,66 +655,60 @@ footer {
   
   <div class="packages-container">
     <!-- BASIC PACKAGE -->
-    <div class="package-card-wrapper">
-      <div class="package-card">
-        <div class="package-badge badge-basic">BAŞLANGIÇ REKLAM PAKETİ</div>
-        <h3 class="package-title">Google Ads Yönetimi</h3>
-        <div class="package-price">5.000₺<span>/ay</span></div>
-        <p class="package-description">Aylık reklam bütçesi <strong>10.000₺ - 30.000₺</strong> arasında olan işletmeler için ideal başlangıç paketi.</p>
-        
-        <ul class="package-features">
-          <li><i class="fas fa-check-circle"></i> Reklamlarınız aynı gün yayınlanır</li>
-          <li><i class="fas fa-check-circle"></i> Reklam bütçeniz en doğru şekilde yönetilir</li>
-          <li><i class="fas fa-check-circle"></i> Düzenli optimizasyon ve raporlama</li>
-          <li><i class="fas fa-check-circle"></i> Haftalık performans analizi</li>
-          <li><i class="fas fa-check-circle"></i> Negatif anahtar kelime çalışması</li>
-        </ul>
-        
-        <a href="https://wa.me/905303158752?text=Merhaba,%20Başlangıç%20paketiniz%20hakkında%20bilgi%20almak%20istiyorum." class="package-cta whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp'tan İletişim</a>
-        <a href="tel:05422360983" class="package-cta phone"><i class="fas fa-phone-alt"></i> Hemen Ara</a>
-      </div>
+    <div class="package-card">
+      <div class="package-badge badge-basic">BAŞLANGIÇ REKLAM PAKETİ</div>
+      <h3 class="package-title">Google Ads Yönetimi</h3>
+      <div class="package-price">5.000₺<span>/ay</span></div>
+      <p class="package-description">Aylık reklam bütçesi <strong>10.000₺ - 30.000₺</strong> arasında olan işletmeler için ideal başlangıç paketi.</p>
+      
+      <ul class="package-features">
+        <li><i class="fas fa-check-circle"></i> Reklamlarınız aynı gün yayınlanır</li>
+        <li><i class="fas fa-check-circle"></i> Reklam bütçeniz en doğru şekilde yönetilir</li>
+        <li><i class="fas fa-check-circle"></i> Düzenli optimizasyon ve raporlama</li>
+        <li><i class="fas fa-check-circle"></i> Haftalık performans analizi</li>
+        <li><i class="fas fa-check-circle"></i> Negatif anahtar kelime çalışması</li>
+      </ul>
+      
+      <a href="https://wa.me/905303158752?text=Merhaba,%20Başlangıç%20paketiniz%20hakkında%20bilgi%20almak%20istiyorum." class="package-cta whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp'tan İletişim</a>
+      <a href="tel:05422360983" class="package-cta phone"><i class="fas fa-phone-alt"></i> Hemen Ara</a>
     </div>
     
     <!-- STANDARD PACKAGE -->
-    <div class="package-card-wrapper popular">
-      <div class="package-card">
-        <div class="package-badge badge-standard">STANDART REKLAM PAKETİ</div>
-        <h3 class="package-title">Google Ads Yönetimi</h3>
-        <div class="package-price">10.000₺<span>/ay</span></div>
-        <p class="package-description">Aylık reklam bütçesi <strong>30.000₺ - 100.000₺</strong> arasında olan işletmeler için kapsamlı paket.</p>
-        
-        <ul class="package-features">
-          <li><i class="fas fa-check-circle"></i> Başlangıç paketindeki tüm özellikler</li>
-          <li><i class="fas fa-check-circle"></i> Gelişmiş rakip analizi</li>
-          <li><i class="fas fa-check-circle"></i> Haftalık strateji toplantıları</li>
-          <li><i class="fas fa-check-circle"></i> Çoklu kampanyalar ve reklam grupları</li>
-          <li><i class="fas fa-check-circle"></i> Dönüşüm takip ve optimizasyonu</li>
-        </ul>
-        
-        <a href="https://wa.me/905303158752?text=Merhaba,%20Standart%20paketiniz%20hakkında%20bilgi%20almak%20istiyorum." class="package-cta whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp'tan İletişim</a>
-        <a href="tel:05422360983" class="package-cta phone"><i class="fas fa-phone-alt"></i> Hemen Ara</a>
-      </div>
+    <div class="package-card popular">
+      <div class="package-badge badge-standard">STANDART REKLAM PAKETİ</div>
+      <h3 class="package-title">Google Ads Yönetimi</h3>
+      <div class="package-price">10.000₺<span>/ay</span></div>
+      <p class="package-description">Aylık reklam bütçesi <strong>30.000₺ - 100.000₺</strong> arasında olan işletmeler için kapsamlı paket.</p>
+      
+      <ul class="package-features">
+        <li><i class="fas fa-check-circle"></i> Başlangıç paketindeki tüm özellikler</li>
+        <li><i class="fas fa-check-circle"></i> Gelişmiş rakip analizi</li>
+        <li><i class="fas fa-check-circle"></i> Haftalık strateji toplantıları</li>
+        <li><i class="fas fa-check-circle"></i> Çoklu kampanyalar ve reklam grupları</li>
+        <li><i class="fas fa-check-circle"></i> Dönüşüm takip ve optimizasyonu</li>
+      </ul>
+      
+      <a href="https://wa.me/905303158752?text=Merhaba,%20Standart%20paketiniz%20hakkında%20bilgi%20almak%20istiyorum." class="package-cta whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp'tan İletişim</a>
+      <a href="tel:05422360983" class="package-cta phone"><i class="fas fa-phone-alt"></i> Hemen Ara</a>
     </div>
     
     <!-- PREMIUM PACKAGE -->
-    <div class="package-card-wrapper">
-      <div class="package-card">
-        <div class="package-badge badge-premium">PREMIUM REKLAM PAKETİ</div>
-        <h3 class="package-title">Google Ads Yönetimi</h3>
-        <div class="package-price">15.000₺<span>/ay</span></div>
-        <p class="package-description">Aylık reklam bütçesi <strong>100.000₺ ve üzeri</strong> olan kurumsal işletmeler için özel paket.</p>
-        
-        <ul class="package-features">
-          <li><i class="fas fa-check-circle"></i> Standart paketindeki tüm özellikler</li>
-          <li><i class="fas fa-check-circle"></i> Özel hesap yöneticisi</li>
-          <li><i class="fas fa-check-circle"></i> Haftalık detaylı raporlama</li>
-          <li><i class="fas fa-check-circle"></i> Çok kanallı reklam stratejisi</li>
-          <li><i class="fas fa-check-circle"></i> Maksimum performans odaklı optimizasyon</li>
-        </ul>
-        
-        <a href="https://wa.me/905303158752?text=Merhaba,%20Premium%20paketiniz%20hakkında%20bilgi%20almak%20istiyorum." class="package-cta whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp'tan İletişim</a>
-        <a href="tel:05422360983" class="package-cta phone"><i class="fas fa-phone-alt"></i> Hemen Ara</a>
-      </div>
+    <div class="package-card">
+      <div class="package-badge badge-premium">PREMIUM REKLAM PAKETİ</div>
+      <h3 class="package-title">Google Ads Yönetimi</h3>
+      <div class="package-price">15.000₺<span>/ay</span></div>
+      <p class="package-description">Aylık reklam bütçesi <strong>100.000₺ ve üzeri</strong> olan kurumsal işletmeler için özel paket.</p>
+      
+      <ul class="package-features">
+        <li><i class="fas fa-check-circle"></i> Standart paketindeki tüm özellikler</li>
+        <li><i class="fas fa-check-circle"></i> Özel hesap yöneticisi</li>
+        <li><i class="fas fa-check-circle"></i> Haftalık detaylı raporlama</li>
+        <li><i class="fas fa-check-circle"></i> Çok kanallı reklam stratejisi</li>
+        <li><i class="fas fa-check-circle"></i> Maksimum performans odaklı optimizasyon</li>
+      </ul>
+      
+      <a href="https://wa.me/905303158752?text=Merhaba,%20Premium%20paketiniz%20hakkında%20bilgi%20almak%20istiyorum." class="package-cta whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp'tan İletişim</a>
+      <a href="tel:05422360983" class="package-cta phone"><i class="fas fa-phone-alt"></i> Hemen Ara</a>
     </div>
   </div>
 </section>
@@ -940,7 +898,7 @@ const observer = new IntersectionObserver((entries) => {
 }, observerOptions);
 
 // Observe elements to animate
-document.querySelectorAll('.package-card-wrapper, .stat-item').forEach(el => {
+document.querySelectorAll('.package-card, .stat-item').forEach(el => {
   observer.observe(el);
 });
 </script>
