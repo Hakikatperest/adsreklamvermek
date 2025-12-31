@@ -663,22 +663,20 @@ footer {
 </header>
 
 <style>
-/* HARF HARF TYPING EFFECT */
 .typing {
-  display: inline-block;
-  overflow: hidden; 
-  border-right: .15em solid #000; /* imleç */
-  white-space: nowrap;
-  width: 0; /* animasyonla açılacak */
   font-size: 2.5rem;
   line-height: 1.2;
+  white-space: nowrap;
+  overflow: hidden;               /* geri kalan harfleri gizle */
+  border-right: .15em solid #000; /* imleç */
+  width: 0ch;                     /* başlangıçta hiç harf görünmesin */
   animation: typing 3s steps(30, end) forwards, blink-caret .75s step-end infinite;
 }
 
-/* Tek tek harf yazma animasyonu */
+/* Harf harf yazma animasyonu */
 @keyframes typing {
-  from { width: 0; }
-  to { width: 100%; }
+  from { width: 0ch; }
+  to { width: 30ch; } /* toplam harf sayısına göre ayarla */
 }
 
 /* İmleç yanıp sönme animasyonu */
@@ -687,12 +685,13 @@ footer {
   50% { border-color: #000; }
 }
 
-/* Mobil uyum: satır atlama */
+/* Mobilde satır kırma */
 @media (max-width: 768px) {
   .typing {
     display: block;
     white-space: normal;
     font-size: 2rem;
+    width: auto; /* mobilde tam görünmesi için auto */
   }
 }
 </style>
