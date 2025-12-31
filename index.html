@@ -77,67 +77,21 @@ header::before {
   margin: 0 auto;
 }
 
-/* TYPERWRITER EFFECT STYLES */
-.typewriter-container {
-  display: inline-block;
-  text-align: left;
-  margin-bottom: 20px;
-}
-
-.typewriter-text {
+header h1 {
   font-size: 2.8rem;
   font-weight: 800;
+  margin-bottom: 20px;
   line-height: 1.2;
-  display: inline-block;
-  overflow: hidden;
-  border-right: 3px solid var(--accent);
-  white-space: nowrap;
-  margin: 0 auto;
-  letter-spacing: 0.05em;
-  animation: blink-caret 0.75s step-end infinite;
 }
 
-.typewriter-subtext {
+header h1 span {
+  display: block;
   font-size: 2rem;
   font-weight: 600;
   color: var(--accent);
   margin-top: 10px;
-  opacity: 0;
-  animation: fadeIn 0.5s ease forwards;
-  animation-delay: 3.5s;
 }
 
-@keyframes typing {
-  from { width: 0 }
-  to { width: 100% }
-}
-
-@keyframes blink-caret {
-  from, to { border-color: transparent }
-  50% { border-color: var(--accent) }
-}
-
-@keyframes fadeIn {
-  to { opacity: 1; }
-}
-
-/* Mobile responsive adjustments */
-@media (max-width: 768px) {
-  .typewriter-text {
-    font-size: 1.8rem;
-    white-space: normal;
-    border-right: none;
-    animation: none;
-    overflow: visible;
-  }
-  
-  .typewriter-subtext {
-    font-size: 1.4rem;
-    animation-delay: 2s;
-  }
-}
-
-/* HEADER TEXT */
 header p {
   font-size: 1.2rem;
   color: rgba(255, 255, 255, 0.9);
@@ -359,100 +313,6 @@ header p {
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
 }
 
-/* NEW: VISUAL ELEMENTS SECTION */
-.visual-section {
-  padding: 80px 20px;
-  background-color: var(--white);
-}
-
-.visual-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 40px;
-  align-items: center;
-}
-
-.visual-text {
-  padding-right: 20px;
-}
-
-.visual-text h2 {
-  font-size: 2.2rem;
-  font-weight: 800;
-  margin-bottom: 20px;
-  color: var(--dark);
-}
-
-.visual-text p {
-  color: var(--gray);
-  margin-bottom: 25px;
-  font-size: 1.1rem;
-  line-height: 1.7;
-}
-
-.visual-image {
-  border-radius: var(--radius);
-  overflow: hidden;
-  box-shadow: var(--shadow);
-  height: 350px;
-  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-}
-
-.visual-image::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: linear-gradient(135deg, rgba(66, 133, 244, 0.1), rgba(52, 168, 83, 0.1));
-  z-index: 1;
-}
-
-.image-placeholder {
-  font-size: 5rem;
-  color: var(--primary);
-  z-index: 2;
-}
-
-/* GOOGLE ADS VISUAL */
-.google-ads-visual {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 30px;
-  margin-top: 40px;
-}
-
-.google-icons {
-  display: flex;
-  gap: 25px;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-.google-icon {
-  width: 70px;
-  height: 70px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 2rem;
-  box-shadow: var(--shadow);
-}
-
-.icon-blue { background-color: #4285F4; color: white; }
-.icon-red { background-color: #EA4335; color: white; }
-.icon-yellow { background-color: #FBBC05; color: var(--dark); }
-.icon-green { background-color: #34A853; color: white; }
-
 /* STATS SECTION */
 .stats {
   background: linear-gradient(135deg, #1A237E 0%, #283593 100%);
@@ -544,76 +404,6 @@ header p {
 .faq-item.active .faq-answer {
   padding: 0 30px 30px;
   max-height: 500px;
-}
-
-/* PROCESS SECTION */
-.process {
-  padding: 100px 20px;
-  background-color: var(--light);
-}
-
-.process-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 30px;
-}
-
-.process-step {
-  background: var(--white);
-  border-radius: var(--radius);
-  padding: 30px;
-  text-align: center;
-  box-shadow: var(--shadow);
-  transition: var(--transition);
-}
-
-.process-step:hover {
-  transform: translateY(-10px);
-  box-shadow: var(--shadow-hover);
-}
-
-.step-icon {
-  width: 80px;
-  height: 80px;
-  border-radius: 50%;
-  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 auto 20px;
-  color: white;
-  font-size: 2rem;
-}
-
-.step-number {
-  position: absolute;
-  top: -10px;
-  right: -10px;
-  background: var(--accent);
-  color: var(--dark);
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: 700;
-  font-size: 0.9rem;
-}
-
-.process-step h3 {
-  font-size: 1.3rem;
-  font-weight: 700;
-  margin-bottom: 15px;
-  color: var(--dark);
-}
-
-.process-step p {
-  color: var(--gray);
-  font-size: 0.95rem;
-  line-height: 1.6;
 }
 
 /* CTA SECTION */
@@ -765,11 +555,11 @@ footer {
 
 /* RESPONSIVE */
 @media (max-width: 992px) {
-  .typewriter-text {
+  header h1 {
     font-size: 2.2rem;
   }
   
-  .typewriter-subtext {
+  header h1 span {
     font-size: 1.6rem;
   }
   
@@ -780,15 +570,6 @@ footer {
   .packages-container {
     gap: 20px;
   }
-  
-  .visual-container {
-    grid-template-columns: 1fr;
-  }
-  
-  .visual-text {
-    padding-right: 0;
-    text-align: center;
-  }
 }
 
 @media (max-width: 768px) {
@@ -796,16 +577,12 @@ footer {
     padding: 80px 20px 100px;
   }
   
-  .typewriter-text {
+  header h1 {
     font-size: 1.8rem;
-    white-space: normal;
-    border-right: none;
-    animation: none;
   }
   
-  .typewriter-subtext {
+  header h1 span {
     font-size: 1.4rem;
-    animation-delay: 2s;
   }
   
   .btn {
@@ -855,10 +632,6 @@ footer {
   .faq-item.active .faq-answer {
     padding: 0 20px 20px;
   }
-  
-  .process-container {
-    grid-template-columns: 1fr;
-  }
 }
 </style>
 </head>
@@ -866,10 +639,7 @@ footer {
 <!-- HERO SECTION -->
 <header>
   <div class="header-content">
-    <div class="typewriter-container">
-      <h1 id="typewriter" class="typewriter-text"></h1>
-      <div class="typewriter-subtext">Reklam Bütçenizi Verimli Kullanın</div>
-    </div>
+    <h1>Profesyonel Google Ads Yönetimi <span>Reklam Bütçenizi Verimli Kullanın</span></h1>
     <p>Google Ads uzman ekibimizle reklam bütçenizi en yüksek getiriyi sağlayacak şekilde yönetiyor, işletmenize sürekli müşteri kazandırıyoruz.</p>
     <div class="cta-buttons">
       <a href="https://wa.me/905303158752" class="btn btn-primary"><i class="fab fa-whatsapp"></i> WhatsApp'tan Yazın</a>
@@ -877,22 +647,6 @@ footer {
     </div>
   </div>
 </header>
-
-<!-- VISUAL SECTION 1 -->
-<section class="visual-section">
-  <div class="visual-container">
-    <div class="visual-text">
-      <h2>Google Ads ile İşletmenizi Büyütün</h2>
-      <p>Doğru hedef kitleye ulaşmak, reklam maliyetlerinizi optimize etmek ve daha fazla müşteri kazanmak için profesyonel Google Ads yönetimine ihtiyacınız var.</p>
-      <p>Uzman ekibimiz, sektörünüze özel stratejiler geliştirerek reklam bütçenizi en verimli şekilde kullanmanızı sağlar.</p>
-    </div>
-    <div class="visual-image">
-      <div class="image-placeholder">
-        <i class="fas fa-chart-line"></i>
-      </div>
-    </div>
-  </div>
-</section>
 
 <!-- PACKAGES SECTION -->
 <section class="packages">
@@ -955,83 +709,6 @@ footer {
       
       <a href="https://wa.me/905303158752?text=Merhaba,%20Premium%20paketiniz%20hakkında%20bilgi%20almak%20istiyorum." class="package-cta whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp'tan İletişim</a>
       <a href="tel:05422360983" class="package-cta phone"><i class="fas fa-phone-alt"></i> Hemen Ara</a>
-    </div>
-  </div>
-</section>
-
-<!-- GOOGLE ADS VISUAL -->
-<section class="visual-section">
-  <div class="visual-container">
-    <div class="visual-image">
-      <div class="image-placeholder">
-        <i class="fas fa-ad"></i>
-      </div>
-    </div>
-    <div class="visual-text">
-      <h2>Google Ads Platformu</h2>
-      <p>Google'ın reklam platformu, dünyanın en büyük arama motorunda işletmenizi potansiyel müşterilerle buluşturmanın en etkili yoludur.</p>
-      <p>Google Ads ile reklamlarınızı arama sonuçlarında, YouTube'da, Gmail'de ve milyonlarca web sitesinde görüntüleyebilirsiniz.</p>
-      
-      <div class="google-ads-visual">
-        <div class="google-icons">
-          <div class="google-icon icon-blue">
-            <i class="fab fa-google"></i>
-          </div>
-          <div class="google-icon icon-red">
-            <i class="fab fa-youtube"></i>
-          </div>
-          <div class="google-icon icon-yellow">
-            <i class="fas fa-search"></i>
-          </div>
-          <div class="google-icon icon-green">
-            <i class="fas fa-envelope"></i>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- PROCESS SECTION -->
-<section class="process">
-  <h2 class="section-title">Çalışma Sürecimiz</h2>
-  <p class="section-subtitle">Google Ads reklamlarınızı nasıl yönettiğimizi keşfedin</p>
-  
-  <div class="process-container">
-    <div class="process-step">
-      <div class="step-icon">
-        <i class="fas fa-search"></i>
-        <div class="step-number">1</div>
-      </div>
-      <h3>Analiz ve Araştırma</h3>
-      <p>İşletmenizi, rakiplerinizi ve hedef kitlenizi analiz ediyor, en doğru anahtar kelimeleri belirliyoruz.</p>
-    </div>
-    
-    <div class="process-step">
-      <div class="step-icon">
-        <i class="fas fa-rocket"></i>
-        <div class="step-number">2</div>
-      </div>
-      <h3>Reklam Stratejisi</h3>
-      <p>Sektörünüze özel reklam stratejisi geliştiriyor, kampanyalarınızı optimize ediyoruz.</p>
-    </div>
-    
-    <div class="process-step">
-      <div class="step-icon">
-        <i class="fas fa-chart-line"></i>
-        <div class="step-number">3</div>
-      </div>
-      <h3>Performans Takibi</h3>
-      <p>Reklam performansınızı sürekli takip ediyor, gerekli optimizasyonları yapıyoruz.</p>
-    </div>
-    
-    <div class="process-step">
-      <div class="step-icon">
-        <i class="fas fa-file-alt"></i>
-        <div class="step-number">4</div>
-      </div>
-      <h3>Detaylı Raporlama</h3>
-      <p>Düzenli olarak detaylı performans raporları sunuyor, gelişim sürecinizi takip ediyoruz.</p>
     </div>
   </div>
 </section>
@@ -1160,25 +837,6 @@ footer {
 </footer>
 
 <script>
-// Typewriter Effect
-const typewriterText = "Profesyonel Google Ads Yönetimi";
-const typewriterElement = document.getElementById('typewriter');
-let i = 0;
-let speed = 80; // typing speed in milliseconds
-
-function typeWriter() {
-  if (i < typewriterText.length) {
-    typewriterElement.innerHTML += typewriterText.charAt(i);
-    i++;
-    setTimeout(typeWriter, speed);
-  }
-}
-
-// Start typewriter effect when page loads
-window.addEventListener('load', () => {
-  typeWriter();
-});
-
 // FAQ Toggle
 document.querySelectorAll('.faq-question').forEach(question => {
   question.addEventListener('click', () => {
@@ -1227,7 +885,7 @@ const observer = new IntersectionObserver((entries) => {
 }, observerOptions);
 
 // Observe elements to animate
-document.querySelectorAll('.package-card, .stat-item, .process-step').forEach(el => {
+document.querySelectorAll('.package-card, .stat-item').forEach(el => {
   observer.observe(el);
 });
 </script>
