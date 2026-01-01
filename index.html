@@ -735,7 +735,7 @@ footer {
 </head>
 <body>
 
-  <!-- MODERN YANDAN AÇILIR MENÜ -->
+ <!-- MODERN YANDAN AÇILIR MENÜ -->
 <nav class="navbar">
   <div class="nav-container">
     <div class="logo">
@@ -1078,43 +1078,36 @@ footer {
 @media (max-width: 768px) {
   .menu-toggle {
     display: flex;
-    order: 2; /* Sağda olması için */
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
   }
   
   .nav-links, .nav-cta {
     display: none;
   }
   
-  .nav-container {
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: nowrap;
-  }
-  
-  /* Logo küçült ve sola yasla */
+  /* Logo küçült ve en sola yasla */
   .logo {
-    order: 1; /* Solda olması için */
-    flex: 1;
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
   }
   
   .logo a {
-    font-size: 1.3rem !important; /* Mobilde küçük */
+    font-size: 1.3rem !important;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+    max-width: 200px;
   }
   
-  /* Hamburger butonu sağa yasla */
-  .menu-toggle {
-    order: 3; /* Sağda olması için */
-    margin-left: auto;
-  }
-  
-  /* Nav container'ı düzenle */
+  /* Nav container'ı tam genişlik yap */
   .nav-container {
-    display: flex;
-    align-items: center;
-    gap: 15px;
+    position: relative;
+    height: 50px;
   }
 }
 
@@ -1124,13 +1117,19 @@ footer {
     padding: 12px 15px;
   }
   
-  .logo a {
-    font-size: 1.1rem !important;
+  .logo {
+    left: 15px;
   }
   
   .menu-toggle {
+    right: 15px;
     width: 26px;
     height: 18px;
+  }
+  
+  .logo a {
+    font-size: 1.1rem !important;
+    max-width: 150px;
   }
   
   .menu-toggle span {
