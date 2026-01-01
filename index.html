@@ -735,7 +735,7 @@ footer {
 </head>
 <body>
 
- <!-- MODERN YANDAN AÇILIR MENÜ -->
+  <!-- MODERN YANDAN AÇILIR MENÜ -->
 <nav class="navbar">
   <div class="nav-container">
     <div class="logo">
@@ -791,15 +791,16 @@ footer {
 </div>
 
 <style>
-/* MODERN YANDAN AÇILIR MENÜ */
+/* MODERN YANDAN AÇILIR MENÜ - BEYAZ */
 .navbar {
-  background: linear-gradient(135deg, #1a237e 0%, #283593 100%);
-  padding: 15px 20px;
+  background: white;
+  padding: 10px 20px;
   position: fixed;
   top: 0;
   width: 100%;
   z-index: 1000;
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid #eee;
 }
 
 .nav-container {
@@ -820,7 +821,7 @@ footer {
   text-decoration: none;
 }
 
-/* Hamburger Menü Butonu */
+/* Hamburger Menü Butonu - SİYAH */
 .menu-toggle {
   display: none;
   flex-direction: column;
@@ -837,13 +838,14 @@ footer {
 .menu-toggle span {
   width: 100%;
   height: 3px;
-  background-color: white;
+  background-color: #333; /* SİYAH */
   border-radius: 10px;
   transition: all 0.3s ease;
 }
 
 .menu-toggle.active span:nth-child(1) {
   transform: rotate(45deg) translate(6px, 6px);
+  background-color: #333;
 }
 
 .menu-toggle.active span:nth-child(2) {
@@ -852,6 +854,7 @@ footer {
 
 .menu-toggle.active span:nth-child(3) {
   transform: rotate(-45deg) translate(7px, -6px);
+  background-color: #333;
 }
 
 /* Masaüstü Menü */
@@ -861,7 +864,7 @@ footer {
 }
 
 .nav-links a {
-  color: white;
+  color: #333; /* SİYAH */
   text-decoration: none;
   font-weight: 500;
   transition: all 0.3s ease;
@@ -871,7 +874,7 @@ footer {
 }
 
 .nav-links a:hover {
-  color: var(--accent);
+  color: var(--primary); /* Mavi renk */
 }
 
 .nav-links a::after {
@@ -881,7 +884,7 @@ footer {
   left: 0;
   width: 0;
   height: 2px;
-  background: var(--accent);
+  background: var(--primary);
   transition: width 0.3s ease;
 }
 
@@ -890,7 +893,7 @@ footer {
 }
 
 .nav-links a.active {
-  color: var(--accent);
+  color: var(--primary); /* Mavi renk */
 }
 
 .nav-links a.active::after {
@@ -903,12 +906,12 @@ footer {
 }
 
 .nav-btn {
-  padding: 12px 24px;
-  border-radius: 12px;
+  padding: 10px 20px;
+  border-radius: 8px;
   font-weight: 600;
   text-decoration: none;
   transition: all 0.3s ease;
-  font-size: 0.95rem;
+  font-size: 0.9rem;
 }
 
 .nav-btn.whatsapp {
@@ -917,29 +920,29 @@ footer {
 }
 
 .nav-btn.phone {
-  background: rgba(255, 255, 255, 0.15);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: var(--primary);
   color: white;
+  border: none;
 }
 
 .nav-btn:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
-/* Mobil Yandan Açılır Menü */
+/* Mobil Yandan Açılır Menü - BEYAZ */
 .sidebar-menu {
   position: fixed;
   top: 0;
   right: -350px;
   width: 320px;
   height: 100%;
-  background: linear-gradient(135deg, #1a237e 0%, #283593 100%);
-  box-shadow: -5px 0 30px rgba(0, 0, 0, 0.2);
+  background: white;
+  box-shadow: -5px 0 30px rgba(0, 0, 0, 0.15);
   z-index: 1002;
   transition: right 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
   overflow-y: auto;
+  border-left: 1px solid #eee;
 }
 
 .sidebar-menu.active {
@@ -947,17 +950,18 @@ footer {
 }
 
 .sidebar-header {
-  padding: 25px;
+  padding: 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid #eee;
+  background: white;
 }
 
 .sidebar-close {
   background: transparent;
   border: none;
-  color: white;
+  color: #333; /* SİYAH */
   font-size: 1.5rem;
   cursor: pointer;
   width: 40px;
@@ -970,19 +974,19 @@ footer {
 }
 
 .sidebar-close:hover {
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(0, 0, 0, 0.05);
 }
 
 .sidebar-links {
-  padding: 30px 0;
+  padding: 20px 0;
 }
 
 .sidebar-links a {
   display: flex;
   align-items: center;
   gap: 15px;
-  padding: 18px 25px;
-  color: white;
+  padding: 15px 25px;
+  color: #333; /* SİYAH */
   text-decoration: none;
   font-size: 1.1rem;
   transition: all 0.3s ease;
@@ -990,34 +994,41 @@ footer {
 }
 
 .sidebar-links a:hover {
-  background: rgba(255, 255, 255, 0.1);
-  color: var(--accent);
-  border-left: 4px solid var(--accent);
+  background: rgba(66, 133, 244, 0.05);
+  color: var(--primary);
+  border-left: 4px solid var(--primary);
   padding-left: 30px;
 }
 
 .sidebar-links a.active {
-  background: rgba(255, 255, 255, 0.1);
-  color: var(--accent);
-  border-left: 4px solid var(--accent);
+  background: rgba(66, 133, 244, 0.1);
+  color: var(--primary);
+  border-left: 4px solid var(--primary);
 }
 
 .sidebar-links a i {
   width: 24px;
   text-align: center;
+  color: #666;
+}
+
+.sidebar-links a:hover i,
+.sidebar-links a.active i {
+  color: var(--primary);
 }
 
 .sidebar-cta {
-  padding: 25px;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 20px;
+  border-top: 1px solid #eee;
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 12px;
+  background: white;
 }
 
 .sidebar-btn {
-  padding: 16px;
-  border-radius: 12px;
+  padding: 14px;
+  border-radius: 8px;
   font-weight: 600;
   text-decoration: none;
   text-align: center;
@@ -1034,15 +1045,14 @@ footer {
 }
 
 .sidebar-btn.phone {
-  background: rgba(255, 255, 255, 0.15);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: var(--primary);
   color: white;
+  border: none;
 }
 
 .sidebar-btn:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
 /* Overlay */
@@ -1067,11 +1077,16 @@ footer {
 /* RESPONSIVE DÜZENLEMELER */
 @media (max-width: 992px) {
   .navbar {
-    padding: 15px 20px;
+    padding: 8px 20px;
   }
   
   .nav-links {
     gap: 20px;
+  }
+  
+  .nav-btn {
+    padding: 8px 16px;
+    font-size: 0.85rem;
   }
 }
 
@@ -1107,14 +1122,14 @@ footer {
   /* Nav container'ı tam genişlik yap */
   .nav-container {
     position: relative;
-    height: 50px;
+    height: 45px; /* Daha dar */
   }
 }
 
 /* Çok küçük ekranlar için ek düzenleme */
 @media (max-width: 480px) {
   .navbar {
-    padding: 12px 15px;
+    padding: 6px 15px;
   }
   
   .logo {
@@ -1138,6 +1153,10 @@ footer {
   
   .sidebar-menu {
     width: 280px;
+  }
+  
+  .nav-container {
+    height: 40px; /* Daha da dar */
   }
 }
 </style>
@@ -1180,7 +1199,7 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 });
 </script>
-  
+
 <!-- HERO SECTION -->
 <header>
   <div class="header-content">
