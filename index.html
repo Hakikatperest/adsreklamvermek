@@ -734,7 +734,8 @@ footer {
 </style>
 </head>
 <body>
-<!-- MODERN YANDAN AÇILIR MENÜ -->
+
+  <!-- MODERN YANDAN AÇILIR MENÜ -->
 <nav class="navbar">
   <div class="nav-container">
     <div class="logo">
@@ -793,7 +794,7 @@ footer {
 /* MODERN YANDAN AÇILIR MENÜ */
 .navbar {
   background: linear-gradient(135deg, #1a237e 0%, #283593 100%);
-  padding: 20px 40px;
+  padding: 15px 20px;
   position: fixed;
   top: 0;
   width: 100%;
@@ -1063,7 +1064,7 @@ footer {
   visibility: visible;
 }
 
-/* Responsive */
+/* RESPONSIVE DÜZENLEMELER */
 @media (max-width: 992px) {
   .navbar {
     padding: 15px 20px;
@@ -1077,6 +1078,7 @@ footer {
 @media (max-width: 768px) {
   .menu-toggle {
     display: flex;
+    order: 2; /* Sağda olması için */
   }
   
   .nav-links, .nav-cta {
@@ -1085,6 +1087,58 @@ footer {
   
   .nav-container {
     justify-content: space-between;
+    align-items: center;
+    flex-wrap: nowrap;
+  }
+  
+  /* Logo küçült ve sola yasla */
+  .logo {
+    order: 1; /* Solda olması için */
+    flex: 1;
+  }
+  
+  .logo a {
+    font-size: 1.3rem !important; /* Mobilde küçük */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  
+  /* Hamburger butonu sağa yasla */
+  .menu-toggle {
+    order: 3; /* Sağda olması için */
+    margin-left: auto;
+  }
+  
+  /* Nav container'ı düzenle */
+  .nav-container {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  }
+}
+
+/* Çok küçük ekranlar için ek düzenleme */
+@media (max-width: 480px) {
+  .navbar {
+    padding: 12px 15px;
+  }
+  
+  .logo a {
+    font-size: 1.1rem !important;
+  }
+  
+  .menu-toggle {
+    width: 26px;
+    height: 18px;
+  }
+  
+  .menu-toggle span {
+    height: 2.5px;
+  }
+  
+  .sidebar-menu {
+    width: 280px;
   }
 }
 </style>
@@ -1127,7 +1181,7 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 });
 </script>
-
+  
 <!-- HERO SECTION -->
 <header>
   <div class="header-content">
