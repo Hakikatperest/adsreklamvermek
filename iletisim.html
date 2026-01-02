@@ -717,7 +717,36 @@
             font-size: 0.9rem;
             width: 100%;
         }
+/* Submenu Styles */
+.submenu {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease;
+    background: rgba(66, 133, 244, 0.03);
+}
 
+.submenu.active {
+    max-height: 200px;
+}
+
+.submenu a {
+    padding: 12px 25px 12px 50px !important;
+    font-size: 1rem !important;
+    border-left: 4px solid transparent !important;
+}
+
+.submenu a:hover {
+    background: rgba(66, 133, 244, 0.08) !important;
+}
+
+.submenu-icon {
+    font-size: 0.8rem !important;
+    transition: transform 0.3s ease;
+}
+
+.has-submenu.active .submenu-icon {
+    transform: rotate(180deg);
+}
         /* RESPONSIVE */
         @media (max-width: 768px) {
             .contact-hero {
@@ -815,9 +844,30 @@
         <a href="/">
             <i class="fas fa-home"></i> Ana Sayfa
         </a>
-        <a href="/#paketler">
-            <i class="fas fa-box"></i> Paketler
+        <a href="#" class="has-submenu" id="servicesMenu">
+            <i class="fas fa-rocket"></i> Hizmetlerimiz <i class="fas fa-chevron-down submenu-icon"></i>
         </a>
+        <div class="submenu" id="servicesSubmenu">
+            <a href="https://www.adsreklamvermek.com/hizmetlerimiz/google-ads-reklam-yo%CC%88netimi.html">
+                <i class="fas fa-ad"></i> Google Ads Reklam Yönetimi
+            </a>
+            <a href="https://www.adsreklamvermek.com/hizmetlerimiz/google-ads-sahte-tiklama-engelleme">
+                <i class="fas fa-shield-alt"></i> Google Ads Sahte Tıklama Engelleme
+            </a>
+        </div>
+        <!-- YENİ BLOG MENÜSÜ -->
+        <a href="#" class="has-submenu" id="blogMenu">
+            <i class="fas fa-blog"></i> Blog Yazıları 
+            <i class="fas fa-chevron-down submenu-icon"></i>
+        </a>
+        <div class="submenu" id="blogSubmenu">
+            <a href="https://www.adsreklamvermek.com/blog/ads-hesabim-askiya-alindi.html">
+                <i class="fas fa-file-alt"></i> Ads Hesabım Askıya Alındı
+            </a>
+            <a href="https://www.adsreklamvermek.com/blog/google-reklamlarim-yayinlanmiyor-cozumu.html">
+                <i class="fas fa-file-alt"></i> Google Reklamlarım Yayınlanmıyor
+            </a>
+        </div>
         <a href="/hakkimizda">
             <i class="fas fa-info-circle"></i> Hakkımızda
         </a>
@@ -1054,7 +1104,14 @@ document.addEventListener('DOMContentLoaded', function() {
     // Menü linklerine tıklayınca menüyü kapat
     const sidebarLinks = document.querySelectorAll('.sidebar-links a');
     sidebarLinks.forEach(link => {
-        link.addEventListener('click', closeMenu);
+        link.addEventListener('click', function(e) {
+            // Sadece submenu dışındaki ve has-submenu olmayan linkler menüyü kapatsın
+            if (!this.classList.contains('has-submenu') && 
+                !this.parentElement.classList.contains('submenu') &&
+                !this.parentElement.parentElement.classList.contains('submenu')) {
+                closeMenu();
+            }
+        });
     });
     
     // ESC tuşu ile menüyü kapat
@@ -1063,6 +1120,30 @@ document.addEventListener('DOMContentLoaded', function() {
             closeMenu();
         }
     });
+    
+    // Hizmetlerimiz submenu toggle
+    const servicesMenu = document.getElementById('servicesMenu');
+    const servicesSubmenu = document.getElementById('servicesSubmenu');
+    
+    if (servicesMenu && servicesSubmenu) {
+        servicesMenu.addEventListener('click', function(e) {
+            e.preventDefault();
+            this.classList.toggle('active');
+            servicesSubmenu.classList.toggle('active');
+        });
+    }
+    
+    // Blog submenu toggle
+    const blogMenu = document.getElementById('blogMenu');
+    const blogSubmenu = document.getElementById('blogSubmenu');
+    
+    if (blogMenu && blogSubmenu) {
+        blogMenu.addEventListener('click', function(e) {
+            e.preventDefault();
+            this.classList.toggle('active');
+            blogSubmenu.classList.toggle('active');
+        });
+    }
 });
 
 // Smooth scroll for anchor links
@@ -1080,6 +1161,20 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                 behavior: 'smooth'
             });
         }
+    });
+});
+
+// Contact card hover effects
+document.querySelectorAll('.contact-card').forEach(card => {
+    card.addEventListener('mouseenter', function() {
+        const icon = this.querySelector('.contact-icon');
+        icon.style.transform = 'scale(1.1)';
+        icon.style.transition = 'transform 0.3s ease';
+    });
+    
+    card.addEventListener('mouseleave', function() {
+        const icon = this.querySelector('.contact-icon');
+        icon.style.transform = 'scale(1)';
     });
 });
 
