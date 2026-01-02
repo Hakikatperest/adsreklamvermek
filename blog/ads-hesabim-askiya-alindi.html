@@ -1327,7 +1327,36 @@
             width: 100%;
             letter-spacing: 0.5px;
         }
+/* Submenu Styles */
+.submenu {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease;
+    background: rgba(66, 133, 244, 0.03);
+}
 
+.submenu.active {
+    max-height: 200px;
+}
+
+.submenu a {
+    padding: 12px 25px 12px 50px !important;
+    font-size: 1rem !important;
+    border-left: 4px solid transparent !important;
+}
+
+.submenu a:hover {
+    background: rgba(66, 133, 244, 0.08) !important;
+}
+
+.submenu-icon {
+    font-size: 0.8rem !important;
+    transition: transform 0.3s ease;
+}
+
+.has-submenu.active .submenu-icon {
+    transform: rotate(180deg);
+}
         /* RESPONSIVE */
         @media (max-width: 768px) {
             .hero-title {
@@ -1434,27 +1463,37 @@
             <i class="fas fa-rocket"></i> Hizmetlerimiz <i class="fas fa-chevron-down submenu-icon"></i>
         </a>
         <div class="submenu" id="servicesSubmenu">
-            <a href="/google-ads-reklam-yönetimi.html">
+            <a href="https://www.adsreklamvermek.com/hizmetlerimiz/google-ads-reklam-yo%CC%88netimi.html">
                 <i class="fas fa-ad"></i> Google Ads Reklam Yönetimi
             </a>
-            <a href="/google-ads-sahte-tiklama-engelleme.html">
+            <a href="https://www.adsreklamvermek.com/hizmetlerimiz/google-ads-sahte-tiklama-engelleme">
                 <i class="fas fa-shield-alt"></i> Google Ads Sahte Tıklama Engelleme
             </a>
         </div>
-        <a href="/google-reklamlarim-yayinlanmiyor">
-            <i class="fas fa-exclamation-triangle"></i> Reklam Sorunları
+        <!-- YENİ BLOG MENÜSÜ -->
+        <a href="#" class="has-submenu" id="blogMenu">
+            <i class="fas fa-blog"></i> Blog Yazıları 
+            <i class="fas fa-chevron-down submenu-icon"></i>
         </a>
+        <div class="submenu" id="blogSubmenu">
+            <a href="https://www.adsreklamvermek.com/blog/ads-hesabim-askiya-alindi.html">
+                <i class="fas fa-file-alt"></i> Ads Hesabım Askıya Alındı
+            </a>
+            <a href="https://www.adsreklamvermek.com/blog/google-reklamlarim-yayinlanmiyor-cozumu.html">
+                <i class="fas fa-file-alt"></i> Google Reklamlarım Yayınlanmıyor
+            </a>
+        </div>
         <a href="/hakkimizda">
             <i class="fas fa-info-circle"></i> Hakkımızda
         </a>
-        <a href="/iletisim">
+        <a href="/iletisim" class="active">
             <i class="fas fa-envelope"></i> İletişim
         </a>
     </div>
 
     <div class="sidebar-cta">
         <a href="https://wa.me/905303158752" target="_blank" class="sidebar-btn whatsapp">
-            <i class="fab fa-whatsapp"></i> WhatsApp'tan Yaz
+            <i class="fab fa-whatsapp"></i> WhatsApp
         </a>
         <a href="tel:05422360983" class="sidebar-btn phone">
             <i class="fas fa-phone"></i> 0542 236 09 83
@@ -1914,12 +1953,14 @@
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-    // Hamburger Menü
+   // Hamburger Menü JavaScript
+document.addEventListener('DOMContentLoaded', function() {
     const menuToggle = document.getElementById('menuToggle');
     const sidebarMenu = document.getElementById('sidebarMenu');
     const sidebarClose = document.getElementById('sidebarClose');
     const sidebarOverlay = document.getElementById('sidebarOverlay');
     
+    // Menü aç
     if (menuToggle) {
         menuToggle.addEventListener('click', function() {
             this.classList.toggle('active');
@@ -1929,6 +1970,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
+    // Menü kapat
     function closeMenu() {
         if (menuToggle) menuToggle.classList.remove('active');
         if (sidebarMenu) sidebarMenu.classList.remove('active');
@@ -1944,16 +1986,27 @@ document.addEventListener('DOMContentLoaded', function() {
         sidebarOverlay.addEventListener('click', closeMenu);
     }
     
+    // Menü linklerine tıklayınca menüyü kapat
     const sidebarLinks = document.querySelectorAll('.sidebar-links a');
     sidebarLinks.forEach(link => {
         link.addEventListener('click', function(e) {
-            if (!this.classList.contains('has-submenu') && !this.parentElement.classList.contains('submenu')) {
+            // Sadece submenu dışındaki ve has-submenu olmayan linkler menüyü kapatsın
+            if (!this.classList.contains('has-submenu') && 
+                !this.parentElement.classList.contains('submenu') &&
+                !this.parentElement.parentElement.classList.contains('submenu')) {
                 closeMenu();
             }
         });
     });
     
-    // Hizmetlerimiz Submenu
+    // ESC tuşu ile menüyü kapat
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+            closeMenu();
+        }
+    });
+    
+    // Hizmetlerimiz submenu toggle
     const servicesMenu = document.getElementById('servicesMenu');
     const servicesSubmenu = document.getElementById('servicesSubmenu');
     
@@ -1965,101 +2018,49 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-    // FAQ Toggle
-    document.querySelectorAll('.faq-question').forEach(question => {
-        question.addEventListener('click', () => {
-            const item = question.parentElement;
-            item.classList.toggle('active');
-        });
-    });
+    // Blog submenu toggle
+    const blogMenu = document.getElementById('blogMenu');
+    const blogSubmenu = document.getElementById('blogSubmenu');
     
-    // Smooth Scroll
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
+    if (blogMenu && blogSubmenu) {
+        blogMenu.addEventListener('click', function(e) {
             e.preventDefault();
-            const targetId = this.getAttribute('href');
-            if(targetId === '#') return;
-            const targetElement = document.querySelector(targetId);
-            if(targetElement) {
-                window.scrollTo({
-                    top: targetElement.offsetTop - 100,
-                    behavior: 'smooth'
-                });
-            }
-        });
-    });
-    
-    // Emergency Timer
-    const emergencyTimer = document.createElement('div');
-    emergencyTimer.style.cssText = `
-        position: fixed;
-        bottom: 40px;
-        left: 40px;
-        background: linear-gradient(135deg, #4285F4, #3367D6);
-        color: white;
-        padding: 15px 25px;
-        border-radius: var(--radius);
-        box-shadow: 0 10px 30px rgba(66, 133, 244, 0.3);
-        z-index: 999;
-        font-weight: 600;
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        animation: pulse 2s infinite;
-    `;
-    
-    let daysLeft = 30;
-    emergencyTimer.innerHTML = `<i class="fas fa-clock"></i> <span id="daysCounter">${daysLeft}</span> gün kaldı!`;
-    document.body.appendChild(emergencyTimer);
-    
-    // Animated Counter
-    const counter = document.getElementById('daysCounter');
-    let currentDays = 30;
-    const interval = setInterval(() => {
-        if (currentDays > 0) {
-            currentDays--;
-            counter.textContent = currentDays;
-            counter.style.transform = 'scale(1.2)';
-            setTimeout(() => counter.style.transform = 'scale(1)', 300);
-        } else {
-            clearInterval(interval);
-        }
-    }, 60000); // Her dakika bir gün azalır
-    
-    // Process Step Animation
-    const observerOptions = {
-        threshold: 0.2,
-        rootMargin: '0px 0px -50px 0px'
-    };
-    
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach((entry, index) => {
-            if (entry.isIntersecting) {
-                setTimeout(() => {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                }, index * 200);
-            }
-        });
-    }, observerOptions);
-    
-    document.querySelectorAll('.process-step').forEach(step => {
-        step.style.opacity = '0';
-        step.style.transform = 'translateY(20px)';
-        step.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-        observer.observe(step);
-    });
-    
-    // Emergency Click Animation
-    const emergencyBtn = document.querySelector('.btn-primary');
-    if (emergencyBtn) {
-        emergencyBtn.addEventListener('click', function() {
-            this.style.animation = 'none';
-            setTimeout(() => {
-                this.style.animation = 'pulse 0.5s ease 3';
-            }, 10);
+            this.classList.toggle('active');
+            blogSubmenu.classList.toggle('active');
         });
     }
+});
+
+// Smooth scroll for anchor links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        
+        const targetId = this.getAttribute('href');
+        if(targetId === '#') return;
+        
+        const targetElement = document.querySelector(targetId);
+        if(targetElement) {
+            window.scrollTo({
+                top: targetElement.offsetTop - 80,
+                behavior: 'smooth'
+            });
+        }
+    });
+});
+
+// Contact card hover effects
+document.querySelectorAll('.contact-card').forEach(card => {
+    card.addEventListener('mouseenter', function() {
+        const icon = this.querySelector('.contact-icon');
+        icon.style.transform = 'scale(1.1)';
+        icon.style.transition = 'transform 0.3s ease';
+    });
+    
+    card.addEventListener('mouseleave', function() {
+        const icon = this.querySelector('.contact-icon');
+        icon.style.transform = 'scale(1)';
+    });
 });
 </script>
 </body>
