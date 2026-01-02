@@ -46,7 +46,6 @@
             color: var(--dark);
             line-height: 1.6;
             overflow-x: hidden;
-            padding-top: 60px; /* Menü yüksekliği için */
         }
 
         /* HAMBURGER MENÜ CSS */
@@ -133,15 +132,15 @@
         .sidebar-header {
             padding: 20px;
             display: flex;
-            justify-content: space-between;
+            justify-content: flex-end; /* Logoyu kaldırdık, sadece kapat butonu */
             align-items: center;
             border-bottom: 1px solid #eee;
             background: white;
             height: 60px;
         }
 
-        .sidebar-header .logo a {
-            font-size: 1.5rem;
+        .sidebar-header .logo {
+            display: none; /* Logoyu tamamen kaldır */
         }
 
         .sidebar-close {
@@ -260,14 +259,14 @@
             visibility: visible;
         }
 
-        /* BREADCRUMB */
+        /* BREADCRUMB - Boşluk düzeltmesi */
         .breadcrumb {
             background: var(--white);
             padding: 15px 40px;
             border-bottom: 1px solid var(--gray-light);
             font-size: 0.9rem;
             color: var(--gray);
-            margin-top: 60px; /* Menü için */
+            margin-top: 60px; /* Üst bar yüksekliği kadar margin */
         }
 
         .breadcrumb a {
@@ -284,15 +283,15 @@
             color: var(--gray);
         }
 
-        /* HERO SECTION */
+        /* HERO SECTION - Boşluk düzeltmesi */
         .google-hero {
             background: linear-gradient(135deg, #1a237e 0%, #283593 50%, #3949ab 100%);
             color: var(--white);
-            padding: 100px 20px 120px;
+            padding: 80px 20px 100px; /* Padding düzenlendi */
             text-align: center;
             position: relative;
             overflow: hidden;
-            margin-top: -60px; /* Menüyü dengelemek için */
+            margin-top: 0; /* Margin kaldırıldı */
         }
 
         .google-hero::before {
@@ -850,17 +849,13 @@
 
         /* RESPONSIVE */
         @media (max-width: 768px) {
-            body {
-                padding-top: 60px;
-            }
-            
             .breadcrumb {
                 margin-top: 60px;
                 padding: 10px 20px;
             }
             
             .google-hero {
-                padding: 80px 20px 100px;
+                padding: 60px 20px 80px;
             }
             
             .google-hero h1 {
@@ -899,6 +894,10 @@
                 height: 55px;
                 font-size: 1.6rem;
             }
+            
+            .sidebar-menu {
+                width: 280px;
+            }
         }
 
         @media (max-width: 480px) {
@@ -918,12 +917,22 @@
 </head>
 <body>
 
+<!-- HAMBURGER MENÜ -->
+<div class="top-bar">
+    <div class="logo">
+        <a href="/">ADS Reklam Vermek</a>
+    </div>
+    <button class="menu-toggle" id="menuToggle">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+</div>
+
 <!-- Sidebar Menü -->
 <div class="sidebar-menu" id="sidebarMenu">
     <div class="sidebar-header">
-        <div class="logo">
-            <a href="/">ADS Reklam Vermek</a>
-        </div>
+        <!-- Logo kaldırıldı, sadece kapat butonu -->
         <button class="sidebar-close" id="sidebarClose">
             <i class="fas fa-times"></i>
         </button>
