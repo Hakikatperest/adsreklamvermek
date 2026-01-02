@@ -48,7 +48,7 @@
             overflow-x: hidden;
         }
 
-        /* HAMBURGER MENÜ CSS */
+        /* HAMBURGER MENÜ CSS - İLK SAYFA STİLİ */
         .top-bar {
             position: fixed;
             top: 0;
@@ -60,22 +60,21 @@
             justify-content: space-between;
             align-items: center;
             z-index: 1000;
-            box-shadow: 0 2px 20px rgba(66, 133, 244, 0.1);
-            height: 70px;
-            border-bottom: 1px solid rgba(66, 133, 244, 0.1);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            height: 60px;
         }
 
         .logo a {
-            font-size: 1.5rem;
+            font-size: 1.4rem;
             font-weight: 800;
             background: linear-gradient(90deg, #4285F4, #34A853, #FBBC05, #EA4335);
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
             text-decoration: none;
-            letter-spacing: -0.5px;
         }
 
+        /* Hamburger Menü Butonu - İLK SAYFA STİLİ */
         .menu-toggle {
             display: flex;
             flex-direction: column;
@@ -92,14 +91,14 @@
         .menu-toggle span {
             width: 100%;
             height: 3px;
-            background: linear-gradient(90deg, #4285F4, #34A853);
+            background-color: #333;
             border-radius: 10px;
-            transition: var(--transition);
+            transition: all 0.3s ease;
         }
 
         .menu-toggle.active span:nth-child(1) {
             transform: rotate(45deg) translate(6px, 6px);
-            background: #4285F4;
+            background-color: #333;
         }
 
         .menu-toggle.active span:nth-child(2) {
@@ -108,22 +107,22 @@
 
         .menu-toggle.active span:nth-child(3) {
             transform: rotate(-45deg) translate(7px, -6px);
-            background: #4285F4;
+            background-color: #333;
         }
 
-        /* SIDEBAR MENÜ */
+        /* Yandan Açılır Menü - İLK SAYFA STİLİ */
         .sidebar-menu {
             position: fixed;
             top: 0;
-            right: -400px;
-            width: 350px;
+            right: -350px;
+            width: 320px;
             height: 100%;
             background: white;
-            box-shadow: -5px 0 40px rgba(66, 133, 244, 0.15);
+            box-shadow: -5px 0 30px rgba(0, 0, 0, 0.15);
             z-index: 1002;
             transition: right 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
             overflow-y: auto;
-            border-left: 1px solid rgba(66, 133, 244, 0.1);
+            border-left: 1px solid #eee;
         }
 
         .sidebar-menu.active {
@@ -131,33 +130,32 @@
         }
 
         .sidebar-header {
-            padding: 25px;
+            padding: 20px;
             display: flex;
             justify-content: flex-end;
             align-items: center;
-            border-bottom: 1px solid rgba(66, 133, 244, 0.1);
+            border-bottom: 1px solid #eee;
             background: white;
-            height: 70px;
+            height: 60px;
         }
 
         .sidebar-close {
-            background: linear-gradient(135deg, #4285F4, #3367D6);
+            background: transparent;
             border: none;
-            color: white;
+            color: #333;
             font-size: 1.5rem;
             cursor: pointer;
-            width: 44px;
-            height: 44px;
+            width: 40px;
+            height: 40px;
             display: flex;
             align-items: center;
             justify-content: center;
             border-radius: 50%;
-            transition: var(--transition);
+            transition: background 0.3s ease;
         }
 
         .sidebar-close:hover {
-            transform: rotate(90deg);
-            box-shadow: 0 5px 20px rgba(66, 133, 244, 0.3);
+            background: rgba(0, 0, 0, 0.05);
         }
 
         .sidebar-links {
@@ -169,26 +167,31 @@
             align-items: center;
             justify-content: space-between;
             gap: 15px;
-            padding: 18px 30px;
-            color: var(--dark);
+            padding: 15px 25px;
+            color: #333;
             text-decoration: none;
             font-size: 1.1rem;
-            font-weight: 500;
-            transition: var(--transition);
+            transition: all 0.3s ease;
             border-left: 4px solid transparent;
         }
 
         .sidebar-links a:hover {
-            background: linear-gradient(90deg, rgba(66, 133, 244, 0.05), transparent);
+            background: rgba(66, 133, 244, 0.05);
             color: #4285F4;
             border-left: 4px solid #4285F4;
-            padding-left: 35px;
+            padding-left: 30px;
+        }
+
+        .sidebar-links a.active {
+            background: rgba(66, 133, 244, 0.1);
+            color: #4285F4;
+            border-left: 4px solid #4285F4;
         }
 
         .sidebar-links a i {
             width: 24px;
             text-align: center;
-            color: var(--gray);
+            color: #666;
         }
 
         .sidebar-links a:hover i,
@@ -196,6 +199,7 @@
             color: #4285F4;
         }
 
+        /* Submenu Styles - İLK SAYFA STİLİ */
         .submenu {
             max-height: 0;
             overflow: hidden;
@@ -208,14 +212,13 @@
         }
 
         .submenu a {
-            padding: 14px 30px 14px 60px !important;
+            padding: 12px 25px 12px 50px !important;
             font-size: 1rem !important;
-            color: var(--gray-dark);
+            border-left: 4px solid transparent !important;
         }
 
         .submenu a:hover {
             background: rgba(66, 133, 244, 0.08) !important;
-            color: #4285F4 !important;
         }
 
         .submenu-icon {
@@ -228,53 +231,51 @@
         }
 
         .sidebar-cta {
-            padding: 25px;
-            border-top: 1px solid rgba(66, 133, 244, 0.1);
+            padding: 20px;
+            border-top: 1px solid #eee;
             display: flex;
             flex-direction: column;
-            gap: 15px;
+            gap: 12px;
             background: white;
         }
 
         .sidebar-btn {
-            padding: 16px;
-            border-radius: var(--radius-sm);
+            padding: 14px;
+            border-radius: 8px;
             font-weight: 600;
             text-decoration: none;
             text-align: center;
-            transition: var(--transition);
+            transition: all 0.3s ease;
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 12px;
+            gap: 10px;
         }
 
         .sidebar-btn.whatsapp {
             background: linear-gradient(135deg, #25D366, #128C7E);
             color: white;
-            box-shadow: 0 5px 20px rgba(37, 211, 102, 0.2);
         }
 
         .sidebar-btn.phone {
-            background: linear-gradient(135deg, #4285F4, #3367D6);
+            background: #4285F4;
             color: white;
             border: none;
-            box-shadow: 0 5px 20px rgba(66, 133, 244, 0.2);
         }
 
         .sidebar-btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 30px rgba(66, 133, 244, 0.3);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
         }
 
+        /* Overlay - İLK SAYFA STİLİ */
         .sidebar-overlay {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.7);
-            backdrop-filter: blur(5px);
+            background: rgba(0, 0, 0, 0.5);
             z-index: 1001;
             opacity: 0;
             visibility: hidden;
@@ -1327,36 +1328,7 @@
             width: 100%;
             letter-spacing: 0.5px;
         }
-/* Submenu Styles */
-.submenu {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.5s ease;
-    background: rgba(66, 133, 244, 0.03);
-}
 
-.submenu.active {
-    max-height: 200px;
-}
-
-.submenu a {
-    padding: 12px 25px 12px 50px !important;
-    font-size: 1rem !important;
-    border-left: 4px solid transparent !important;
-}
-
-.submenu a:hover {
-    background: rgba(66, 133, 244, 0.08) !important;
-}
-
-.submenu-icon {
-    font-size: 0.8rem !important;
-    transition: transform 0.3s ease;
-}
-
-.has-submenu.active .submenu-icon {
-    transform: rotate(180deg);
-}
         /* RESPONSIVE */
         @media (max-width: 768px) {
             .hero-title {
@@ -1407,6 +1379,11 @@
             .screenshot-title {
                 font-size: 1.5rem;
             }
+            
+            .breadcrumb {
+                margin-top: 60px;
+                padding: 10px 20px;
+            }
         }
 
         @media (max-width: 480px) {
@@ -1435,10 +1412,10 @@
 </head>
 <body>
 
-<!-- HAMBURGER MENÜ -->
+<!-- HAMBURGER MENÜ - İLK SAYFA YAPISI -->
 <div class="top-bar">
     <div class="logo">
-        <a href="/">ADS Reklam Çözüm</a>
+        <a href="/">ADS Reklam Vermek</a>
     </div>
     <button class="menu-toggle" id="menuToggle">
         <span></span>
@@ -1447,7 +1424,7 @@
     </button>
 </div>
 
-<!-- Sidebar Menü -->
+<!-- Sidebar Menü - İLK SAYFA YAPISI -->
 <div class="sidebar-menu" id="sidebarMenu">
     <div class="sidebar-header">
         <button class="sidebar-close" id="sidebarClose">
@@ -1470,25 +1447,27 @@
                 <i class="fas fa-shield-alt"></i> Google Ads Sahte Tıklama Engelleme
             </a>
         </div>
-        <!-- YENİ BLOG MENÜSÜ -->
-        <a href="#" class="has-submenu" id="blogMenu">
-            <i class="fas fa-blog"></i> Blog Yazıları 
-            <i class="fas fa-chevron-down submenu-icon"></i>
-        </a>
-        <div class="submenu" id="blogSubmenu">
-            <a href="https://www.adsreklamvermek.com/blog/ads-hesabim-askiya-alindi.html">
-                <i class="fas fa-file-alt"></i> Ads Hesabım Askıya Alındı
-            </a>
-            <a href="https://www.adsreklamvermek.com/blog/google-reklamlarim-yayinlanmiyor-cozumu.html">
-                <i class="fas fa-file-alt"></i> Google Reklamlarım Yayınlanmıyor
-            </a>
-        </div>
-        <a href="/hakkimizda">
-            <i class="fas fa-info-circle"></i> Hakkımızda
-        </a>
-        <a href="/iletisim" class="active">
-            <i class="fas fa-envelope"></i> İletişim
-        </a>
+       <!-- YENİ BLOG MENÜSÜ -->
+<a href="#" class="has-submenu" id="blogMenu">
+    <i class="fas fa-blog"></i> Blog Yazıları 
+    <i class="fas fa-chevron-down submenu-icon"></i>
+</a>
+
+<div class="submenu" id="blogSubmenu">
+    <a href="https://www.adsreklamvermek.com/blog/ads-hesabim-askiya-alindi.html">
+        <i class="fas fa-file-alt"></i> Ads Hesabım Askıya Alındı
+    </a>
+    <a href="https://www.adsreklamvermek.com/blog/google-reklamlarim-yayinlanmiyor-cozumu.html">
+        <i class="fas fa-file-alt"></i> Google Reklamlarım Yayınlanmıyor
+    </a>
+</div>
+
+<a href="/hakkimizda">
+    <i class="fas fa-info-circle"></i> Hakkımızda
+</a>
+<a href="/iletisim">
+    <i class="fas fa-envelope"></i> İletişim
+</a>
     </div>
 
     <div class="sidebar-cta">
@@ -1917,7 +1896,7 @@
 <!-- FOOTER -->
 <footer>
     <div class="footer-content">
-        <div class="footer-logo">ADS Reklam Çözüm</div>
+        <div class="footer-logo">ADS Reklam Vermek</div>
         <p class="footer-tagline">2026 Google Ads uzmanlığı ile hesap güvenliği ve maksimum ROI garantisi</p>
         
         <div class="footer-contact">
@@ -1927,32 +1906,32 @@
             </div>
             <div class="contact-item">
                 <i class="fas fa-envelope"></i>
-                <span>acil@adsreklamcozum.com</span>
+                <span>info@adsreklamvermek.com</span>
             </div>
             <div class="contact-item">
                 <i class="fas fa-clock"></i>
-                <span>7/24 Acil Hesap Kurtarma</span>
+                <span>Haftanın Her Günü 09:00-22:00</span>
             </div>
         </div>
         
         <div class="footer-links">
             <a href="/">Ana Sayfa</a>
-            <a href="/google-ads-reklam-yönetimi.html">ADS Reklam Yönetimi</a>
-            <a href="/google-ads-sahte-tiklama-engelleme.html">Sahte Tıklama Koruma</a>
-            <a href="/google-reklamlarim-yayinlanmiyor">Reklam Sorunları</a>
-            <a href="/ads-hesabim-askiya-alindi">Hesap Kurtarma</a>
+            <a href="/hizmetlerimiz/google-ads-reklam-yönetimi.html">ADS Reklam Yönetimi</a>
+            <a href="/hizmetlerimiz/google-ads-sahte-tiklama-engelleme.html">Sahte Tıklama Koruma</a>
+            <a href="/blog/google-reklamlarim-yayinlanmiyor">Reklam Sorunları</a>
+            <a href="/blog/ads-hesabim-askiya-alindi">Hesap Kurtarma</a>
             <a href="/hakkimizda">Hakkımızda</a>
             <a href="/iletisim">İletişim</a>
         </div>
         
         <div class="copyright">
-            © 2026 ADS Reklam Çözüm. Tüm hakları saklıdır. | Google Ads Hesap Kurtarma ve Danışmanlık Hizmetleri
+            © 2026 ADS Reklam Vermek. Tüm hakları saklıdır. | Google Ads Hesap Kurtarma ve Danışmanlık Hizmetleri
         </div>
     </div>
 </footer>
 
 <script>
-   // Hamburger Menü JavaScript
+// Hamburger Menü JavaScript - İLK SAYFA KODU
 document.addEventListener('DOMContentLoaded', function() {
     const menuToggle = document.getElementById('menuToggle');
     const sidebarMenu = document.getElementById('sidebarMenu');
@@ -2048,17 +2027,11 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Contact card hover effects
-document.querySelectorAll('.contact-card').forEach(card => {
-    card.addEventListener('mouseenter', function() {
-        const icon = this.querySelector('.contact-icon');
-        icon.style.transform = 'scale(1.1)';
-        icon.style.transition = 'transform 0.3s ease';
-    });
-    
-    card.addEventListener('mouseleave', function() {
-        const icon = this.querySelector('.contact-icon');
-        icon.style.transform = 'scale(1)';
+// FAQ Toggle
+document.querySelectorAll('.faq-question').forEach(question => {
+    question.addEventListener('click', () => {
+        const item = question.parentElement;
+        item.classList.toggle('active');
     });
 });
 </script>
