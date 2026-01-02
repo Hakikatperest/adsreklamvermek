@@ -1014,7 +1014,7 @@
 </head>
 <body>
 
-<!-- HAMBURGER MENÜ -->
+<!-- HAMBURGER MENÜ - İLK SAYFA YAPISI -->
 <div class="top-bar">
     <div class="logo">
         <a href="/">ADS Reklam Vermek</a>
@@ -1026,7 +1026,7 @@
     </button>
 </div>
 
-<!-- Sidebar Menü -->
+<!-- Sidebar Menü - İLK SAYFA YAPISI -->
 <div class="sidebar-menu" id="sidebarMenu">
     <div class="sidebar-header">
         <button class="sidebar-close" id="sidebarClose">
@@ -1042,19 +1042,34 @@
             <i class="fas fa-rocket"></i> Hizmetlerimiz <i class="fas fa-chevron-down submenu-icon"></i>
         </a>
         <div class="submenu" id="servicesSubmenu">
-            <a href="/google-ads-reklam-yönetimi.html">
+            <a href="https://www.adsreklamvermek.com/hizmetlerimiz/google-ads-reklam-yo%CC%88netimi.html">
                 <i class="fas fa-ad"></i> Google Ads Reklam Yönetimi
             </a>
-            <a href="/google-ads-sahte-tiklama-engelleme.html">
+            <a href="https://www.adsreklamvermek.com/hizmetlerimiz/google-ads-sahte-tiklama-engelleme">
                 <i class="fas fa-shield-alt"></i> Google Ads Sahte Tıklama Engelleme
             </a>
         </div>
-        <a href="/hakkimizda">
-            <i class="fas fa-info-circle"></i> Hakkımızda
-        </a>
-        <a href="/iletisim">
-            <i class="fas fa-envelope"></i> İletişim
-        </a>
+       <!-- YENİ BLOG MENÜSÜ -->
+<a href="#" class="has-submenu" id="blogMenu">
+    <i class="fas fa-blog"></i> Blog Yazıları 
+    <i class="fas fa-chevron-down submenu-icon"></i>
+</a>
+
+<div class="submenu" id="blogSubmenu">
+    <a href="https://www.adsreklamvermek.com/blog/ads-hesabim-askiya-alindi.html">
+        <i class="fas fa-file-alt"></i> Ads Hesabım Askıya Alındı
+    </a>
+    <a href="https://www.adsreklamvermek.com/blog/google-reklamlarim-yayinlanmiyor-cozumu.html">
+        <i class="fas fa-file-alt"></i> Google Reklamlarım Yayınlanmıyor
+    </a>
+</div>
+
+<a href="/hakkimizda">
+    <i class="fas fa-info-circle"></i> Hakkımızda
+</a>
+<a href="/iletisim">
+    <i class="fas fa-envelope"></i> İletişim
+</a>
     </div>
 
     <div class="sidebar-cta">
@@ -1414,14 +1429,15 @@
             </div>
         </div>
         
-        <div class="footer-links">
-            <a href="/">Ana Sayfa</a>
-            <a href="/google-ads-reklam-yönetimi.html">Google Ads Reklam Yönetimi</a>
-            <a href="/google-ads-sahte-tiklama-engelleme.html">Google Ads Sahte Tıklama Engelleme</a>
-            <a href="/google-reklam-vermek-istiyorum">Google Reklam Vermek</a>
-            <a href="/hakkimizda">Hakkımızda</a>
-            <a href="/iletisim">İletişim</a>
-        </div>
+       <div class="footer-links">
+    <a href="/">Ana Sayfa</a>
+    <a href="/hizmetlerimiz/google-ads-reklam-yönetimi.html">ADS Reklam Yönetimi</a>
+    <a href="/hizmetlerimiz/google-ads-sahte-tiklama-engelleme.html">Sahte Tıklama Koruma</a>
+    <a href="/blog/google-reklamlarim-yayinlanmiyor">Reklam Sorunları</a>
+    <a href="/blog/ads-hesabim-askiya-alindi">Hesap Kurtarma</a>
+    <a href="/hakkimizda">Hakkımızda</a>
+    <a href="/iletisim">İletişim</a>
+</div>
         
         <div class="copyright">
             © 2025 ADS Reklam Vermek. Tüm hakları saklıdır. | Google Ads Sorun Çözüm ve Danışmanlık Hizmetleri
@@ -1430,7 +1446,7 @@
 </footer>
 
 <script>
-// Hamburger Menü JavaScript
+// Hamburger Menü JavaScript - İLK SAYFA KODU
 document.addEventListener('DOMContentLoaded', function() {
     const menuToggle = document.getElementById('menuToggle');
     const sidebarMenu = document.getElementById('sidebarMenu');
@@ -1467,8 +1483,10 @@ document.addEventListener('DOMContentLoaded', function() {
     const sidebarLinks = document.querySelectorAll('.sidebar-links a');
     sidebarLinks.forEach(link => {
         link.addEventListener('click', function(e) {
-            // Sadece submenu dışındaki linkler menüyü kapatsın
-            if (!this.classList.contains('has-submenu') && !this.parentElement.classList.contains('submenu')) {
+            // Sadece submenu dışındaki ve has-submenu olmayan linkler menüyü kapatsın
+            if (!this.classList.contains('has-submenu') && 
+                !this.parentElement.classList.contains('submenu') &&
+                !this.parentElement.parentElement.classList.contains('submenu')) {
                 closeMenu();
             }
         });
@@ -1492,9 +1510,21 @@ document.addEventListener('DOMContentLoaded', function() {
             servicesSubmenu.classList.toggle('active');
         });
     }
+    
+    // Blog submenu toggle
+    const blogMenu = document.getElementById('blogMenu');
+    const blogSubmenu = document.getElementById('blogSubmenu');
+    
+    if (blogMenu && blogSubmenu) {
+        blogMenu.addEventListener('click', function(e) {
+            e.preventDefault();
+            this.classList.toggle('active');
+            blogSubmenu.classList.toggle('active');
+        });
+    }
 });
 
-// FAQ Toggle
+// FAQ Toggle (eğer sayfanda FAQ varsa)
 document.querySelectorAll('.faq-question').forEach(question => {
     question.addEventListener('click', () => {
         const item = question.parentElement;
@@ -1519,56 +1549,5 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         }
     });
 });
-
-// Keyword highlight animation
-document.addEventListener('DOMContentLoaded', function() {
-    const keywords = document.querySelectorAll('.keyword-highlight');
-    keywords.forEach(keyword => {
-        keyword.addEventListener('mouseenter', function() {
-            this.style.transform = 'scale(1.05)';
-            this.style.transition = 'transform 0.2s ease';
-        });
-        
-        keyword.addEventListener('mouseleave', function() {
-            this.style.transform = 'scale(1)';
-        });
-    });
-});
-
-// Add active class to current section in viewport
-const sections = document.querySelectorAll('.content-section');
-const observerOptions = {
-    threshold: 0.3,
-    rootMargin: '0px 0px -50px 0px'
-};
-
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('active');
-        }
-    });
-}, observerOptions);
-
-sections.forEach(section => {
-    observer.observe(section);
-});
-
-// Emergency mode timer
-let emergencyMode = false;
-const emergencyButton = document.querySelector('.btn-primary');
-if (emergencyButton) {
-    emergencyButton.addEventListener('click', function() {
-        if (!emergencyMode) {
-            emergencyMode = true;
-            this.innerHTML = '<i class="fas fa-bolt"></i> ACİL MOD: WhatsApp Açılıyor...';
-            setTimeout(() => {
-                this.innerHTML = '<i class="fab fa-whatsapp"></i> Acil Sorun Çözüm Hattı';
-                emergencyMode = false;
-            }, 3000);
-        }
-    });
-}
-</script>
 </body>
 </html>
