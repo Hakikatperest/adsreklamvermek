@@ -132,7 +132,7 @@
         .sidebar-header {
             padding: 20px;
             display: flex;
-            justify-content: flex-end; /* Logoyu kaldırdık, sadece kapat butonu */
+            justify-content: flex-end;
             align-items: center;
             border-bottom: 1px solid #eee;
             background: white;
@@ -140,7 +140,7 @@
         }
 
         .sidebar-header .logo {
-            display: none; /* Logoyu tamamen kaldır */
+            display: none;
         }
 
         .sidebar-close {
@@ -169,6 +169,7 @@
         .sidebar-links a {
             display: flex;
             align-items: center;
+            justify-content: space-between;
             gap: 15px;
             padding: 15px 25px;
             color: #333;
@@ -200,6 +201,37 @@
         .sidebar-links a:hover i,
         .sidebar-links a.active i {
             color: #4285F4;
+        }
+
+        /* Submenu Styles */
+        .submenu {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease;
+            background: rgba(66, 133, 244, 0.03);
+        }
+
+        .submenu.active {
+            max-height: 200px;
+        }
+
+        .submenu a {
+            padding: 12px 25px 12px 50px !important;
+            font-size: 1rem !important;
+            border-left: 4px solid transparent !important;
+        }
+
+        .submenu a:hover {
+            background: rgba(66, 133, 244, 0.08) !important;
+        }
+
+        .submenu-icon {
+            font-size: 0.8rem !important;
+            transition: transform 0.3s ease;
+        }
+
+        .has-submenu.active .submenu-icon {
+            transform: rotate(180deg);
         }
 
         .sidebar-cta {
@@ -259,14 +291,14 @@
             visibility: visible;
         }
 
-        /* BREADCRUMB - Boşluk düzeltmesi */
+        /* BREADCRUMB */
         .breadcrumb {
             background: var(--white);
             padding: 15px 40px;
             border-bottom: 1px solid var(--gray-light);
             font-size: 0.9rem;
             color: var(--gray);
-            margin-top: 60px; /* Üst bar yüksekliği kadar margin */
+            margin-top: 60px;
         }
 
         .breadcrumb a {
@@ -283,15 +315,15 @@
             color: var(--gray);
         }
 
-        /* HERO SECTION - Boşluk düzeltmesi */
+        /* HERO SECTION */
         .google-hero {
             background: linear-gradient(135deg, #1a237e 0%, #283593 50%, #3949ab 100%);
             color: var(--white);
-            padding: 80px 20px 100px; /* Padding düzenlendi */
+            padding: 80px 20px 100px;
             text-align: center;
             position: relative;
             overflow: hidden;
-            margin-top: 0; /* Margin kaldırıldı */
+            margin-top: 0;
         }
 
         .google-hero::before {
@@ -932,7 +964,6 @@
 <!-- Sidebar Menü -->
 <div class="sidebar-menu" id="sidebarMenu">
     <div class="sidebar-header">
-        <!-- Logo kaldırıldı, sadece kapat butonu -->
         <button class="sidebar-close" id="sidebarClose">
             <i class="fas fa-times"></i>
         </button>
@@ -942,9 +973,17 @@
         <a href="/">
             <i class="fas fa-home"></i> Ana Sayfa
         </a>
-        <a href="/hizmetlerimiz">
-            <i class="fas fa-box"></i> Hizmelerimiz
+        <a href="#" class="has-submenu" id="servicesMenu">
+            <i class="fas fa-rocket"></i> Hizmetlerimiz <i class="fas fa-chevron-down submenu-icon"></i>
         </a>
+        <div class="submenu" id="servicesSubmenu">
+            <a href="/google-ads-reklam-yönetimi.html">
+                <i class="fas fa-ad"></i> Google Ads Reklam Yönetimi
+            </a>
+            <a href="/google-ads-sahte-tiklama-engelleme.html">
+                <i class="fas fa-shield-alt"></i> Google Ads Sahte Tıklama Engelleme
+            </a>
+        </div>
         <a href="/hakkimizda">
             <i class="fas fa-info-circle"></i> Hakkımızda
         </a>
@@ -1252,10 +1291,10 @@
         
         <div class="footer-links">
             <a href="/">Ana Sayfa</a>
-            <a href="/hizmetlerimiz">Hizmetlerimiz</a>
+            <a href="/google-ads-reklam-yönetimi.html">Google Ads Reklam Yönetimi</a>
+            <a href="/google-ads-sahte-tiklama-engelleme.html">Google Ads Sahte Tıklama Engelleme</a>
             <a href="/hakkimizda">Hakkımızda</a>
             <a href="/iletisim">İletişim</a>
-            <a href="/google-reklam-vermek-istiyorum">Google Reklam Vermek</a>
         </div>
         
         <div class="copyright">
@@ -1301,7 +1340,12 @@ document.addEventListener('DOMContentLoaded', function() {
     // Menü linklerine tıklayınca menüyü kapat
     const sidebarLinks = document.querySelectorAll('.sidebar-links a');
     sidebarLinks.forEach(link => {
-        link.addEventListener('click', closeMenu);
+        link.addEventListener('click', function(e) {
+            // Sadece submenu dışındaki linkler menüyü kapatsın
+            if (!this.classList.contains('has-submenu') && !this.parentElement.classList.contains('submenu')) {
+                closeMenu();
+            }
+        });
     });
     
     // ESC tuşu ile menüyü kapat
@@ -1310,6 +1354,18 @@ document.addEventListener('DOMContentLoaded', function() {
             closeMenu();
         }
     });
+    
+    // Hizmetlerimiz submenu toggle
+    const servicesMenu = document.getElementById('servicesMenu');
+    const servicesSubmenu = document.getElementById('servicesSubmenu');
+    
+    if (servicesMenu && servicesSubmenu) {
+        servicesMenu.addEventListener('click', function(e) {
+            e.preventDefault();
+            this.classList.toggle('active');
+            servicesSubmenu.classList.toggle('active');
+        });
+    }
 });
 
 // FAQ Toggle
