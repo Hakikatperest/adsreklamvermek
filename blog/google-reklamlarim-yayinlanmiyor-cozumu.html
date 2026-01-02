@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Google Reklam Vermek İstiyorum | Google Ads Ücretleri ve Rehberi</title>
-    <meta name="description" content="Google reklam verme, Google Ads ücretleri, Google ilan vermek istiyorum rehberi. Google a reklam nasıl verilir, Google reklam verme fiyatları 2025, Google tıklama başı fiyatları hakkında tüm bilgiler." />
-    <meta name="keywords" content="google reklam verme, google da reklam nasıl verilir, google ilan vermek istiyorum, google reklam verme ücreti, google a reklam nasıl verilir, google reklam ver, google reklam verme fiyatları, google reklam verme ücretleri, ads reklam ver, google a ilan vermek, google a nasıl reklam verilir, google a reklam verme, google a reklam verme fiyatları, google a reklam vermek istiyorum, google a reklam vermek kaç tl, google reklam verme ücreti, google tıklama başı fiyatları" />
+    <title>Google Reklamlarım Yayınlanmıyor: 2025 Sorun Çözüm Rehberi | ADS Reklam</title>
+    <meta name="description" content="Google reklamlarım yayınlanmıyor sorunu mu yaşıyorsunuz? Google Ads reklamlarım çıkmıyor, Google ilanlarım aktif değil, Google reklamlarım onaylanmadı sorunlarının 2025 çözümleri burada. Hemen tıklayın!" />
+    <meta name="keywords" content="google reklamlarım yayınlanmıyor, google ads reklamlarım çıkmıyor, google ilanlarım aktif değil, google reklamlarım onaylanmadı, google reklamım çıkmıyor neden, google reklamım yayında değil, google reklam yayınlanma sorunları, google ads yayınlanmıyor, google reklam onay süresi, google reklam politikası ihlali, google reklam reddedildi, google reklam hesabım askıda, google ads kampanyam çalışmıyor" />
     <meta name="robots" content="index, follow" />
-    <link rel="canonical" href="https://www.adsreklamvermek.com/google-reklam-vermek-istiyorum" />
+    <link rel="canonical" href="https://www.adsreklamvermek.com/google-reklamlarim-yayinlanmiyor" />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
@@ -48,26 +48,24 @@
             overflow-x: hidden;
         }
 
-        /* MENÜ STİLLERİ */
-        .navbar {
-            background: linear-gradient(135deg, #1a237e 0%, #283593 100%);
-            padding: 20px 40px;
-            position: sticky;
+        /* HAMBURGER MENÜ CSS */
+        .top-bar {
+            position: fixed;
             top: 0;
-            z-index: 1000;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-        }
-
-        .nav-container {
-            max-width: 1400px;
-            margin: 0 auto;
+            left: 0;
+            right: 0;
+            background: white;
+            padding: 15px 20px;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            height: 60px;
         }
 
         .logo a {
-            font-size: 1.8rem;
+            font-size: 1.4rem;
             font-weight: 800;
             background: linear-gradient(90deg, #4285F4, #34A853, #FBBC05, #EA4335);
             -webkit-background-clip: text;
@@ -76,63 +74,256 @@
             text-decoration: none;
         }
 
-        .nav-links {
+        /* Hamburger Menü Butonu */
+        .menu-toggle {
             display: flex;
-            gap: 40px;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 30px;
+            height: 21px;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            padding: 0;
+            z-index: 1001;
         }
 
-        .nav-links a {
-            color: rgba(255, 255, 255, 0.9);
-            text-decoration: none;
-            font-weight: 500;
-            transition: var(--transition);
-            font-size: 1rem;
+        .menu-toggle span {
+            width: 100%;
+            height: 3px;
+            background-color: #333;
+            border-radius: 10px;
+            transition: all 0.3s ease;
         }
 
-        .nav-links a:hover {
-            color: var(--accent);
-            transform: translateY(-2px);
+        .menu-toggle.active span:nth-child(1) {
+            transform: rotate(45deg) translate(6px, 6px);
+            background-color: #333;
         }
 
-        .nav-cta {
+        .menu-toggle.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .menu-toggle.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(7px, -6px);
+            background-color: #333;
+        }
+
+        /* Yandan Açılır Menü */
+        .sidebar-menu {
+            position: fixed;
+            top: 0;
+            right: -350px;
+            width: 320px;
+            height: 100%;
+            background: white;
+            box-shadow: -5px 0 30px rgba(0, 0, 0, 0.15);
+            z-index: 1002;
+            transition: right 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+            overflow-y: auto;
+            border-left: 1px solid #eee;
+        }
+
+        .sidebar-menu.active {
+            right: 0;
+        }
+
+        .sidebar-header {
+            padding: 20px;
             display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            border-bottom: 1px solid #eee;
+            background: white;
+            height: 60px;
+        }
+
+        .sidebar-header .logo {
+            display: none;
+        }
+
+        .sidebar-close {
+            background: transparent;
+            border: none;
+            color: #333;
+            font-size: 1.5rem;
+            cursor: pointer;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            transition: background 0.3s ease;
+        }
+
+        .sidebar-close:hover {
+            background: rgba(0, 0, 0, 0.05);
+        }
+
+        .sidebar-links {
+            padding: 20px 0;
+        }
+
+        .sidebar-links a {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
             gap: 15px;
+            padding: 15px 25px;
+            color: #333;
+            text-decoration: none;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            border-left: 4px solid transparent;
         }
 
-        .nav-btn {
-            padding: 12px 24px;
-            border-radius: var(--radius-sm);
+        .sidebar-links a:hover {
+            background: rgba(66, 133, 244, 0.05);
+            color: #4285F4;
+            border-left: 4px solid #4285F4;
+            padding-left: 30px;
+        }
+
+        .sidebar-links a.active {
+            background: rgba(66, 133, 244, 0.1);
+            color: #4285F4;
+            border-left: 4px solid #4285F4;
+        }
+
+        .sidebar-links a i {
+            width: 24px;
+            text-align: center;
+            color: #666;
+        }
+
+        .sidebar-links a:hover i,
+        .sidebar-links a.active i {
+            color: #4285F4;
+        }
+
+        /* Submenu Styles */
+        .submenu {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease;
+            background: rgba(66, 133, 244, 0.03);
+        }
+
+        .submenu.active {
+            max-height: 200px;
+        }
+
+        .submenu a {
+            padding: 12px 25px 12px 50px !important;
+            font-size: 1rem !important;
+            border-left: 4px solid transparent !important;
+        }
+
+        .submenu a:hover {
+            background: rgba(66, 133, 244, 0.08) !important;
+        }
+
+        .submenu-icon {
+            font-size: 0.8rem !important;
+            transition: transform 0.3s ease;
+        }
+
+        .has-submenu.active .submenu-icon {
+            transform: rotate(180deg);
+        }
+
+        .sidebar-cta {
+            padding: 20px;
+            border-top: 1px solid #eee;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            background: white;
+        }
+
+        .sidebar-btn {
+            padding: 14px;
+            border-radius: 8px;
             font-weight: 600;
             text-decoration: none;
-            transition: var(--transition);
-            font-size: 0.95rem;
+            text-align: center;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
         }
 
-        .nav-btn.whatsapp {
+        .sidebar-btn.whatsapp {
             background: linear-gradient(135deg, #25D366, #128C7E);
             color: white;
         }
 
-        .nav-btn.phone {
-            background: rgba(255, 255, 255, 0.15);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
+        .sidebar-btn.phone {
+            background: #4285F4;
             color: white;
+            border: none;
         }
 
-        .nav-btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        .sidebar-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Overlay */
+        .sidebar-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 1001;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+        }
+
+        .sidebar-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        /* BREADCRUMB */
+        .breadcrumb {
+            background: var(--white);
+            padding: 15px 40px;
+            border-bottom: 1px solid var(--gray-light);
+            font-size: 0.9rem;
+            color: var(--gray);
+            margin-top: 60px;
+        }
+
+        .breadcrumb a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+
+        .breadcrumb span {
+            margin: 0 8px;
+            color: var(--gray);
         }
 
         /* HERO SECTION */
         .google-hero {
-            background: linear-gradient(135deg, #1a237e 0%, #283593 50%, #3949ab 100%);
+            background: linear-gradient(135deg, #8B0000 0%, #B22222 50%, #DC143C 100%);
             color: var(--white);
-            padding: 100px 20px 120px;
+            padding: 80px 20px 100px;
             text-align: center;
             position: relative;
             overflow: hidden;
+            margin-top: 0;
         }
 
         .google-hero::before {
@@ -143,8 +334,8 @@
             right: 0;
             bottom: 0;
             background: 
-                radial-gradient(circle at 20% 80%, rgba(66, 133, 244, 0.15) 0%, transparent 50%),
-                radial-gradient(circle at 80% 20%, rgba(52, 168, 83, 0.1) 0%, transparent 50%);
+                radial-gradient(circle at 20% 80%, rgba(234, 67, 53, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(251, 188, 5, 0.1) 0%, transparent 50%);
             z-index: 0;
         }
 
@@ -201,7 +392,7 @@
         }
 
         .btn-primary {
-            background: linear-gradient(135deg, var(--secondary), #2E8B57);
+            background: linear-gradient(135deg, var(--danger), #C62828);
             color: var(--white);
         }
 
@@ -219,29 +410,6 @@
 
         .btn i {
             font-size: 1.2rem;
-        }
-
-        /* BREADCRUMB */
-        .breadcrumb {
-            background: var(--white);
-            padding: 15px 40px;
-            border-bottom: 1px solid var(--gray-light);
-            font-size: 0.9rem;
-            color: var(--gray);
-        }
-
-        .breadcrumb a {
-            color: var(--primary);
-            text-decoration: none;
-        }
-
-        .breadcrumb a:hover {
-            text-decoration: underline;
-        }
-
-        .breadcrumb span {
-            margin: 0 8px;
-            color: var(--gray);
         }
 
         /* ANA İÇERİK */
@@ -299,7 +467,7 @@
             font-size: 1.8rem;
             font-weight: 700;
             margin-bottom: 20px;
-            color: var(--primary);
+            color: var(--danger);
             padding-bottom: 10px;
             border-bottom: 2px solid var(--gray-light);
         }
@@ -330,21 +498,21 @@
         }
 
         .highlight-box {
-            background: linear-gradient(135deg, rgba(66, 133, 244, 0.1), rgba(51, 103, 214, 0.05));
-            border-left: 4px solid var(--primary);
+            background: linear-gradient(135deg, rgba(234, 67, 53, 0.1), rgba(198, 40, 40, 0.05));
+            border-left: 4px solid var(--danger);
             padding: 25px;
             margin: 30px 0;
             border-radius: 0 var(--radius) var(--radius) 0;
         }
 
         .highlight-box h4 {
-            color: var(--primary);
+            color: var(--danger);
             font-size: 1.2rem;
             margin-bottom: 15px;
             font-weight: 700;
         }
 
-        .price-table {
+        .problem-table {
             width: 100%;
             border-collapse: collapse;
             margin: 30px 0;
@@ -353,30 +521,30 @@
             overflow: hidden;
         }
 
-        .price-table th {
-            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+        .problem-table th {
+            background: linear-gradient(135deg, var(--danger), #C62828);
             color: white;
             padding: 20px;
             text-align: left;
             font-weight: 600;
         }
 
-        .price-table td {
+        .problem-table td {
             padding: 18px 20px;
             border-bottom: 1px solid var(--gray-light);
         }
 
-        .price-table tr:last-child td {
+        .problem-table tr:last-child td {
             border-bottom: none;
         }
 
-        .price-table tr:nth-child(even) {
+        .problem-table tr:nth-child(even) {
             background-color: var(--light);
         }
 
         .keyword-highlight {
-            background: linear-gradient(135deg, var(--accent), #F9AB00);
-            color: var(--dark);
+            background: linear-gradient(135deg, var(--danger), #C62828);
+            color: white;
             padding: 3px 8px;
             border-radius: 4px;
             font-weight: 600;
@@ -396,7 +564,7 @@
             display: inline-block;
             width: 40px;
             height: 40px;
-            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            background: linear-gradient(135deg, var(--danger), #C62828);
             color: white;
             border-radius: 50%;
             text-align: center;
@@ -412,6 +580,36 @@
             font-size: 1.2rem;
             color: var(--dark);
             margin-bottom: 15px;
+        }
+
+        .warning-box {
+            background: linear-gradient(135deg, #FFF3CD, #FFEEBA);
+            border-left: 4px solid #FFC107;
+            padding: 25px;
+            margin: 30px 0;
+            border-radius: 0 var(--radius) var(--radius) 0;
+        }
+
+        .warning-box h4 {
+            color: #856404;
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .success-box {
+            background: linear-gradient(135deg, #D4EDDA, #C3E6CB);
+            border-left: 4px solid var(--secondary);
+            padding: 25px;
+            margin: 30px 0;
+            border-radius: 0 var(--radius) var(--radius) 0;
+        }
+
+        .success-box h4 {
+            color: #155724;
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+            font-weight: 700;
         }
 
         /* SAĞ SÜTUN - SIDEBAR */
@@ -439,7 +637,7 @@
         }
 
         .quick-contact {
-            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            background: linear-gradient(135deg, var(--danger) 0%, #C62828 100%);
             color: white;
             text-align: center;
         }
@@ -502,12 +700,12 @@
         }
 
         .keyword-list a:hover {
-            color: var(--primary);
+            color: var(--danger);
             transform: translateX(5px);
         }
 
         .keyword-list i {
-            color: var(--primary);
+            color: var(--danger);
             margin-right: 10px;
             font-size: 0.9rem;
         }
@@ -556,9 +754,44 @@
             margin-top: 10px;
         }
 
+        .related-links {
+            list-style: none;
+        }
+
+        .related-links li {
+            margin-bottom: 12px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid var(--gray-light);
+        }
+
+        .related-links li:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+
+        .related-links a {
+            color: var(--primary);
+            text-decoration: none;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+        }
+
+        .related-links a:hover {
+            color: var(--danger);
+            transform: translateX(5px);
+        }
+
+        .related-links i {
+            color: var(--primary);
+            margin-right: 10px;
+            font-size: 0.9rem;
+        }
+
         /* CTA SECTION */
         .cta-section {
-            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            background: linear-gradient(135deg, var(--danger) 0%, #C62828 100%);
             padding: 100px 20px;
             text-align: center;
             color: white;
@@ -623,7 +856,7 @@
         }
 
         .floating-phone {
-            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            background: linear-gradient(135deg, var(--danger), #C62828);
             color: white;
         }
 
@@ -713,23 +946,13 @@
 
         /* RESPONSIVE */
         @media (max-width: 768px) {
-            .navbar {
-                padding: 15px 20px;
-            }
-            
-            .nav-container {
-                flex-direction: column;
-                gap: 15px;
-            }
-            
-            .nav-links {
-                gap: 15px;
-                flex-wrap: wrap;
-                justify-content: center;
+            .breadcrumb {
+                margin-top: 60px;
+                padding: 10px 20px;
             }
             
             .google-hero {
-                padding: 80px 20px 100px;
+                padding: 60px 20px 80px;
             }
             
             .google-hero h1 {
@@ -768,6 +991,10 @@
                 height: 55px;
                 font-size: 1.6rem;
             }
+            
+            .sidebar-menu {
+                width: 280px;
+            }
         }
 
         @media (max-width: 480px) {
@@ -775,11 +1002,11 @@
                 font-size: 1.8rem;
             }
             
-            .price-table {
+            .problem-table {
                 font-size: 0.9rem;
             }
             
-            .price-table th, .price-table td {
+            .problem-table th, .problem-table td {
                 padding: 12px 15px;
             }
         }
@@ -787,38 +1014,75 @@
 </head>
 <body>
 
-<!-- NAVBAR -->
-<nav class="navbar">
-    <div class="nav-container">
-        <div class="logo">
-            <a href="/">ADS Reklam Vermek</a>
-        </div>
-        <div class="nav-links">
-            <a href="/">Ana Sayfa</a>
-            <a href="/#paketler">Paketler</a>
-            <a href="/hakkimizda">Hakkımızda</a>
-            <a href="/iletisim">İletişim</a>
-        </div>
-        <div class="nav-cta">
-            <a href="https://wa.me/905303158752" class="nav-btn whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp</a>
-            <a href="tel:05422360983" class="nav-btn phone"><i class="fas fa-phone-alt"></i> 0542 236 09 83</a>
-        </div>
+<!-- HAMBURGER MENÜ -->
+<div class="top-bar">
+    <div class="logo">
+        <a href="/">ADS Reklam Vermek</a>
     </div>
-</nav>
+    <button class="menu-toggle" id="menuToggle">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+</div>
+
+<!-- Sidebar Menü -->
+<div class="sidebar-menu" id="sidebarMenu">
+    <div class="sidebar-header">
+        <button class="sidebar-close" id="sidebarClose">
+            <i class="fas fa-times"></i>
+        </button>
+    </div>
+
+    <div class="sidebar-links">
+        <a href="/">
+            <i class="fas fa-home"></i> Ana Sayfa
+        </a>
+        <a href="#" class="has-submenu" id="servicesMenu">
+            <i class="fas fa-rocket"></i> Hizmetlerimiz <i class="fas fa-chevron-down submenu-icon"></i>
+        </a>
+        <div class="submenu" id="servicesSubmenu">
+            <a href="/google-ads-reklam-yönetimi.html">
+                <i class="fas fa-ad"></i> Google Ads Reklam Yönetimi
+            </a>
+            <a href="/google-ads-sahte-tiklama-engelleme.html">
+                <i class="fas fa-shield-alt"></i> Google Ads Sahte Tıklama Engelleme
+            </a>
+        </div>
+        <a href="/hakkimizda">
+            <i class="fas fa-info-circle"></i> Hakkımızda
+        </a>
+        <a href="/iletisim">
+            <i class="fas fa-envelope"></i> İletişim
+        </a>
+    </div>
+
+    <div class="sidebar-cta">
+        <a href="https://wa.me/905303158752" target="_blank" class="sidebar-btn whatsapp">
+            <i class="fab fa-whatsapp"></i> WhatsApp
+        </a>
+        <a href="tel:05422360983" class="sidebar-btn phone">
+            <i class="fas fa-phone"></i> 0542 236 09 83
+        </a>
+    </div>
+</div>
+
+<!-- Overlay -->
+<div class="sidebar-overlay" id="sidebarOverlay"></div>
 
 <!-- BREADCRUMB -->
 <div class="breadcrumb">
     <a href="/">Ana Sayfa</a> <span>></span>
-    <span>Google Reklam Vermek İstiyorum</span>
+    <span>Google Reklamlarım Yayınlanmıyor</span>
 </div>
 
 <!-- HERO SECTION -->
 <section class="google-hero">
     <div class="google-hero-content">
-        <h1>Google Reklam Vermek İstiyorum: <span>2025 Google Ads Rehberi</span></h1>
-        <p>Google reklam verme, Google Ads ücretleri, Google ilan vermek istiyorum rehberi. <strong>Google a reklam nasıl verilir</strong>, Google reklam verme fiyatları 2025, Google tıklama başı fiyatları hakkında tüm bilgiler burada.</p>
+        <h1>Google Reklamlarım Yayınlanmıyor: <span>2025 Sorun Çözüm Rehberi</span></h1>
+        <p>Google Ads reklamlarım çıkmıyor, Google ilanlarım aktif değil, Google reklamlarım onaylanmadı sorunları mı yaşıyorsunuz? <strong>Google reklam yayınlanma sorunları</strong> için uzman çözümler burada!</p>
         <div class="hero-cta-buttons">
-            <a href="https://wa.me/905303158752?text=Merhaba,%20Google%20reklam%20vermek%20istiyorum.%20Bana%20yardımcı%20olabilir%20misiniz?" class="btn btn-primary"><i class="fab fa-whatsapp"></i> Ücretsiz Danışmanlık Al</a>
+            <a href="https://wa.me/905303158752?text=Merhaba,%20Google%20reklamlarım%20yayınlanmıyor.%20Acil%20yardım%20istiyorum!" class="btn btn-primary"><i class="fab fa-whatsapp"></i> Acil Sorun Çözüm Hattı</a>
             <a href="tel:05422360983" class="btn btn-secondary"><i class="fas fa-phone-alt"></i> Hemen Arayın: 0542 236 09 83</a>
         </div>
     </div>
@@ -829,152 +1093,203 @@
     <div class="content-container">
         <!-- SOL SÜTUN - ANA İÇERİK -->
         <article class="article-content">
-            <h1 class="section-title">Google Reklam Vermek İstiyorum: 2025'te Google Ads ile Tanışın</h1>
-            <p class="section-subtitle"><strong>Google reklam verme</strong> işlemi, işletmenizin online görünürlüğünü artırmak ve potansiyel müşterilere ulaşmak için en etkili yöntemlerden biridir. Bu kapsamlı rehberde, <strong>Google a reklam nasıl verilir</strong>, <strong>Google reklam verme ücreti</strong> ne kadar, ve <strong>Google reklam verme fiyatları</strong> hakkında tüm detayları bulacaksınız.</p>
+            <h1 class="section-title">Google Reklamlarım Yayınlanmıyor: 2025 Sorunları ve Çözümleri</h1>
+            <p class="section-subtitle">"<strong>Google reklamlarım yayınlanmıyor</strong>" diyorsanız yalnız değilsiniz! Google Ads reklam yayınlanma sorunları, özellikle 2025 politikalarıyla birlikte yaygın bir problem haline geldi. Bu kapsamlı rehberde, <strong>Google ads reklamlarım çıkmıyor</strong>, <strong>Google ilanlarım aktif değil</strong>, <strong>Google reklamlarım onaylanmadı</strong> gibi sorunların nedenlerini ve çözümlerini adım adım bulacaksınız.</p>
             
             <!-- BÖLÜM 1 -->
-            <section class="content-section" id="nedir">
-                <h2>Google Reklam Vermek Nedir?</h2>
-                <p><strong>Google reklam ver</strong>mek, Google'ın arama sonuçlarında ve partner web sitelerinde işletmenizin reklamlarını göstermesidir. <strong>Google Ads</strong> platformu üzerinden yapılan bu reklamlar, hedef kitlenizin arama yaptığı anahtar kelimelere göre gösterilir. Bu sayede, ürün veya hizmetinizi arayan potansiyel müşterilere doğrudan ulaşabilirsiniz.</p>
+            <section class="content-section" id="nedenler">
+                <h2>Google Reklamlarım Neden Yayınlanmıyor? 10 Ana Neden</h2>
+                <p><strong>Google reklamım çıkmıyor neden</strong> sorusunun birden fazla cevabı olabilir. İşte en yaygın 10 neden:</p>
                 
-                <div class="highlight-box">
-                    <h4><i class="fas fa-lightbulb"></i> Önemli Not:</h4>
-                    <p><strong>Google ilan vermek istiyorum</strong> diyenlerin %78'i ilk 3 ayda pozitif ROI elde ediyor. Doğru strateji ile <strong>Google reklam verme</strong> işlemi işletmenize ciddi müşteri kazandırabilir.</p>
-                </div>
-                
-                <h3>Google Reklam Türleri</h3>
-                <ul>
-                    <li><strong>Arama Ağı Reklamları:</strong> Kullanıcıların arama yaptığı kelimelerde gösterilir</li>
-                    <li><strong>Görüntülü Reklam Ağı:</strong> Web sitelerinde, uygulamalarda ve YouTube'da gösterilir</li>
-                    <li><strong>Alışveriş Reklamları:</strong> E-ticaret ürünlerini doğrudan arama sonuçlarında gösterir</li>
-                    <li><strong>Video Reklamları:</strong> YouTube ve Google video partnerlerinde gösterilir</li>
-                    <li><strong>Uygulama Reklamları:</strong> Mobil uygulama indirmelerini teşvik eder</li>
-                </ul>
-            </section>
-            
-            <!-- BÖLÜM 2 -->
-            <section class="content-section" id="nasil-verilir">
-                <h2>Google A Reklam Nasıl Verilir? Adım Adım Rehber</h2>
-                <p><strong>Google a nasıl reklam verilir</strong> sorusunun cevabı aslında basit adımlardan oluşur. İşte <strong>Google a reklam verme</strong> işlemi için izlemeniz gereken adımlar:</p>
-                
-                <div class="step-box">
-                    <div class="step-number">1</div>
-                    <div class="step-title">Google Ads Hesabı Oluşturma</div>
-                    <p>İlk adım, <strong>ads reklam ver</strong>mek için bir Google Ads hesabı oluşturmaktır. Google'a kayıt olun ve işletme bilgilerinizi girin.</p>
-                </div>
-                
-                <div class="step-box">
-                    <div class="step-number">2</div>
-                    <div class="step-title">Kampanya Türünü Seçme</div>
-                    <p>Hedeflerinize uygun kampanya türünü seçin: Satış, web sitesi trafiği, marka bilinirliği vb.</p>
-                </div>
-                
-                <div class="step-box">
-                    <div class="step-number">3</div>
-                    <div class="step-title">Anahtar Kelime Araştırması</div>
-                    <p>Potansiyel müşterilerinizin aradığı anahtar kelimeleri belirleyin. Bu, <strong>Google reklam verme</strong> başarınızı doğrudan etkiler.</p>
-                </div>
-                
-                <div class="step-box">
-                    <div class="step-number">4</div>
-                    <div class="step-title">Reklam Metinleri Oluşturma</div>
-                    <p>Dikkat çekici, ikna edici reklam metinleri yazın. CTA (Eylem Çağrısı) eklemeyi unutmayın.</p>
-                </div>
-                
-                <div class="step-box">
-                    <div class="step-number">5</div>
-                    <div class="step-title">Bütçe ve Teklif Belirleme</div>
-                    <p><strong>Google reklam verme ücreti</strong> ni belirleyin. Günlük bütçe ve maksimum tıklama başı ücret ayarlayın.</p>
-                </div>
-                
-                <div class="step-box">
-                    <div class="step-number">6</div>
-                    <div class="step-title">Reklamları Yayınlama ve İzleme</div>
-                    <p>Reklamlarınızı yayınlayın ve performansını düzenli olarak izleyin, optimize edin.</p>
-                </div>
-            </section>
-            
-            <!-- BÖLÜM 3 -->
-            <section class="content-section" id="ucretler">
-                <h2>Google Reklam Verme Ücretleri 2025</h2>
-                <p><strong>Google reklam verme fiyatları</strong> birçok faktöre bağlı olarak değişir. <strong>Google a reklam vermek kaç tl</strong> sorusunun net bir cevabı yoktur, ancak sektörel ortalamaları şu şekildedir:</p>
-                
-                <table class="price-table">
+                <table class="problem-table">
                     <thead>
                         <tr>
-                            <th>Sektör</th>
-                            <th>Ortalama Tıklama Başı Ücret</th>
-                            <th>Aylık Minimum Bütçe</th>
+                            <th>Problem No</th>
+                            <th>Olası Neden</th>
+                            <th>Çözüm Önceliği</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td><strong>E-ticaret</strong></td>
-                            <td>1.50 TL - 8 TL</td>
-                            <td>1.500 TL</td>
+                            <td><strong>1</strong></td>
+                            <td><span class="keyword-highlight">Google Reklam Politikası İhlali</span></td>
+                            <td>YÜKSEK</td>
                         </tr>
                         <tr>
-                            <td><strong>Yerel Hizmetler</strong></td>
-                            <td>2 TL - 12 TL</td>
-                            <td>1.000 TL</td>
+                            <td><strong>2</strong></td>
+                            <td>Ödeme Sorunları (Kart onayı, limit, vs.)</td>
+                            <td>YÜKSEK</td>
                         </tr>
                         <tr>
-                            <td><strong>B2B Hizmetler</strong></td>
-                            <td>5 TL - 25 TL</td>
-                            <td>2.000 TL</td>
+                            <td><strong>3</strong></td>
+                            <td>Hesap Askıya Alınması</td>
+                            <td>YÜKSEK</td>
                         </tr>
                         <tr>
-                            <td><strong>Seyahat & Turizm</strong></td>
-                            <td>3 TL - 15 TL</td>
-                            <td>1.500 TL</td>
+                            <td><strong>4</strong></td>
+                            <td>Reklam Onay Süreci Devam Ediyor</td>
+                            <td>ORTA</td>
                         </tr>
                         <tr>
-                            <td><strong>Sağlık & Medikal</strong></td>
-                            <td>4 TL - 20 TL</td>
-                            <td>2.500 TL</td>
+                            <td><strong>5</strong></td>
+                            <td>Anahtar Kelime Politikaları İhlali</td>
+                            <td>ORTA</td>
+                        </tr>
+                        <tr>
+                            <td><strong>6</strong></td>
+                            <td>Hedefleme Sorunları</td>
+                            <td>DÜŞÜK</td>
+                        </tr>
+                        <tr>
+                            <td><strong>7</strong></td>
+                            <td>Bütçe Yetersizliği veya Limitler</td>
+                            <td>DÜŞÜK</td>
+                        </tr>
+                        <tr>
+                            <td><strong>8</strong></td>
+                            <td>Zamanlama ve Programlama Hataları</td>
+                            <td>DÜŞÜK</td>
+                        </tr>
+                        <tr>
+                            <td><strong>9</strong></td>
+                            <td>Reklam Kalite Puanı Düşüklüğü</td>
+                            <td>ORTA</td>
+                        </tr>
+                        <tr>
+                            <td><strong>10</strong></td>
+                            <td>Teknik Hatalar (Google tarafı)</td>
+                            <td>DÜŞÜK</td>
                         </tr>
                     </tbody>
                 </table>
                 
+                <div class="warning-box">
+                    <h4><i class="fas fa-exclamation-triangle"></i> Acil Durum: Hesabınız Askıda mı?</h4>
+                    <p>Eğer "<strong>Google reklam hesabım askıda</strong>" diyorsanız, bu genellikle ciddi politika ihlalleri veya tekrarlanan uyarılar sonucu olur. <strong>Google Ads kampanyam çalışmıyor</strong> sorununun en ciddi versiyonudur ve profesyonel yardım gerektirir.</p>
+                </div>
+            </section>
+            
+            <!-- BÖLÜM 2 -->
+            <section class="content-section" id="cozumler">
+                <h2>Google Reklam Yayınlanma Sorunları Çözüm Adımları</h2>
+                <p><strong>Google reklamım yayında değil</strong> sorununu çözmek için bu adımları izleyin:</p>
+                
+                <div class="step-box">
+                    <div class="step-number">1</div>
+                    <div class="step-title">Google Ads Politikalarını Kontrol Edin</div>
+                    <p>İlk adım, <strong>Google reklam politikası ihlali</strong> olup olmadığını kontrol etmektir. Google Ads panelinizde "Politikalar ve ihlaller" bölümüne gidin. Yasaklı ürün/hizmet, yanıltıcı içerik, sahte iddialar gibi ihlaller <strong>Google reklam reddedildi</strong> sorununa neden olur.</p>
+                </div>
+                
+                <div class="step-box">
+                    <div class="step-number">2</div>
+                    <div class="step-title">Ödeme Bilgilerinizi Doğrulayın</div>
+                    <p>Ödeme yönteminizin geçerli olduğundan, kart limitlerinin aşılmadığından emin olun. "<strong>Google ads yayınlanmıyor</strong>" sorununun %30'u ödeme problemlerinden kaynaklanır.</p>
+                </div>
+                
+                <div class="step-box">
+                    <div class="step-number">3</div>
+                    <div class="step-title">Reklam Onay Süresini Bekleyin</div>
+                    <p><strong>Google reklam onay süresi</strong> normalde 24-48 saattir ancak bazı durumlarda 3-5 iş gününe kadar uzayabilir. Yeni kampanyalar için sabırlı olun.</p>
+                </div>
+                
+                <div class="step-box">
+                    <div class="step-number">4</div>
+                    <div class="step-title">Anahtar Kelimelerinizi Gözden Geçirin</div>
+                    <p>Yasaklı, markalı veya çok genel anahtar kelimeler kullanıyor olabilirsiniz. Google'ın yasaklı anahtar kelime listesini kontrol edin.</p>
+                </div>
+                
+                <div class="step-box">
+                    <div class="step-number">5</div>
+                    <div class="step-title">Hedefleme Ayarlarını Kontrol Edin</div>
+                    <p>Çok dar hedefleme yapmış olabilirsiniz. Coğrafi hedefleme, dil seçenekleri ve demografik filtreleri gözden geçirin.</p>
+                </div>
+                
+                <div class="step-box">
+                    <div class="step-number">6</div>
+                    <div class="step-title">Google Support ile İletişime Geçin</div>
+                    <p>Tüm adımları denediniz ve hala "<strong>Google reklamlarım çıkmıyor</strong>" diyorsanız, Google Ads destek ekibiyle iletişime geçin.</p>
+                </div>
+            </section>
+            
+            <!-- BÖLÜM 3 -->
+            <section class="content-section" id="politika-ihlali">
+                <h2>Google Reklam Politikası İhlali: En Yaygın 2025 İhlalleri</h2>
+                <p><strong>Google reklam politikası ihlali</strong>, yayınlanma sorunlarının en büyük nedenidir. İşte 2025'te en sık karşılaşılan ihlaller:</p>
+                
+                <h3>1. Sağlık ve Medikal İddialar</h3>
+                <p>"Kesin çözüm", "%100 iyileştirme", "mucize ürün" gibi kanıtlanamayan iddialar. Google bu tür ifadelere karşı çok katı.</p>
+                
+                <h3>2. Finansal Hizmetlerde Yanıltıcı İçerik</h3>
+                <p>"Garantili kazanç", "risksiz yatırım" gibi finansal vaatler kesinlikle yasaktır.</p>
+                
+                <h3>3. Telif Hakkı İhlalleri</h3>
+                <p>Markalı içerik, telif hakkı olan görseller, izinsiz logo kullanımı.</p>
+                
+                <h3>4. Yetişkin İçeriği</h3>
+                <p>Google reklam politikaları yetişkin içeriğine izin vermez. Dolaylı referanslar bile sorun çıkarabilir.</p>
+                
+                <h3>5. Alkol, Kumar ve İlaç</h3>
+                <p>Bu kategorilerdeki ürün/hizmetler için özel izinler gereklidir.</p>
+                
                 <div class="highlight-box">
-                    <h4><i class="fas fa-calculator"></i> Google Tıklama Başı Fiyatları Nasıl Belirlenir?</h4>
-                    <p><strong>Google tıklama başı fiyatları</strong> şu faktörlere göre değişir: Rekabet yoğunluğu, sektör, anahtar kelime kalitesi, reklam kalite puanı, teklif stratejisi ve coğrafi konum. <strong>Google a ilan vermek</strong> istiyorsanız, doğru anahtar kelime seçimi maliyetleri %40'a kadar düşürebilir.</p>
+                    <h4><i class="fas fa-lightbulb"></i> SEO Uzmanı Tavsiyesi:</h4>
+                    <p>"<strong>Google reklamlarım onaylanmadı</strong>" sorunu yaşıyorsanız, reklam metinlerinizi yeniden yazın. Daha az iddialı, daha açıklayıcı ve politika dostu bir dil kullanın. "En iyi" yerine "kaliteli", "kesin çözüm" yerine "etkili çözüm" gibi ifadeler tercih edin.</p>
                 </div>
             </section>
             
             <!-- BÖLÜM 4 -->
-            <section class="content-section" id="faydalar">
-                <h2>Google Reklam Vermenin Faydaları</h2>
-                <p><strong>Google reklam vermek istiyorum</strong> diyen işletmeler bu faydalardan yararlanır:</p>
+            <section class="content-section" id="acil-cozum">
+                <h2>Acil Durum: Google Reklamlarım Hemen Yayınlansın İstiyorum!</h2>
+                <p>İş kaybı yaşıyorsanız ve "<strong>Google ilanlarım aktif değil</strong>" sorunu acil çözüm gerektiriyorsa:</p>
                 
-                <h3>1. Hızlı Sonuçlar</h3>
-                <p>SEO'nun aksine, Google Ads anında sonuç verir. Reklamlarınız aynı gün yayına girer ve trafik almaya başlar.</p>
+                <div class="success-box">
+                    <h4><i class="fas fa-bolt"></i> Acil Çözüm Paketi</h4>
+                    <p>1. <strong>Yeni Kampanya Oluşturun:</strong> Sorunlu kampanyayı duraklatın, tamamen yeni bir kampanya oluşturun<br>
+                    2. <strong>Temiz Metinler Yazın:</strong> Tüm politik ihlal şüphesi olan ifadeleri kaldırın<br>
+                    3. <strong>Farklı Ödeme Yöntemi:</strong> Farklı bir kredi kartı veya banka hesabı ekleyin<br>
+                    4. <strong>Hedeflemeyi Genişletin:</strong> Coğrafi ve demografik kısıtlamaları gevşetin<br>
+                    5. <strong>Profesyonel Yardım Alın:</strong> Google Ads uzmanlarından acil destek isteyin</p>
+                </div>
                 
-                <h3>2. Hedef Kitleye Ulaşma</h3>
-                <p>Yaş, cinsiyet, konum, ilgi alanları gibi kriterlere göre hedef kitlenizi belirleyebilirsiniz.</p>
-                
-                <h3>3. Ölçülebilir ROI</h3>
-                <p>Her kuruşun nereye gittiğini ve ne kadar geri döndüğünü tam olarak ölçebilirsiniz.</p>
-                
-                <h3>4. Esnek Bütçe</h3>
-                <p>Günlük bütçenizi istediğiniz zaman değiştirebilir, kampanyalarınızı durdurabilir veya başlatabilirsiniz.</p>
-                
-                <h3>5. Rekabet Avantajı</h3>
-                <p>Rakiplerinizin organik aramada üst sıralarda çıkması, onların önünde reklam gösterilmenizi engellemez.</p>
+                <h3>Google Ads Uzmanı Neden Önemli?</h3>
+                <p><strong>Google reklam yayınlanma sorunları</strong> genellikle teknik bilgi gerektirir. Bir uzman:</p>
+                <ul>
+                    <li>Politika ihlallerini dakikalar içinde tespit eder</li>
+                    <li>Google ile doğrudan iletişim kurabilir</li>
+                    <li>Alternatif stratejiler geliştirebilir</li>
+                    <li>Hesap askıya alınması durumunda resmi itiraz sürecini yönetir</li>
+                </ul>
             </section>
             
             <!-- BÖLÜM 5 -->
-            <section class="content-section" id="yanlis-bilinenler">
-                <h2>Google Reklam Verme Hakkında Yanlış Bilinenler</h2>
+            <section class="content-section" id="onleme">
+                <h2>Google Reklam Yayınlanma Sorunlarını Önleme</h2>
+                <p>Sorun çıkmadan önlem almak en iyi stratejidir. İşte <strong>Google reklamım çıkmıyor neden</strong> sorusunu sormamak için yapmanız gerekenler:</p>
                 
-                <h3>Yanlış 1: "Google reklam verme çok pahalı"</h3>
-                <p>Gerçek: Günlük 50 TL gibi küçük bütçelerle bile <strong>Google reklam ver</strong>mek mümkün. Önemli olan doğru stratejidir.</p>
+                <h3>1. Düzenli Politika Kontrolü</h3>
+                <p>Her ay Google Ads politikalarını gözden geçirin. Google politika güncellemelerini takip edin.</p>
                 
-                <h3>Yanlış 2: "Sadece büyük şirketler içindir"</h3>
-                <p>Gerçek: KOBİ'ler için özel kampanya türleri ve bütçe seçenekleri mevcuttur. <strong>Google a reklam verme</strong> her büyüklükteki işletme için uygundur.</p>
+                <h3>2. Aşamalı Kampanya Başlatma</h3>
+                <p>Yeni kampanyaları küçük bütçelerle başlatın, sorun yoksa bütçeyi artırın.</p>
                 
-                <h3>Yanlış 3: "Karmaşık, öğrenmesi zor"</h3>
-                <p>Gerçek: Temel seviyede <strong>Google da reklam nasıl verilir</strong> öğrenmek kolaydır. Uzman yönetimle çok daha verimli sonuçlar alınır.</p>
+                <h3>3. Çoklu Ödeme Yöntemi</h3>
+                <p>Hesabınızda her zaman iki farklı ödeme yöntemi bulundurun.</p>
+                
+                <h3>4. Temiz Reklam Geçmişi</h3>
+                <p>Eski, sorunlu kampanyaları tamamen silin, temiz bir reklam geçmişi oluşturun.</p>
+                
+                <h3>5. Profesyonel Denetim</h3>
+                <p>Yılda en az bir kez Google Ads uzmanına hesabınızı denetletin.</p>
+                
+                <div class="highlight-box">
+                    <h4><i class="fas fa-chart-line"></i> İstatistikler:</h4>
+                    <p>Google reklam yayınlanma sorunları yaşayan işletmelerin:<br>
+                    • %45'i politika ihlali nedeniyle sorun yaşıyor<br>
+                    • %28'i ödeme sorunları yaşıyor<br>
+                    • %15'i teknik hatalarla karşılaşıyor<br>
+                    • %12'si diğer nedenlerden etkileniyor<br>
+                    <strong>Profesyonel destek alanların %92'si sorunlarını 48 saat içinde çözüyor.</strong></p>
+                </div>
             </section>
         </article>
         
@@ -982,33 +1297,42 @@
         <aside class="sidebar">
             <!-- HIZLI İLETİŞİM -->
             <div class="sidebar-widget quick-contact">
-                <h3 class="widget-title"><i class="fas fa-headset"></i> Hızlı İletişim</h3>
-                <p style="margin-bottom: 20px; opacity: 0.9;">Google reklam verme konusunda ücretsiz danışmanlık alın.</p>
-                <a href="https://wa.me/905303158752?text=Merhaba,%20Google%20reklam%20vermek%20istiyorum.%20Bana%20yardımcı%20olabilir%20misiniz?" class="contact-sidebar-btn whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp'tan Yaz</a>
+                <h3 class="widget-title"><i class="fas fa-headset"></i> Acil Reklam Çözüm Hattı</h3>
+                <p style="margin-bottom: 20px; opacity: 0.9;">Google reklamlarınız yayınlanmıyorsa hemen yardım alın.</p>
+                <a href="https://wa.me/905303158752?text=ACİL:%20Google%20reklamlarım%20yayınlanmıyor.%20Hemen%20yardım%20istiyorum!" class="contact-sidebar-btn whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp Acil Destek</a>
                 <a href="tel:05422360983" class="contact-sidebar-btn phone"><i class="fas fa-phone-alt"></i> 0542 236 09 83</a>
-                <p style="margin-top: 15px; font-size: 0.9rem; opacity: 0.8;">7/24 Ücretsiz Danışmanlık</p>
+                <p style="margin-top: 15px; font-size: 0.9rem; opacity: 0.8;">7/24 Acil Sorun Çözüm</p>
+            </div>
+            
+            <!-- İLGİLİ İÇERİKLER -->
+            <div class="sidebar-widget">
+                <h3 class="widget-title"><i class="fas fa-link"></i> İlgili İçerikler</h3>
+                <ul class="related-links">
+                    <li><a href="/google-ads-reklam-yönetimi.html"><i class="fas fa-chevron-right"></i> Google Ads Reklam Yönetimi</a></li>
+                    <li><a href="/google-ads-sahte-tiklama-engelleme.html"><i class="fas fa-chevron-right"></i> Google Ads Sahte Tıklama Engelleme</a></li>
+                    <li><a href="/google-reklam-vermek-istiyorum"><i class="fas fa-chevron-right"></i> Google Reklam Vermek İstiyorum</a></li>
+                    <li><a href="#"><i class="fas fa-chevron-right"></i> Google Ads Bütçe Optimizasyonu</a></li>
+                    <li><a href="#"><i class="fas fa-chevron-right"></i> Google Ads Anahtar Kelime Stratejisi</a></li>
+                </ul>
             </div>
             
             <!-- ANAHTAR KELİMELER -->
             <div class="sidebar-widget">
                 <h3 class="widget-title"><i class="fas fa-search"></i> Popüler Aramalar</h3>
                 <ul class="keyword-list">
-                    <li><a href="#nedir"><i class="fas fa-chevron-right"></i> google reklam verme</a></li>
-                    <li><a href="#nasil-verilir"><i class="fas fa-chevron-right"></i> google da reklam nasıl verilir</a></li>
-                    <li><a href="#"><i class="fas fa-chevron-right"></i> google ilan vermek istiyorum</a></li>
-                    <li><a href="#ucretler"><i class="fas fa-chevron-right"></i> google reklam verme ücreti</a></li>
-                    <li><a href="#nasil-verilir"><i class="fas fa-chevron-right"></i> google a reklam nasıl verilir</a></li>
-                    <li><a href="#"><i class="fas fa-chevron-right"></i> google reklam ver</a></li>
-                    <li><a href="#ucretler"><i class="fas fa-chevron-right"></i> google reklam verme fiyatları</a></li>
-                    <li><a href="#ucretler"><i class="fas fa-chevron-right"></i> google reklam verme ücretleri</a></li>
-                    <li><a href="#"><i class="fas fa-chevron-right"></i> ads reklam ver</a></li>
-                    <li><a href="#"><i class="fas fa-chevron-right"></i> google a ilan vermek</a></li>
-                    <li><a href="#nasil-verilir"><i class="fas fa-chevron-right"></i> google a nasıl reklam verilir</a></li>
-                    <li><a href="#"><i class="fas fa-chevron-right"></i> google a reklam verme</a></li>
-                    <li><a href="#ucretler"><i class="fas fa-chevron-right"></i> google a reklam verme fiyatları</a></li>
-                    <li><a href="#"><i class="fas fa-chevron-right"></i> google a reklam vermek istiyorum</a></li>
-                    <li><a href="#ucretler"><i class="fas fa-chevron-right"></i> google a reklam vermek kaç tl</a></li>
-                    <li><a href="#ucretler"><i class="fas fa-chevron-right"></i> google tıklama başı fiyatları</a></li>
+                    <li><a href="#nedenler"><i class="fas fa-chevron-right"></i> google reklamlarım yayınlanmıyor</a></li>
+                    <li><a href="#cozumler"><i class="fas fa-chevron-right"></i> google ads reklamlarım çıkmıyor</a></li>
+                    <li><a href="#acil-cozum"><i class="fas fa-chevron-right"></i> google ilanlarım aktif değil</a></li>
+                    <li><a href="#politika-ihlali"><i class="fas fa-chevron-right"></i> google reklamlarım onaylanmadı</a></li>
+                    <li><a href="#nedenler"><i class="fas fa-chevron-right"></i> google reklamım çıkmıyor neden</a></li>
+                    <li><a href="#"><i class="fas fa-chevron-right"></i> google reklamım yayında değil</a></li>
+                    <li><a href="#"><i class="fas fa-chevron-right"></i> google reklam yayınlanma sorunları</a></li>
+                    <li><a href="#"><i class="fas fa-chevron-right"></i> google ads yayınlanmıyor</a></li>
+                    <li><a href="#cozumler"><i class="fas fa-chevron-right"></i> google reklam onay süresi</a></li>
+                    <li><a href="#politika-ihlali"><i class="fas fa-chevron-right"></i> google reklam politikası ihlali</a></li>
+                    <li><a href="#"><i class="fas fa-chevron-right"></i> google reklam reddedildi</a></li>
+                    <li><a href="#nedenler"><i class="fas fa-chevron-right"></i> google reklam hesabım askıda</a></li>
+                    <li><a href="#"><i class="fas fa-chevron-right"></i> google ads kampanyam çalışmıyor</a></li>
                 </ul>
             </div>
             
@@ -1018,31 +1342,31 @@
                 
                 <div class="faq-item">
                     <div class="faq-question">
-                        <span>Google reklam vermek için ne kadar bütçe gerekir?</span>
+                        <span>Google reklam onay süresi ne kadar?</span>
                         <i class="fas fa-chevron-down"></i>
                     </div>
                     <div class="faq-answer">
-                        <p>Minimum günlük 50 TL bütçe ile başlanabilir. İdeal başlangıç bütçesi sektöre göre 1.000-2.000 TL arasındadır.</p>
+                        <p>Normal şartlarda 24-48 saat, ancak ilk kampanyalar veya yüksek riskli sektörlerde 3-5 iş gününe kadar uzayabilir.</p>
                     </div>
                 </div>
                 
                 <div class="faq-item">
                     <div class="faq-question">
-                        <span>Reklamlarım ne zaman yayına girer?</span>
+                        <span>Hesabım askıya alındı, ne yapmalıyım?</span>
                         <i class="fas fa-chevron-down"></i>
                     </div>
                     <div class="faq-answer">
-                        <p>Profesyonel yönetimde reklamlarınız aynı gün, ortalama 2-6 saat içinde yayına girer.</p>
+                        <p>Öncelikle politika ihlallerini düzeltin, sonra Google'a resmi itiraz başvurusu yapın. Profesyonel destek almanız önerilir.</p>
                     </div>
                 </div>
                 
                 <div class="faq-item">
                     <div class="faq-question">
-                        <span>Google Ads öğrenmek zor mu?</span>
+                        <span>Reklamlarım neden aniden durdu?</span>
                         <i class="fas fa-chevron-down"></i>
                     </div>
                     <div class="faq-answer">
-                        <p>Temel seviye öğrenilebilir ancak uzmanlık gerektirir. Profesyonel yönetim ile %40-60 daha verimli sonuçlar alınır.</p>
+                        <p>Ödeme sorunları, politika güncellemeleri veya şüpheli aktivite tespiti nedeniyle olabilir. Hemen ödeme ve politika kontrollerini yapın.</p>
                     </div>
                 </div>
             </div>
@@ -1052,11 +1376,11 @@
 
 <!-- CTA SECTION -->
 <section class="cta-section">
-    <h2>Google Reklam Vermeye Hemen Başlayın!</h2>
-    <p>Google Ads uzmanlarımız sizin için en uygun stratejiyi belirlesin. İlk ay %20 özel indirimle başlayın.</p>
+    <h2>Google Reklam Sorunlarınız 24 Saatte Çözülsün!</h2>
+    <p>Google Ads uzmanlarımız sorununuzu analiz edip hızlı çözüm üretsin. İlk değerlendirme ücretsiz!</p>
     <div class="cta-buttons">
-        <a href="https://wa.me/905303158752?text=Merhaba,%20Google%20reklam%20vermek%20istiyorum.%20İlk%20ay%20%2020%25%20indirimden%20yararlanmak%20istiyorum." class="btn btn-primary"><i class="fab fa-whatsapp"></i> Ücretsiz Danışmanlık + %20 İndirim</a>
-        <a href="tel:05422360983" class="btn btn-secondary"><i class="fas fa-phone-alt"></i> Hemen Ara: 0542 236 09 83</a>
+        <a href="https://wa.me/905303158752?text=Google%20reklam%20sorunum%20var.%20Ücretsiz%20analiz%20istiyorum." class="btn btn-primary"><i class="fab fa-whatsapp"></i> Ücretsiz Sorun Analizi</a>
+        <a href="tel:05422360983" class="btn btn-secondary"><i class="fas fa-phone-alt"></i> Acil Çözüm Hattı: 0542 236 09 83</a>
     </div>
 </section>
 
@@ -1092,19 +1416,84 @@
         
         <div class="footer-links">
             <a href="/">Ana Sayfa</a>
-            <a href="/#paketler">Paketler</a>
+            <a href="/google-ads-reklam-yönetimi.html">Google Ads Reklam Yönetimi</a>
+            <a href="/google-ads-sahte-tiklama-engelleme.html">Google Ads Sahte Tıklama Engelleme</a>
+            <a href="/google-reklam-vermek-istiyorum">Google Reklam Vermek</a>
             <a href="/hakkimizda">Hakkımızda</a>
             <a href="/iletisim">İletişim</a>
-            <a href="/google-reklam-vermek-istiyorum">Google Reklam Vermek</a>
         </div>
         
         <div class="copyright">
-            © 2025 ADS Reklam Vermek. Tüm hakları saklıdır. | Google Ads Yönetimi ve Danışmanlık Hizmetleri
+            © 2025 ADS Reklam Vermek. Tüm hakları saklıdır. | Google Ads Sorun Çözüm ve Danışmanlık Hizmetleri
         </div>
     </div>
 </footer>
 
 <script>
+// Hamburger Menü JavaScript
+document.addEventListener('DOMContentLoaded', function() {
+    const menuToggle = document.getElementById('menuToggle');
+    const sidebarMenu = document.getElementById('sidebarMenu');
+    const sidebarClose = document.getElementById('sidebarClose');
+    const sidebarOverlay = document.getElementById('sidebarOverlay');
+    
+    // Menü aç
+    if (menuToggle) {
+        menuToggle.addEventListener('click', function() {
+            this.classList.toggle('active');
+            sidebarMenu.classList.toggle('active');
+            sidebarOverlay.classList.toggle('active');
+            document.body.style.overflow = 'hidden';
+        });
+    }
+    
+    // Menü kapat
+    function closeMenu() {
+        if (menuToggle) menuToggle.classList.remove('active');
+        if (sidebarMenu) sidebarMenu.classList.remove('active');
+        if (sidebarOverlay) sidebarOverlay.classList.remove('active');
+        document.body.style.overflow = '';
+    }
+    
+    if (sidebarClose) {
+        sidebarClose.addEventListener('click', closeMenu);
+    }
+    
+    if (sidebarOverlay) {
+        sidebarOverlay.addEventListener('click', closeMenu);
+    }
+    
+    // Menü linklerine tıklayınca menüyü kapat
+    const sidebarLinks = document.querySelectorAll('.sidebar-links a');
+    sidebarLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            // Sadece submenu dışındaki linkler menüyü kapatsın
+            if (!this.classList.contains('has-submenu') && !this.parentElement.classList.contains('submenu')) {
+                closeMenu();
+            }
+        });
+    });
+    
+    // ESC tuşu ile menüyü kapat
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+            closeMenu();
+        }
+    });
+    
+    // Hizmetlerimiz submenu toggle
+    const servicesMenu = document.getElementById('servicesMenu');
+    const servicesSubmenu = document.getElementById('servicesSubmenu');
+    
+    if (servicesMenu && servicesSubmenu) {
+        servicesMenu.addEventListener('click', function(e) {
+            e.preventDefault();
+            this.classList.toggle('active');
+            servicesSubmenu.classList.toggle('active');
+        });
+    }
+});
+
 // FAQ Toggle
 document.querySelectorAll('.faq-question').forEach(question => {
     question.addEventListener('click', () => {
@@ -1164,6 +1553,22 @@ const observer = new IntersectionObserver((entries) => {
 sections.forEach(section => {
     observer.observe(section);
 });
+
+// Emergency mode timer
+let emergencyMode = false;
+const emergencyButton = document.querySelector('.btn-primary');
+if (emergencyButton) {
+    emergencyButton.addEventListener('click', function() {
+        if (!emergencyMode) {
+            emergencyMode = true;
+            this.innerHTML = '<i class="fas fa-bolt"></i> ACİL MOD: WhatsApp Açılıyor...';
+            setTimeout(() => {
+                this.innerHTML = '<i class="fab fa-whatsapp"></i> Acil Sorun Çözüm Hattı';
+                emergencyMode = false;
+            }, 3000);
+        }
+    });
+}
 </script>
 </body>
 </html>
