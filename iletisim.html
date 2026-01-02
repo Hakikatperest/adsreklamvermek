@@ -1,0 +1,982 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>İletişim | Google Ads Yönetimi Hizmetlerimiz</title>
+<meta name="description" content="Google Ads uzman ekibimizle iletişime geçin. Profesyonel reklam yönetimi, ücretsiz danışmanlık ve özel teklifler için bize ulaşın." />
+<meta name="robots" content="index, follow" />
+<link rel="canonical" href="https://www.adsreklamvermek.com/iletisim" />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+:root {
+  --primary: #4285F4;
+  --primary-dark: #3367D6;
+  --secondary: #34A853;
+  --accent: #FBBC05;
+  --danger: #EA4335;
+  --dark: #1A1F36;
+  --gray-dark: #3C4257;
+  --gray: #697386;
+  --gray-light: #E3E8EE;
+  --light: #F6F9FC;
+  --white: #FFFFFF;
+  --shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+  --shadow-hover: 0 20px 60px rgba(0, 0, 0, 0.12);
+  --radius: 16px;
+  --radius-sm: 12px;
+  --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: var(--light);
+  color: var(--dark);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* MENÜ STİLLERİ */
+.navbar {
+  background: linear-gradient(135deg, #1a237e 0%, #283593 100%);
+  padding: 20px 40px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+.nav-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo a {
+  font-size: 1.8rem;
+  font-weight: 800;
+  background: linear-gradient(90deg, #4285F4, #34A853, #FBBC05, #EA4335);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-decoration: none;
+}
+
+.nav-links {
+  display: flex;
+  gap: 40px;
+}
+
+.nav-links a {
+  color: rgba(255, 255, 255, 0.9);
+  text-decoration: none;
+  font-weight: 500;
+  transition: var(--transition);
+  font-size: 1rem;
+}
+
+.nav-links a:hover {
+  color: var(--accent);
+  transform: translateY(-2px);
+}
+
+.nav-cta {
+  display: flex;
+  gap: 15px;
+}
+
+.nav-btn {
+  padding: 12px 24px;
+  border-radius: var(--radius-sm);
+  font-weight: 600;
+  text-decoration: none;
+  transition: var(--transition);
+  font-size: 0.95rem;
+}
+
+.nav-btn.whatsapp {
+  background: linear-gradient(135deg, #25D366, #128C7E);
+  color: white;
+}
+
+.nav-btn.phone {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: white;
+}
+
+.nav-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* HERO SECTION - İLETİŞİM */
+.contact-hero {
+  background: linear-gradient(135deg, #1a237e 0%, #283593 50%, #3949ab 100%);
+  color: var(--white);
+  padding: 80px 20px 100px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.contact-hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    radial-gradient(circle at 20% 80%, rgba(66, 133, 244, 0.15) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(52, 168, 83, 0.1) 0%, transparent 50%);
+  z-index: 0;
+}
+
+.contact-hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.contact-hero h1 {
+  font-size: 2.8rem;
+  font-weight: 800;
+  margin-bottom: 20px;
+  line-height: 1.2;
+}
+
+.contact-hero p {
+  font-size: 1.2rem;
+  color: rgba(255, 255, 255, 0.9);
+  max-width: 700px;
+  margin: 0 auto 40px;
+  font-weight: 300;
+}
+
+.contact-cta-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-top: 30px;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 18px 36px;
+  border-radius: var(--radius);
+  font-weight: 600;
+  font-size: 16px;
+  text-decoration: none;
+  transition: var(--transition);
+  border: none;
+  cursor: pointer;
+  min-width: 220px;
+  box-shadow: var(--shadow);
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--secondary), #2E8B57);
+  color: var(--white);
+}
+
+.btn-secondary {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: var(--white);
+}
+
+.btn:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-hover);
+}
+
+.btn i {
+  font-size: 1.2rem;
+}
+
+/* İLETİŞİM BÖLÜMÜ */
+.contact-section {
+  padding: 100px 20px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.contact-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  margin-top: 50px;
+}
+
+@media (max-width: 992px) {
+  .contact-container {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}
+
+/* İLETİŞİM FORMU */
+.contact-form-container {
+  background: var(--white);
+  border-radius: var(--radius);
+  padding: 50px 40px;
+  box-shadow: var(--shadow);
+  border: 1px solid var(--gray-light);
+}
+
+.contact-form-container h2 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: var(--dark);
+}
+
+.contact-form-container > p {
+  color: var(--gray);
+  margin-bottom: 30px;
+  font-size: 1rem;
+}
+
+.form-group {
+  margin-bottom: 25px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: var(--gray-dark);
+  font-size: 0.95rem;
+}
+
+.form-control {
+  width: 100%;
+  padding: 16px 20px;
+  border: 1px solid var(--gray-light);
+  border-radius: var(--radius-sm);
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+  transition: var(--transition);
+  background-color: var(--light);
+}
+
+.form-control:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(66, 133, 244, 0.1);
+}
+
+textarea.form-control {
+  min-height: 150px;
+  resize: vertical;
+}
+
+.submit-btn {
+  width: 100%;
+  padding: 18px;
+  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+  color: white;
+  border: none;
+  border-radius: var(--radius-sm);
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+  margin-top: 10px;
+}
+
+.submit-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 30px rgba(66, 133, 244, 0.2);
+}
+
+/* İLETİŞİM BİLGİLERİ */
+.contact-info-container {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.contact-methods {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.contact-method {
+  background: var(--white);
+  border-radius: var(--radius);
+  padding: 30px;
+  box-shadow: var(--shadow);
+  transition: var(--transition);
+  border: 1px solid var(--gray-light);
+}
+
+.contact-method:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-hover);
+}
+
+.contact-icon {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  font-size: 1.8rem;
+}
+
+.contact-whatsapp .contact-icon {
+  background: linear-gradient(135deg, rgba(37, 211, 102, 0.1), rgba(18, 140, 126, 0.1));
+  color: #25D366;
+}
+
+.contact-phone .contact-icon {
+  background: linear-gradient(135deg, rgba(66, 133, 244, 0.1), rgba(51, 103, 214, 0.1));
+  color: var(--primary);
+}
+
+.contact-email .contact-icon {
+  background: linear-gradient(135deg, rgba(251, 188, 5, 0.1), rgba(249, 171, 0, 0.1));
+  color: var(--accent);
+}
+
+.contact-method h3 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: var(--dark);
+}
+
+.contact-method p {
+  color: var(--gray);
+  margin-bottom: 20px;
+  font-size: 1rem;
+}
+
+.contact-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--primary-dark);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.1rem;
+  transition: var(--transition);
+}
+
+.contact-link:hover {
+  color: var(--primary);
+  gap: 15px;
+}
+
+/* ÇALIŞMA SAATLERİ */
+.working-hours {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+  border-radius: var(--radius);
+  padding: 30px;
+  color: white;
+}
+
+.working-hours h3 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.working-hours h3 i {
+  color: var(--accent);
+}
+
+.hours-list {
+  list-style: none;
+}
+
+.hours-list li {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.hours-list li:last-child {
+  border-bottom: none;
+}
+
+.hours-list .day {
+  font-weight: 500;
+}
+
+.hours-list .time {
+  font-weight: 600;
+  color: var(--accent);
+}
+
+/* HARİTA BÖLÜMÜ */
+.map-section {
+  padding: 0 20px 100px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.map-section h2 {
+  text-align: center;
+  font-size: 2.2rem;
+  font-weight: 800;
+  margin-bottom: 20px;
+  color: var(--dark);
+}
+
+.map-section p {
+  text-align: center;
+  font-size: 1.1rem;
+  color: var(--gray);
+  max-width: 700px;
+  margin: 0 auto 40px;
+}
+
+.map-container {
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  height: 500px;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  position: relative;
+}
+
+.map-placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  color: var(--gray-dark);
+  text-align: center;
+  padding: 20px;
+}
+
+.map-placeholder i {
+  font-size: 4rem;
+  margin-bottom: 20px;
+  color: var(--primary);
+  opacity: 0.7;
+}
+
+.map-placeholder h3 {
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+  color: var(--dark);
+}
+
+/* FLOATING CTA */
+.floating-cta {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.floating-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  transition: var(--transition);
+  text-decoration: none;
+  font-size: 1.8rem;
+}
+
+.floating-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+}
+
+.floating-whatsapp {
+  background: linear-gradient(135deg, #25D366, #128C7E);
+  color: white;
+  animation: pulse 2s infinite;
+}
+
+.floating-phone {
+  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+  color: white;
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+  }
+}
+
+/* FOOTER */
+footer {
+  background: var(--dark);
+  color: white;
+  padding: 60px 20px 30px;
+  text-align: center;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+}
+
+.footer-logo {
+  font-size: 1.8rem;
+  font-weight: 800;
+  background: linear-gradient(90deg, #4285F4, #34A853, #FBBC05, #EA4335);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.footer-contact {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  margin: 20px 0;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.contact-item i {
+  color: var(--accent);
+}
+
+.footer-links {
+  display: flex;
+  gap: 30px;
+  margin: 20px 0;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.footer-links a {
+  color: rgba(255, 255, 255, 0.7);
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.footer-links a:hover {
+  color: var(--accent);
+}
+
+.copyright {
+  margin-top: 40px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.9rem;
+  width: 100%;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 15px 20px;
+  }
+  
+  .nav-container {
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .nav-links {
+    gap: 15px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .contact-hero {
+    padding: 60px 20px 80px;
+  }
+  
+  .contact-hero h1 {
+    font-size: 2rem;
+  }
+  
+  .contact-hero p {
+    font-size: 1rem;
+  }
+  
+  .btn {
+    min-width: 100%;
+    padding: 16px 24px;
+  }
+  
+  .contact-cta-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .contact-form-container {
+    padding: 30px 20px;
+  }
+  
+  .contact-method {
+    padding: 25px 20px;
+  }
+  
+  .map-container {
+    height: 400px;
+  }
+  
+  .floating-cta {
+    bottom: 20px;
+    right: 20px;
+  }
+  
+  .floating-btn {
+    width: 55px;
+    height: 55px;
+    font-size: 1.6rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-hero h1 {
+    font-size: 1.7rem;
+  }
+  
+  .map-section h2 {
+    font-size: 1.8rem;
+  }
+  
+  .contact-icon {
+    width: 60px;
+    height: 60px;
+    font-size: 1.5rem;
+  }
+}
+</style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+  <div class="nav-container">
+    <div class="logo">
+      <a href="/">ADS Reklam Vermek</a>
+    </div>
+    <div class="nav-links">
+      <a href="/">Ana Sayfa</a>
+      <a href="/#paketler">Paketler</a>
+      <a href="/#sss">SSS</a>
+      <a href="/iletisim">İletişim</a>
+    </div>
+    <div class="nav-cta">
+      <a href="https://wa.me/905303158752" class="nav-btn whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+      <a href="tel:05422360983" class="nav-btn phone"><i class="fas fa-phone-alt"></i> 0542 236 09 83</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO SECTION -->
+<section class="contact-hero">
+  <div class="contact-hero-content">
+    <h1>Google Ads Uzmanlarıyla İletişime Geçin</h1>
+    <p>Reklam bütçenizi verimli kullanmak, ücretsiz danışmanlık almak veya özel tekliflerimiz hakkında bilgi almak için bize ulaşın. Ekibimiz 7/24 sizinle iletişim halinde.</p>
+    <div class="contact-cta-buttons">
+      <a href="#iletisim-formu" class="btn btn-primary"><i class="fas fa-comment-alt"></i> Hızlı Teklif Al</a>
+      <a href="tel:05422360983" class="btn btn-secondary"><i class="fas fa-phone-alt"></i> Hemen Ara</a>
+    </div>
+  </div>
+</section>
+
+<!-- İLETİŞİM BÖLÜMÜ -->
+<section class="contact-section" id="iletisim">
+  <div class="contact-container">
+    <!-- İLETİŞİM FORMU -->
+    <div class="contact-form-container" id="iletisim-formu">
+      <h2>Ücretsiz Danışmanlık Formu</h2>
+      <p>İşletmeniz için en uygun Google Ads stratejisini belirlemek için formu doldurun, sizi arayalım.</p>
+      
+      <form id="contactForm">
+        <div class="form-group">
+          <label for="fullName">Ad Soyad *</label>
+          <input type="text" id="fullName" class="form-control" placeholder="Adınız ve soyadınız" required>
+        </div>
+        
+        <div class="form-group">
+          <label for="phone">Telefon Numarası *</label>
+          <input type="tel" id="phone" class="form-control" placeholder="05XX XXX XX XX" required>
+        </div>
+        
+        <div class="form-group">
+          <label for="email">E-posta Adresi *</label>
+          <input type="email" id="email" class="form-control" placeholder="email@example.com" required>
+        </div>
+        
+        <div class="form-group">
+          <label for="company">Şirket / İşletme Adı</label>
+          <input type="text" id="company" class="form-control" placeholder="İşletmenizin adı">
+        </div>
+        
+        <div class="form-group">
+          <label for="service">İlgi Duyduğunuz Hizmet *</label>
+          <select id="service" class="form-control" required>
+            <option value="">Seçiniz</option>
+            <option value="baslangic">Başlangıç Reklam Paketi</option>
+            <option value="standart">Standart Reklam Paketi</option>
+            <option value="premium">Premium Reklam Paketi</option>
+            <option value="web-site">Web Site Kurulumu</option>
+            <option value="danismanlik">Ücretsiz Danışmanlık</option>
+            <option value="diger">Diğer</option>
+          </select>
+        </div>
+        
+        <div class="form-group">
+          <label for="message">Mesajınız</label>
+          <textarea id="message" class="form-control" placeholder="Reklam hedefleriniz, bütçeniz veya özel istekleriniz..."></textarea>
+        </div>
+        
+        <button type="submit" class="submit-btn">
+          <i class="fas fa-paper-plane"></i> Gönder ve Ücretsiz Teklif Al
+        </button>
+        
+        <p style="font-size: 0.85rem; color: var(--gray); margin-top: 15px; text-align: center;">
+          Formu gönderdiğinizde, <a href="#" style="color: var(--primary);">Gizlilik Politikamızı</a> kabul etmiş olursunuz.
+        </p>
+      </form>
+    </div>
+    
+    <!-- İLETİŞİM BİLGİLERİ -->
+    <div class="contact-info-container">
+      <div class="contact-methods">
+        <!-- WhatsApp -->
+        <div class="contact-method contact-whatsapp">
+          <div class="contact-icon">
+            <i class="fab fa-whatsapp"></i>
+          </div>
+          <h3>WhatsApp Hattı</h3>
+          <p>7/24 aktif WhatsApp hattımızdan anlık mesajlaşma ile hızlı destek alın.</p>
+          <a href="https://wa.me/905303158752" class="contact-link">
+            <i class="fab fa-whatsapp"></i> 0530 315 87 52
+          </a>
+        </div>
+        
+        <!-- Telefon -->
+        <div class="contact-method contact-phone">
+          <div class="contact-icon">
+            <i class="fas fa-phone-alt"></i>
+          </div>
+          <h3>Telefon Numarası</h3>
+          <p>Haftanın her günü 09:00 - 22:00 arası telefonla ulaşabilirsiniz.</p>
+          <a href="tel:05422360983" class="contact-link">
+            <i class="fas fa-phone-alt"></i> 0542 236 09 83
+          </a>
+        </div>
+        
+        <!-- E-posta -->
+        <div class="contact-method contact-email">
+          <div class="contact-icon">
+            <i class="fas fa-envelope"></i>
+          </div>
+          <h3>E-posta Adresi</h3>
+          <p>Detaylı teklif ve iş birlikleri için e-posta gönderebilirsiniz.</p>
+          <a href="mailto:info@adsreklamvermek.com" class="contact-link">
+            <i class="fas fa-envelope"></i> info@adsreklamvermek.com
+          </a>
+        </div>
+      </div>
+      
+      <!-- ÇALIŞMA SAATLERİ -->
+      <div class="working-hours">
+        <h3><i class="fas fa-clock"></i> Çalışma Saatlerimiz</h3>
+        <ul class="hours-list">
+          <li>
+            <span class="day">Pazartesi - Cuma</span>
+            <span class="time">09:00 - 22:00</span>
+          </li>
+          <li>
+            <span class="day">Cumartesi</span>
+            <span class="time">10:00 - 20:00</span>
+          </li>
+          <li>
+            <span class="day">Pazar</span>
+            <span class="time">12:00 - 18:00</span>
+          </li>
+        </ul>
+        <p style="margin-top: 20px; font-size: 0.9rem; opacity: 0.9;">
+          <i class="fas fa-info-circle"></i> Acil durumlarda WhatsApp hattımız 7/24 aktiftir.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HARİTA BÖLÜMÜ -->
+<section class="map-section">
+  <h2>Ofis Konumumuz</h2>
+  <p>İstanbul'da merkezi ofisimizden Türkiye'nin her yerine hizmet veriyoruz. Randevu alarak ofisimizi ziyaret edebilirsiniz.</p>
+  
+  <div class="map-container">
+    <div class="map-placeholder">
+      <i class="fas fa-map-marked-alt"></i>
+      <h3>İstanbul, Türkiye</h3>
+      <p>Google Ads reklam yönetimi hizmetlerimiz tüm Türkiye'ye yöneliktir.</p>
+      <p style="margin-top: 15px; font-size: 1rem;">
+        <strong>Adres:</strong> İstanbul, Türkiye<br>
+        <strong>Randevu:</strong> 0542 236 09 83
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- FLOATING CTA -->
+<div class="floating-cta">
+  <a href="https://wa.me/905303158752" class="floating-btn floating-whatsapp">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+  <a href="tel:05422360983" class="floating-btn floating-phone">
+    <i class="fas fa-phone-alt"></i>
+  </a>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-content">
+    <div class="footer-logo">ADS Reklam Vermek</div>
+    
+    <div class="footer-contact">
+      <div class="contact-item">
+        <i class="fas fa-phone-alt"></i>
+        <span>0542 236 09 83</span>
+      </div>
+      <div class="contact-item">
+        <i class="fas fa-envelope"></i>
+        <span>info@adsreklamvermek.com</span>
+      </div>
+      <div class="contact-item">
+        <i class="fas fa-clock"></i>
+        <span>Haftanın Her Günü 09:00-22:00</span>
+      </div>
+    </div>
+    
+    <div class="footer-links">
+      <a href="/">Ana Sayfa</a>
+      <a href="/#paketler">Paketler</a>
+      <a href="/#sss">SSS</a>
+      <a href="/iletisim">İletişim</a>
+      <a href="#">Gizlilik Politikası</a>
+      <a href="#">KVKK</a>
+    </div>
+    
+    <div class="copyright">
+      © 2025 ADS Reklam Vermek. Tüm hakları saklıdır. | Google Ads Yönetimi ve Danışmanlık Hizmetleri
+    </div>
+  </div>
+</footer>
+
+<script>
+// Form gönderme işlemi
+document.getElementById('contactForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+  
+  // Form verilerini al
+  const formData = {
+    name: document.getElementById('fullName').value,
+    phone: document.getElementById('phone').value,
+    email: document.getElementById('email').value,
+    company: document.getElementById('company').value,
+    service: document.getElementById('service').value,
+    message: document.getElementById('message').value
+  };
+  
+  // Burada form verilerini işleyecek backend kodunuz olacak
+  // Şimdilik simüle ediyoruz
+  console.log('Form gönderildi:', formData);
+  
+  // Başarı mesajı
+  alert('Teşekkürler! Formunuz başarıyla gönderildi. En kısa sürede sizinle iletişime geçeceğiz.');
+  
+  // Formu temizle
+  document.getElementById('contactForm').reset();
+  
+  // WhatsApp'a yönlendirme (isteğe bağlı)
+  // const whatsappMessage = `Merhaba, Google Ads hizmeti hakkında bilgi almak istiyorum. Adım: ${formData.name}, Telefon: ${formData.phone}, Hizmet: ${formData.service}`;
+  // window.open(`https://wa.me/905303158752?text=${encodeURIComponent(whatsappMessage)}`, '_blank');
+});
+
+// Telefon numarası formatlama
+document.getElementById('phone').addEventListener('input', function(e) {
+  let value = e.target.value.replace(/\D/g, '');
+  if (value.length > 10) value = value.substring(0, 10);
+  
+  if (value.length > 6) {
+    value = value.replace(/(\d{3})(\d{3})(\d{2})(\d{2})/, '$1 $2 $3 $4');
+  } else if (value.length > 3) {
+    value = value.replace(/(\d{3})(\d{1,3})/, '$1 $2');
+  }
+  
+  e.target.value = value;
+});
+
+// Smooth scroll for anchor links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function(e) {
+    e.preventDefault();
+    
+    const targetId = this.getAttribute('href');
+    if(targetId === '#') return;
+    
+    const targetElement = document.querySelector(targetId);
+    if(targetElement) {
+      window.scrollTo({
+        top: targetElement.offsetTop - 80,
+        behavior: 'smooth'
+      });
+    }
+  });
+});
+</script>
+</body>
+</html>
