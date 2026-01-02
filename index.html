@@ -984,6 +984,18 @@
                 <i class="fas fa-shield-alt"></i> Google Ads Sahte Tıklama Engelleme
             </a>
         </div>
+        <!-- YENİ BLOG MENÜSÜ -->
+        <a href="#" class="has-submenu" id="blogMenu">
+            <i class="fas fa-blog"></i> Blog Yazılarımız <i class="fas fa-chevron-down submenu-icon"></i>
+        </a>
+        <div class="submenu" id="blogSubmenu">
+            <a href="https://www.adsreklamvermek.com/blog/ads-hesabim-askiya-alindi.html" target="_blank">
+                <i class="fas fa-file-alt"></i> Ads Hesabım Askıya Alındı
+            </a>
+            <a href="https://www.adsreklamvermek.com/blog/google-reklamlarim-yayinlanmiyor-cozumu.html" target="_blank">
+                <i class="fas fa-file-alt"></i> Google Reklamlarım Yayınlanmıyor
+            </a>
+        </div>
         <a href="/hakkimizda">
             <i class="fas fa-info-circle"></i> Hakkımızda
         </a>
@@ -1341,8 +1353,10 @@ document.addEventListener('DOMContentLoaded', function() {
     const sidebarLinks = document.querySelectorAll('.sidebar-links a');
     sidebarLinks.forEach(link => {
         link.addEventListener('click', function(e) {
-            // Sadece submenu dışındaki linkler menüyü kapatsın
-            if (!this.classList.contains('has-submenu') && !this.parentElement.classList.contains('submenu')) {
+            // Sadece submenu dışındaki ve has-submenu olmayan linkler menüyü kapatsın
+            if (!this.classList.contains('has-submenu') && 
+                !this.parentElement.classList.contains('submenu') &&
+                !this.parentElement.parentElement.classList.contains('submenu')) {
                 closeMenu();
             }
         });
@@ -1364,6 +1378,18 @@ document.addEventListener('DOMContentLoaded', function() {
             e.preventDefault();
             this.classList.toggle('active');
             servicesSubmenu.classList.toggle('active');
+        });
+    }
+    
+    // Blog submenu toggle
+    const blogMenu = document.getElementById('blogMenu');
+    const blogSubmenu = document.getElementById('blogSubmenu');
+    
+    if (blogMenu && blogSubmenu) {
+        blogMenu.addEventListener('click', function(e) {
+            e.preventDefault();
+            this.classList.toggle('active');
+            blogSubmenu.classList.toggle('active');
         });
     }
 });
