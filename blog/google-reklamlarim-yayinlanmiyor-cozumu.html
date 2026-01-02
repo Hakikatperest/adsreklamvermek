@@ -316,8 +316,8 @@
         }
 
         /* HERO SECTION */
-        .google-hero {
-            background: linear-gradient(135deg, #8B0000 0%, #B22222 50%, #DC143C 100%);
+       .google-hero {
+    background: linear-gradient(135deg, #1a237e 0%, #283593 50%, #3949ab 100%);
             color: var(--white);
             padding: 80px 20px 100px;
             text-align: center;
@@ -326,18 +326,18 @@
             margin-top: 0;
         }
 
-        .google-hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: 
-                radial-gradient(circle at 20% 80%, rgba(234, 67, 53, 0.15) 0%, transparent 50%),
-                radial-gradient(circle at 80% 20%, rgba(251, 188, 5, 0.1) 0%, transparent 50%);
-            z-index: 0;
-        }
+       .google-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        radial-gradient(circle at 20% 80%, rgba(66, 133, 244, 0.15) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(52, 168, 83, 0.1) 0%, transparent 50%);
+    z-index: 0;
+}
 
         .google-hero-content {
             position: relative;
@@ -391,17 +391,16 @@
             box-shadow: var(--shadow);
         }
 
-        .btn-primary {
-            background: linear-gradient(135deg, var(--danger), #C62828);
-            color: var(--white);
-        }
+    .btn-primary {
+    background: linear-gradient(135deg, var(--secondary), #2E8B57); /* Yeşil */
+    color: var(--white);
+}
 
-        .btn-secondary {
-            background: rgba(255, 255, 255, 0.15);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            color: var(--white);
-        }
+.btn-secondary {
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: var(--white);
+}
 
         .btn:hover {
             transform: translateY(-5px);
@@ -791,7 +790,8 @@
 
         /* CTA SECTION */
         .cta-section {
-            background: linear-gradient(135deg, var(--danger) 0%, #C62828 100%);
+    background: linear-gradient(135deg, #1a237e 0%, #283593 30%, #3949ab 70%, #5c6bc0 100%);
+}
             padding: 100px 20px;
             text-align: center;
             color: white;
