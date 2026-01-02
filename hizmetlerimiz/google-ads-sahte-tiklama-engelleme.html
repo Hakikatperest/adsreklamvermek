@@ -49,6 +49,36 @@
         }
 
         /* HAMBURGER MENÜ CSS */
+        /* ÜST MENÜ ÇUBUĞU - BU KODU EN BAŞA EKLEYİN */
+.top-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: white;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    height: 60px;
+}
+
+.top-bar .logo a {
+    font-size: 1.4rem;
+    font-weight: 800;
+    background: linear-gradient(90deg, #4285F4, #34A853, #FBBC05, #EA4335);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    text-decoration: none;
+}
+
+/* Tüm sayfaya menü altında kalması için margin ekle */
+body {
+    margin-top: 60px;
+}
         /* Submenu Styles - İLK SAYFA STİLİ */
 .submenu {
     max-height: 0;
