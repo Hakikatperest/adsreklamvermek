@@ -49,31 +49,42 @@
         }
 
         /* HAMBURGER MENÜ CSS */
-        .top-bar {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            background: white;
-            padding: 15px 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            height: 60px;
-        }
+        /* Submenu Styles - İLK SAYFA STİLİ */
+.submenu {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease;
+    background: rgba(66, 133, 244, 0.03);
+}
 
-        .logo a {
-            font-size: 1.4rem;
-            font-weight: 800;
-            background: linear-gradient(90deg, #4285F4, #34A853, #FBBC05, #EA4335);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            text-decoration: none;
-        }
+.submenu.active {
+    max-height: 200px;
+}
 
+.submenu a {
+    padding: 12px 25px 12px 50px !important;
+    font-size: 1rem !important;
+    border-left: 4px solid transparent !important;
+}
+
+.submenu a:hover {
+    background: rgba(66, 133, 244, 0.08) !important;
+}
+
+.submenu-icon {
+    font-size: 0.8rem !important;
+    transition: transform 0.3s ease;
+}
+
+.has-submenu.active .submenu-icon {
+    transform: rotate(180deg);
+}
+
+.has-submenu {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
         /* Hamburger Menü Butonu */
         .menu-toggle {
             display: flex;
@@ -996,10 +1007,10 @@
 </head>
 <body>
 
-<!-- HAMBURGER MENÜ -->
+<!-- HAMBURGER MENÜ - İLK SAYFA YAPISI -->
 <div class="top-bar">
     <div class="logo">
-        <a href="https://www.adsreklamvermek.com/">ADS Reklam Vermek</a>
+        <a href="/">ADS Reklam Vermek</a>
     </div>
     <button class="menu-toggle" id="menuToggle">
         <span></span>
@@ -1008,7 +1019,7 @@
     </button>
 </div>
 
-<!-- Sidebar Menü -->
+<!-- Sidebar Menü - İLK SAYFA YAPISI -->
 <div class="sidebar-menu" id="sidebarMenu">
     <div class="sidebar-header">
         <button class="sidebar-close" id="sidebarClose">
@@ -1017,21 +1028,41 @@
     </div>
 
     <div class="sidebar-links">
-        <a href="https://www.adsreklamvermek.com/">
+        <a href="/">
             <i class="fas fa-home"></i> Ana Sayfa
         </a>
-        <a href="/google-ads-reklam-yonetimi">
-            <i class="fas fa-chart-line"></i> Google Ads Yönetimi
+        <a href="#" class="has-submenu" id="servicesMenu">
+            <i class="fas fa-rocket"></i> Hizmetlerimiz <i class="fas fa-chevron-down submenu-icon"></i>
         </a>
-        <a href="https://www.adsreklamvermek.com/hakkimizda">
-            <i class="fas fa-info-circle"></i> Hakkımızda
-        </a>
-        <a href="/google-reklam-vermek-istiyorum">
-            <i class="fas fa-ad"></i> Google Reklam Vermek
-        </a>
-        <a href="https://www.adsreklamvermek.com/iletisim">
-            <i class="fas fa-envelope"></i> İletişim
-        </a>
+        <div class="submenu" id="servicesSubmenu">
+            <a href="https://www.adsreklamvermek.com/hizmetlerimiz/google-ads-reklam-yo%CC%88netimi.html">
+                <i class="fas fa-ad"></i> Google Ads Reklam Yönetimi
+            </a>
+            <a href="https://www.adsreklamvermek.com/hizmetlerimiz/google-ads-sahte-tiklama-engelleme">
+                <i class="fas fa-shield-alt"></i> Google Ads Sahte Tıklama Engelleme
+            </a>
+        </div>
+       <!-- YENİ BLOG MENÜSÜ -->
+<a href="#" class="has-submenu" id="blogMenu">
+    <i class="fas fa-blog"></i> Blog Yazıları 
+    <i class="fas fa-chevron-down submenu-icon"></i>
+</a>
+
+<div class="submenu" id="blogSubmenu">
+    <a href="https://www.adsreklamvermek.com/blog/ads-hesabim-askiya-alindi.html">
+        <i class="fas fa-file-alt"></i> Ads Hesabım Askıya Alındı
+    </a>
+    <a href="https://www.adsreklamvermek.com/blog/google-reklamlarim-yayinlanmiyor-cozumu.html">
+        <i class="fas fa-file-alt"></i> Google Reklamlarım Yayınlanmıyor
+    </a>
+</div>
+
+<a href="/hakkimizda">
+    <i class="fas fa-info-circle"></i> Hakkımızda
+</a>
+<a href="/iletisim">
+    <i class="fas fa-envelope"></i> İletişim
+</a>
     </div>
 
     <div class="sidebar-cta">
@@ -1369,13 +1400,15 @@
             </div>
         </div>
         
-        <div class="footer-links">
-            <a href="https://www.adsreklamvermek.com/">Ana Sayfa</a>
-            <a href="/google-ads-reklam-yonetimi">Google Ads Yönetimi</a>
-            <a href="/google-sahte-tiklama-engelleme">Sahte Tıklama Engelleme</a>
-            <a href="https://www.adsreklamvermek.com/hakkimizda">Hakkımızda</a>
-            <a href="https://www.adsreklamvermek.com/iletisim">İletişim</a>
-        </div>
+      <div class="footer-links">
+    <a href="/">Ana Sayfa</a>
+    <a href="/hizmetlerimiz/google-ads-reklam-yönetimi.html">ADS Reklam Yönetimi</a>
+    <a href="/hizmetlerimiz/google-ads-sahte-tiklama-engelleme.html">Sahte Tıklama Koruma</a>
+    <a href="/blog/google-reklamlarim-yayinlanmiyor">Reklam Sorunları</a>
+    <a href="/blog/ads-hesabim-askiya-alindi">Hesap Kurtarma</a>
+    <a href="/hakkimizda">Hakkımızda</a>
+    <a href="/iletisim">İletişim</a>
+</div>
         
         <div class="copyright">
             © 2025 ADS Reklam Vermek. Tüm hakları saklıdır. | Google Ads Sahte Tıklama Engelleme ve Fraud Detection Sistemleri
@@ -1384,7 +1417,7 @@
 </footer>
 
 <script>
-// Hamburger Menü JavaScript
+// Hamburger Menü JavaScript - İLK SAYFA KODU
 document.addEventListener('DOMContentLoaded', function() {
     const menuToggle = document.getElementById('menuToggle');
     const sidebarMenu = document.getElementById('sidebarMenu');
@@ -1420,7 +1453,14 @@ document.addEventListener('DOMContentLoaded', function() {
     // Menü linklerine tıklayınca menüyü kapat
     const sidebarLinks = document.querySelectorAll('.sidebar-links a');
     sidebarLinks.forEach(link => {
-        link.addEventListener('click', closeMenu);
+        link.addEventListener('click', function(e) {
+            // Sadece submenu dışındaki ve has-submenu olmayan linkler menüyü kapatsın
+            if (!this.classList.contains('has-submenu') && 
+                !this.parentElement.classList.contains('submenu') &&
+                !this.parentElement.parentElement.classList.contains('submenu')) {
+                closeMenu();
+            }
+        });
     });
     
     // ESC tuşu ile menüyü kapat
@@ -1429,13 +1469,39 @@ document.addEventListener('DOMContentLoaded', function() {
             closeMenu();
         }
     });
-
-    // FAQ Accordion
-    const faqItems = document.querySelectorAll('.faq-item');
     
-    faqItems.forEach(item => {
-        const question = item.querySelector('.faq-question');
-        
+    // Hizmetlerimiz submenu toggle
+    const servicesMenu = document.getElementById('servicesMenu');
+    const servicesSubmenu = document.getElementById('servicesSubmenu');
+    
+    if (servicesMenu && servicesSubmenu) {
+        servicesMenu.addEventListener('click', function(e) {
+            e.preventDefault();
+            this.classList.toggle('active');
+            servicesSubmenu.classList.toggle('active');
+        });
+    }
+    
+    // Blog submenu toggle
+    const blogMenu = document.getElementById('blogMenu');
+    const blogSubmenu = document.getElementById('blogSubmenu');
+    
+    if (blogMenu && blogSubmenu) {
+        blogMenu.addEventListener('click', function(e) {
+            e.preventDefault();
+            this.classList.toggle('active');
+            blogSubmenu.classList.toggle('active');
+        });
+    }
+});
+
+// FAQ Accordion (sayfanda var, koru)
+const faqItems = document.querySelectorAll('.faq-item');
+    
+faqItems.forEach(item => {
+    const question = item.querySelector('.faq-question');
+    
+    if (question) {
         question.addEventListener('click', () => {
             // Close other items
             faqItems.forEach(otherItem => {
@@ -1447,45 +1513,62 @@ document.addEventListener('DOMContentLoaded', function() {
             // Toggle current item
             item.classList.toggle('active');
         });
-    });
+    }
+});
 
-    // Smooth scroll for anchor links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-            e.preventDefault();
-            
-            const targetId = this.getAttribute('href');
-            if(targetId === '#') return;
-            
-            const targetElement = document.querySelector(targetId);
-            if(targetElement) {
-                window.scrollTo({
-                    top: targetElement.offsetTop - 80,
-                    behavior: 'smooth'
-                });
-            }
-        });
+// Smooth scroll for anchor links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        
+        const targetId = this.getAttribute('href');
+        if(targetId === '#') return;
+        
+        const targetElement = document.querySelector(targetId);
+        if(targetElement) {
+            window.scrollTo({
+                top: targetElement.offsetTop - 80,
+                behavior: 'smooth'
+            });
+        }
     });
+});
 
-    // Solution card hover effects
-    document.querySelectorAll('.solution-card').forEach(card => {
-        card.addEventListener('mouseenter', function() {
-            const icon = this.querySelector('.solution-icon');
+// Solution card hover effects
+document.querySelectorAll('.solution-card').forEach(card => {
+    card.addEventListener('mouseenter', function() {
+        const icon = this.querySelector('.solution-icon');
+        if (icon) {
             icon.style.transform = 'scale(1.1) rotate(5deg)';
             icon.style.transition = 'transform 0.3s ease';
-        });
-        
-        card.addEventListener('mouseleave', function() {
-            const icon = this.querySelector('.solution-icon');
-            icon.style.transform = 'scale(1) rotate(0deg)';
-        });
+        }
     });
+    
+    card.addEventListener('mouseleave', function() {
+        const icon = this.querySelector('.solution-icon');
+        if (icon) {
+            icon.style.transform = 'scale(1) rotate(0deg)';
+        }
+    });
+});
 
-    // Stat box animation
-    const observerOptions = {
-        threshold: 0.5,
-        rootMargin: '0px 0px -50px 0px'
-    };
+// Stat box animation
+const observerOptions = {
+    threshold: 0.5,
+    rootMargin: '0px 0px -50px 0px'
+};
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('animated');
+        }
+    });
+}, observerOptions);
+
+document.querySelectorAll('.stat-box').forEach(box => {
+    observer.observe(box);
+});
 
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
