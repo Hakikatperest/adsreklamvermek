@@ -1446,85 +1446,117 @@
 </footer>
 
 <script>
-// Hamburger Menü JavaScript - İLK SAYFA KODU
+// Hamburger Menü JavaScript - GÜNCELLENMİŞ
 document.addEventListener('DOMContentLoaded', function() {
+    // Elementleri tanımla
     const menuToggle = document.getElementById('menuToggle');
     const sidebarMenu = document.getElementById('sidebarMenu');
     const sidebarClose = document.getElementById('sidebarClose');
     const sidebarOverlay = document.getElementById('sidebarOverlay');
     
-    // Menü aç
+    console.log("Menü elementleri yüklendi:");
+    console.log("menuToggle:", menuToggle);
+    console.log("sidebarMenu:", sidebarMenu);
+    console.log("sidebarClose:", sidebarClose);
+    console.log("sidebarOverlay:", sidebarOverlay);
+    
+    // Menü açma fonksiyonu
     if (menuToggle) {
-        menuToggle.addEventListener('click', function() {
+        menuToggle.addEventListener('click', function(e) {
+            e.stopPropagation();
+            console.log("Menü aç butonuna tıklandı");
             this.classList.toggle('active');
             sidebarMenu.classList.toggle('active');
             sidebarOverlay.classList.toggle('active');
             document.body.style.overflow = 'hidden';
         });
+    } else {
+        console.error("menuToggle elementi bulunamadı!");
     }
     
-    // Menü kapat
+    // Menü kapatma fonksiyonu
     function closeMenu() {
+        console.log("Menü kapatılıyor");
         if (menuToggle) menuToggle.classList.remove('active');
         if (sidebarMenu) sidebarMenu.classList.remove('active');
         if (sidebarOverlay) sidebarOverlay.classList.remove('active');
         document.body.style.overflow = '';
     }
     
+    // Kapatma butonu
     if (sidebarClose) {
-        sidebarClose.addEventListener('click', closeMenu);
-    }
-    
-    if (sidebarOverlay) {
-        sidebarOverlay.addEventListener('click', closeMenu);
-    }
-    
-    // Menü linklerine tıklayınca menüyü kapat
-    const sidebarLinks = document.querySelectorAll('.sidebar-links a');
-    sidebarLinks.forEach(link => {
-        link.addEventListener('click', function(e) {
-            // Sadece submenu dışındaki ve has-submenu olmayan linkler menüyü kapatsın
-            if (!this.classList.contains('has-submenu') && 
-                !this.parentElement.classList.contains('submenu') &&
-                !this.parentElement.parentElement.classList.contains('submenu')) {
-                closeMenu();
-            }
+        sidebarClose.addEventListener('click', function(e) {
+            e.stopPropagation();
+            closeMenu();
         });
-    });
+    }
     
-    // ESC tuşu ile menüyü kapat
+    // Overlay tıklama
+    if (sidebarOverlay) {
+        sidebarOverlay.addEventListener('click', function(e) {
+            e.stopPropagation();
+            closeMenu();
+        });
+    }
+    
+    // ESC tuşu ile kapat
     document.addEventListener('keydown', function(e) {
         if (e.key === 'Escape') {
             closeMenu();
         }
     });
     
-    // Hizmetlerimiz submenu toggle
+    // Alt menü toggle fonksiyonları
     const servicesMenu = document.getElementById('servicesMenu');
     const servicesSubmenu = document.getElementById('servicesSubmenu');
+    const blogMenu = document.getElementById('blogMenu');
+    const blogSubmenu = document.getElementById('blogSubmenu');
     
+    console.log("Alt menü elementleri:");
+    console.log("servicesMenu:", servicesMenu);
+    console.log("servicesSubmenu:", servicesSubmenu);
+    console.log("blogMenu:", blogMenu);
+    console.log("blogSubmenu:", blogSubmenu);
+    
+    // Hizmetlerimiz alt menüsü
     if (servicesMenu && servicesSubmenu) {
         servicesMenu.addEventListener('click', function(e) {
             e.preventDefault();
+            e.stopPropagation();
+            console.log("Hizmetlerimiz menüsüne tıklandı");
             this.classList.toggle('active');
             servicesSubmenu.classList.toggle('active');
         });
     }
     
-    // Blog submenu toggle
-    const blogMenu = document.getElementById('blogMenu');
-    const blogSubmenu = document.getElementById('blogSubmenu');
-    
+    // Blog alt menüsü
     if (blogMenu && blogSubmenu) {
         blogMenu.addEventListener('click', function(e) {
             e.preventDefault();
+            e.stopPropagation();
+            console.log("Blog menüsüne tıklandı");
             this.classList.toggle('active');
             blogSubmenu.classList.toggle('active');
         });
     }
+    
+    // Menü linklerine tıklandığında menüyü kapat (alt menüler hariç)
+    const sidebarLinks = document.querySelectorAll('.sidebar-links a');
+    sidebarLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            // Alt menü butonları hariç diğer linkler menüyü kapatsın
+            if (!this.classList.contains('has-submenu')) {
+                console.log("Menü linkine tıklandı, menü kapatılıyor");
+                closeMenu();
+            }
+        });
+    });
+    
+    // Sayfa yüklendiğinde test mesajı
+    console.log("Menü sistemi başarıyla yüklendi!");
 });
 
-// FAQ Toggle (eğer sayfanda FAQ varsa)
+// FAQ Toggle
 document.querySelectorAll('.faq-question').forEach(question => {
     question.addEventListener('click', () => {
         const item = question.parentElement;
@@ -1532,14 +1564,12 @@ document.querySelectorAll('.faq-question').forEach(question => {
     });
 });
 
-// Smooth scroll for anchor links
+// Smooth scroll
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
         e.preventDefault();
-        
         const targetId = this.getAttribute('href');
         if(targetId === '#') return;
-        
         const targetElement = document.querySelector(targetId);
         if(targetElement) {
             window.scrollTo({
