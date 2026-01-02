@@ -1,923 +1,949 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Hakkımızda | Google Ads Uzmanları | ADS Reklam Vermek</title>
-<meta name="description" content="10+ yıllık Google Ads deneyimiyle, işletmenizin dijital pazarlama stratejilerini profesyonelce yönetiyoruz. Hedeflerinize özel çözümler sunuyoruz." />
-<meta name="robots" content="index, follow" />
-<link rel="canonical" href="https://www.adsreklamvermek.com/hakkimizda" />
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-<style>
-:root {
-  --primary: #4285F4;
-  --primary-dark: #3367D6;
-  --secondary: #34A853;
-  --accent: #FBBC05;
-  --danger: #EA4335;
-  --dark: #1A1F36;
-  --gray-dark: #3C4257;
-  --gray: #697386;
-  --gray-light: #E3E8EE;
-  --light: #F6F9FC;
-  --white: #FFFFFF;
-  --shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
-  --shadow-hover: 0 20px 60px rgba(0, 0, 0, 0.12);
-  --radius: 16px;
-  --radius-sm: 12px;
-  --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-}
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-  font-family: 'Inter', sans-serif;
-  background-color: var(--light);
-  color: var(--dark);
-  line-height: 1.6;
-  overflow-x: hidden;
-}
-
-/* HAMBURGER MENÜ CSS */
-.top-bar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  background: white;
-  padding: 15px 20px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  z-index: 1000;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  height: 60px;
-}
-
-.logo a {
-  font-size: 1.4rem;
-  font-weight: 800;
-  background: linear-gradient(90deg, #4285F4, #34A853, #FBBC05, #EA4335);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-  text-decoration: none;
-}
-
-/* Hamburger Menü Butonu */
-.menu-toggle {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  width: 30px;
-  height: 21px;
-  background: transparent;
-  border: none;
-  cursor: pointer;
-  padding: 0;
-  z-index: 1001;
-}
-
-.menu-toggle span {
-  width: 100%;
-  height: 3px;
-  background-color: #333;
-  border-radius: 10px;
-  transition: all 0.3s ease;
-}
-
-.menu-toggle.active span:nth-child(1) {
-  transform: rotate(45deg) translate(6px, 6px);
-  background-color: #333;
-}
-
-.menu-toggle.active span:nth-child(2) {
-  opacity: 0;
-}
-
-.menu-toggle.active span:nth-child(3) {
-  transform: rotate(-45deg) translate(7px, -6px);
-  background-color: #333;
-}
-
-/* Yandan Açılır Menü */
-.sidebar-menu {
-  position: fixed;
-  top: 0;
-  right: -350px;
-  width: 320px;
-  height: 100%;
-  background: white;
-  box-shadow: -5px 0 30px rgba(0, 0, 0, 0.15);
-  z-index: 1002;
-  transition: right 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
-  overflow-y: auto;
-  border-left: 1px solid #eee;
-}
-
-.sidebar-menu.active {
-  right: 0;
-}
-
-.sidebar-header {
-  padding: 20px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  border-bottom: 1px solid #eee;
-  background: white;
-  height: 60px;
-}
-
-.sidebar-header .logo a {
-  font-size: 1.5rem;
-}
-
-.sidebar-close {
-  background: transparent;
-  border: none;
-  color: #333;
-  font-size: 1.5rem;
-  cursor: pointer;
-  width: 40px;
-  height: 40px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%;
-  transition: background 0.3s ease;
-}
-
-.sidebar-close:hover {
-  background: rgba(0, 0, 0, 0.05);
-}
-
-.sidebar-links {
-  padding: 20px 0;
-}
-
-.sidebar-links a {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-  padding: 15px 25px;
-  color: #333;
-  text-decoration: none;
-  font-size: 1.1rem;
-  transition: all 0.3s ease;
-  border-left: 4px solid transparent;
-}
-
-.sidebar-links a:hover {
-  background: rgba(66, 133, 244, 0.05);
-  color: #4285F4;
-  border-left: 4px solid #4285F4;
-  padding-left: 30px;
-}
-
-.sidebar-links a.active {
-  background: rgba(66, 133, 244, 0.1);
-  color: #4285F4;
-  border-left: 4px solid #4285F4;
-}
-
-.sidebar-links a i {
-  width: 24px;
-  text-align: center;
-  color: #666;
-}
-
-.sidebar-links a:hover i,
-.sidebar-links a.active i {
-  color: #4285F4;
-}
-
-.sidebar-cta {
-  padding: 20px;
-  border-top: 1px solid #eee;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  background: white;
-}
-
-.sidebar-btn {
-  padding: 14px;
-  border-radius: 8px;
-  font-weight: 600;
-  text-decoration: none;
-  text-align: center;
-  transition: all 0.3s ease;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-}
-
-.sidebar-btn.whatsapp {
-  background: linear-gradient(135deg, #25D366, #128C7E);
-  color: white;
-}
-
-.sidebar-btn.phone {
-  background: #4285F4;
-  color: white;
-  border: none;
-}
-
-.sidebar-btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-}
-
-/* Overlay */
-.sidebar-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.5);
-  z-index: 1001;
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity 0.3s ease, visibility 0.3s ease;
-}
-
-.sidebar-overlay.active {
-  opacity: 1;
-  visibility: visible;
-}
-
-/* Sayfa İçeriği Padding (menü yüksekliği için) */
-body {
-  padding-top: 60px;
-}
-
-/* HERO SECTION - HAKKIMIZDA */
-.about-hero {
-  background: linear-gradient(135deg, #1a237e 0%, #283593 50%, #3949ab 100%);
-  color: var(--white);
-  padding: 100px 20px 120px;
-  text-align: center;
-  position: relative;
-  overflow: hidden;
-  margin-top: -60px; /* menüyü dengelemek için */
-}
-
-.about-hero::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: 
-    radial-gradient(circle at 20% 80%, rgba(66, 133, 244, 0.15) 0%, transparent 50%),
-    radial-gradient(circle at 80% 20%, rgba(52, 168, 83, 0.1) 0%, transparent 50%);
-  z-index: 0;
-}
-
-.about-hero-content {
-  position: relative;
-  z-index: 1;
-  max-width: 1000px;
-  margin: 0 auto;
-}
-
-.about-hero h1 {
-  font-size: 3rem;
-  font-weight: 800;
-  margin-bottom: 20px;
-  line-height: 1.2;
-}
-
-.about-hero h1 span {
-  display: block;
-  font-size: 1.8rem;
-  font-weight: 600;
-  color: var(--accent);
-  margin-top: 10px;
-}
-
-.about-hero p {
-  font-size: 1.2rem;
-  color: rgba(255, 255, 255, 0.9);
-  max-width: 800px;
-  margin: 0 auto 40px;
-  font-weight: 300;
-}
-
-.hero-stats {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 40px;
-  margin-top: 60px;
-}
-
-.hero-stat {
-  text-align: center;
-  padding: 20px;
-}
-
-.hero-stat-number {
-  font-size: 2.5rem;
-  font-weight: 800;
-  color: var(--accent);
-  margin-bottom: 5px;
-}
-
-.hero-stat-label {
-  font-size: 1rem;
-  color: rgba(255, 255, 255, 0.9);
-  font-weight: 500;
-}
-
-/* HAKKIMIZDA İÇERİK */
-.about-content {
-  padding: 100px 20px;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.about-section {
-  margin-bottom: 100px;
-}
-
-.section-title {
-  text-align: center;
-  font-size: 2.2rem;
-  font-weight: 800;
-  margin-bottom: 20px;
-  color: var(--dark);
-}
-
-.section-subtitle {
-  text-align: center;
-  font-size: 1.1rem;
-  color: var(--gray);
-  max-width: 700px;
-  margin: 0 auto 60px;
-}
-
-/* MISYON VİZYON */
-.mission-vision {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 40px;
-  margin-top: 50px;
-}
-
-@media (max-width: 768px) {
-  .mission-vision {
-    grid-template-columns: 1fr;
-    gap: 30px;
-  }
-}
-
-.mission-card, .vision-card {
-  background: var(--white);
-  border-radius: var(--radius);
-  padding: 50px 40px;
-  box-shadow: var(--shadow);
-  transition: var(--transition);
-  border: 1px solid var(--gray-light);
-  text-align: center;
-}
-
-.mission-card:hover, .vision-card:hover {
-  transform: translateY(-10px);
-  box-shadow: var(--shadow-hover);
-}
-
-.mission-card {
-  border-top: 5px solid var(--secondary);
-}
-
-.vision-card {
-  border-top: 5px solid var(--primary);
-}
-
-.card-icon {
-  width: 80px;
-  height: 80px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 auto 25px;
-  font-size: 2rem;
-}
-
-.mission-card .card-icon {
-  background: linear-gradient(135deg, rgba(52, 168, 83, 0.1), rgba(46, 139, 87, 0.1));
-  color: var(--secondary);
-}
-
-.vision-card .card-icon {
-  background: linear-gradient(135deg, rgba(66, 133, 244, 0.1), rgba(51, 103, 214, 0.1));
-  color: var(--primary);
-}
-
-.card-title {
-  font-size: 1.5rem;
-  font-weight: 700;
-  margin-bottom: 20px;
-  color: var(--dark);
-}
-
-.card-content {
-  color: var(--gray);
-  line-height: 1.7;
-}
-
-/* EKİP */
-.team-section {
-  text-align: center;
-}
-
-.team-container {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 40px;
-  margin-top: 50px;
-}
-
-.team-member {
-  background: var(--white);
-  border-radius: var(--radius);
-  padding: 40px 30px;
-  width: 100%;
-  max-width: 350px;
-  box-shadow: var(--shadow);
-  transition: var(--transition);
-  border: 1px solid var(--gray-light);
-}
-
-.team-member:hover {
-  transform: translateY(-10px);
-  box-shadow: var(--shadow-hover);
-}
-
-.member-photo {
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
-  margin: 0 auto 25px;
-  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
-  font-size: 3rem;
-  font-weight: 700;
-}
-
-.member-name {
-  font-size: 1.4rem;
-  font-weight: 700;
-  margin-bottom: 10px;
-  color: var(--dark);
-}
-
-.member-title {
-  color: var(--primary);
-  font-weight: 600;
-  margin-bottom: 20px;
-  font-size: 1rem;
-}
-
-.member-bio {
-  color: var(--gray);
-  margin-bottom: 25px;
-  line-height: 1.6;
-}
-
-.member-skills {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 10px;
-  margin-top: 20px;
-}
-
-.skill-tag {
-  background: var(--light);
-  color: var(--gray-dark);
-  padding: 8px 16px;
-  border-radius: 50px;
-  font-size: 0.85rem;
-  font-weight: 500;
-}
-
-/* DEĞERLERİMİZ */
-.values-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 30px;
-  margin-top: 50px;
-}
-
-.value-card {
-  background: var(--white);
-  border-radius: var(--radius);
-  padding: 40px 30px;
-  box-shadow: var(--shadow);
-  transition: var(--transition);
-  border: 1px solid var(--gray-light);
-  text-align: center;
-}
-
-.value-card:hover {
-  transform: translateY(-5px);
-  box-shadow: var(--shadow-hover);
-}
-
-.value-icon {
-  width: 70px;
-  height: 70px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 auto 25px;
-  font-size: 1.8rem;
-  color: white;
-}
-
-.value-1 .value-icon { background: linear-gradient(135deg, #4285F4, #3367D6); }
-.value-2 .value-icon { background: linear-gradient(135deg, #34A853, #2E8B57); }
-.value-3 .value-icon { background: linear-gradient(135deg, #FBBC05, #F9AB00); }
-.value-4 .value-icon { background: linear-gradient(135deg, #EA4335, #D93025); }
-
-.value-title {
-  font-size: 1.3rem;
-  font-weight: 700;
-  margin-bottom: 15px;
-  color: var(--dark);
-}
-
-.value-description {
-  color: var(--gray);
-  line-height: 1.6;
-}
-
-/* SÜREÇ */
-.process-container {
-  max-width: 900px;
-  margin: 50px auto 0;
-  position: relative;
-}
-
-.process-container::before {
-  content: '';
-  position: absolute;
-  top: 40px;
-  left: 50px;
-  right: 50px;
-  height: 3px;
-  background: linear-gradient(90deg, var(--primary), var(--secondary));
-  z-index: 0;
-}
-
-@media (max-width: 768px) {
-  .process-container::before {
-    display: none;
-  }
-}
-
-.process-step {
-  display: flex;
-  align-items: flex-start;
-  margin-bottom: 50px;
-  position: relative;
-  z-index: 1;
-}
-
-.step-number {
-  width: 80px;
-  height: 80px;
-  border-radius: 50%;
-  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
-  color: white;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.8rem;
-  font-weight: 700;
-  flex-shrink: 0;
-  margin-right: 30px;
-  box-shadow: 0 10px 30px rgba(66, 133, 244, 0.2);
-}
-
-.step-content {
-  background: var(--white);
-  border-radius: var(--radius);
-  padding: 30px;
-  box-shadow: var(--shadow);
-  flex: 1;
-  border: 1px solid var(--gray-light);
-}
-
-.step-title {
-  font-size: 1.3rem;
-  font-weight: 700;
-  margin-bottom: 15px;
-  color: var(--dark);
-}
-
-.step-description {
-  color: var(--gray);
-  line-height: 1.7;
-}
-
-/* CTA SECTION */
-.cta-section {
-  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
-  padding: 100px 20px;
-  text-align: center;
-  color: white;
-  border-radius: var(--radius);
-  margin: 80px auto;
-  max-width: 1200px;
-}
-
-.cta-section h2 {
-  font-size: 2.5rem;
-  font-weight: 800;
-  margin-bottom: 20px;
-}
-
-.cta-section p {
-  font-size: 1.2rem;
-  max-width: 700px;
-  margin: 0 auto 40px;
-  opacity: 0.9;
-}
-
-.cta-buttons {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  flex-wrap: wrap;
-}
-
-.btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 12px;
-  padding: 18px 36px;
-  border-radius: var(--radius);
-  font-weight: 600;
-  font-size: 16px;
-  text-decoration: none;
-  transition: var(--transition);
-  border: none;
-  cursor: pointer;
-  min-width: 220px;
-  box-shadow: var(--shadow);
-}
-
-.btn-primary {
-  background: linear-gradient(135deg, var(--secondary), #2E8B57);
-  color: var(--white);
-}
-
-.btn-secondary {
-  background: rgba(255, 255, 255, 0.15);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  color: var(--white);
-}
-
-.btn:hover {
-  transform: translateY(-5px);
-  box-shadow: var(--shadow-hover);
-}
-
-.btn i {
-  font-size: 1.2rem;
-}
-
-/* FLOATING CTA */
-.floating-cta {
-  position: fixed;
-  bottom: 30px;
-  right: 30px;
-  z-index: 1000;
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-}
-
-.floating-btn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-  transition: var(--transition);
-  text-decoration: none;
-  font-size: 1.8rem;
-}
-
-.floating-btn:hover {
-  transform: scale(1.1);
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
-}
-
-.floating-whatsapp {
-  background: linear-gradient(135deg, #25D366, #128C7E);
-  color: white;
-  animation: pulse 2s infinite;
-}
-
-.floating-phone {
-  background: linear-gradient(135deg, var(--primary), var(--primary-dark);
-  color: white;
-}
-
-@keyframes pulse {
-  0% {
-    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
-  }
-  70% {
-    box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
-  }
-  100% {
-    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
-  }
-}
-
-/* FOOTER */
-footer {
-  background: var(--dark);
-  color: white;
-  padding: 60px 20px 30px;
-  text-align: center;
-}
-
-.footer-content {
-  max-width: 1200px;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 30px;
-}
-
-.footer-logo {
-  font-size: 1.8rem;
-  font-weight: 800;
-  background: linear-gradient(90deg, #4285F4, #34A853, #FBBC05, #EA4335);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-}
-
-.footer-contact {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 30px;
-  margin: 20px 0;
-}
-
-.contact-item {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  color: rgba(255, 255, 255, 0.8);
-}
-
-.contact-item i {
-  color: var(--accent);
-}
-
-.footer-links {
-  display: flex;
-  gap: 30px;
-  margin: 20px 0;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-.footer-links a {
-  color: rgba(255, 255, 255, 0.7);
-  text-decoration: none;
-  transition: color 0.3s;
-}
-
-.footer-links a:hover {
-  color: var(--accent);
-}
-
-.copyright {
-  margin-top: 40px;
-  padding-top: 20px;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-  color: rgba(255, 255, 255, 0.6);
-  font-size: 0.9rem;
-  width: 100%;
-}
-
-/* RESPONSIVE */
-@media (max-width: 992px) {
-  .about-hero h1 {
-    font-size: 2.5rem;
-  }
-  
-  .about-hero h1 span {
-    font-size: 1.5rem;
-  }
-  
-  .hero-stat-number {
-    font-size: 2rem;
-  }
-}
-
-@media (max-width: 768px) {
-  .about-hero {
-    padding: 80px 20px 100px;
-  }
-  
-  .about-hero h1 {
-    font-size: 2rem;
-  }
-  
-  .about-hero h1 span {
-    font-size: 1.3rem;
-  }
-  
-  .btn {
-    min-width: 100%;
-    padding: 16px 24px;
-  }
-  
-  .cta-buttons {
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  .section-title {
-    font-size: 1.8rem;
-  }
-  
-  .process-step {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-  
-  .step-number {
-    margin-right: 0;
-    margin-bottom: 20px;
-  }
-  
-  .floating-cta {
-    bottom: 20px;
-    right: 20px;
-  }
-  
-  .floating-btn {
-    width: 55px;
-    height: 55px;
-    font-size: 1.6rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .mission-card, .vision-card {
-    padding: 30px 20px;
-  }
-  
-  .team-member {
-    padding: 30px 20px;
-  }
-  
-  .value-card {
-    padding: 30px 20px;
-  }
-  
-  .cta-section h2 {
-    font-size: 2rem;
-  }
-}
-</style>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hakkımızda | Google Ads Uzmanları | ADS Reklam Vermek</title>
+    <meta name="description" content="10+ yıllık Google Ads, Full-Stack Development, SEO ve UI/UX deneyimiyle işletmenizin dijital pazarlama stratejilerini profesyonelce yönetiyoruz." />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://www.adsreklamvermek.com/hakkimizda" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #4285F4;
+            --primary-dark: #3367D6;
+            --secondary: #34A853;
+            --accent: #FBBC05;
+            --danger: #EA4335;
+            --dark: #1A1F36;
+            --gray-dark: #3C4257;
+            --gray: #697386;
+            --gray-light: #E3E8EE;
+            --light: #F6F9FC;
+            --white: #FFFFFF;
+            --shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+            --shadow-hover: 0 20px 60px rgba(0, 0, 0, 0.12);
+            --radius: 16px;
+            --radius-sm: 12px;
+            --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--light);
+            color: var(--dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* HAMBURGER MENÜ CSS */
+        .top-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: white;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            height: 60px;
+        }
+
+        .logo a {
+            font-size: 1.4rem;
+            font-weight: 800;
+            background: linear-gradient(90deg, #4285F4, #34A853, #FBBC05, #EA4335);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            text-decoration: none;
+        }
+
+        /* Hamburger Menü Butonu */
+        .menu-toggle {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 30px;
+            height: 21px;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            padding: 0;
+            z-index: 1001;
+        }
+
+        .menu-toggle span {
+            width: 100%;
+            height: 3px;
+            background-color: #333;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .menu-toggle.active span:nth-child(1) {
+            transform: rotate(45deg) translate(6px, 6px);
+            background-color: #333;
+        }
+
+        .menu-toggle.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .menu-toggle.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(7px, -6px);
+            background-color: #333;
+        }
+
+        /* Yandan Açılır Menü */
+        .sidebar-menu {
+            position: fixed;
+            top: 0;
+            right: -350px;
+            width: 320px;
+            height: 100%;
+            background: white;
+            box-shadow: -5px 0 30px rgba(0, 0, 0, 0.15);
+            z-index: 1002;
+            transition: right 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+            overflow-y: auto;
+            border-left: 1px solid #eee;
+        }
+
+        .sidebar-menu.active {
+            right: 0;
+        }
+
+        .sidebar-header {
+            padding: 20px;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            border-bottom: 1px solid #eee;
+            background: white;
+            height: 60px;
+        }
+
+        .sidebar-header .logo {
+            display: none;
+        }
+
+        .sidebar-close {
+            background: transparent;
+            border: none;
+            color: #333;
+            font-size: 1.5rem;
+            cursor: pointer;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            transition: background 0.3s ease;
+        }
+
+        .sidebar-close:hover {
+            background: rgba(0, 0, 0, 0.05);
+        }
+
+        .sidebar-links {
+            padding: 20px 0;
+        }
+
+        .sidebar-links a {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 15px 25px;
+            color: #333;
+            text-decoration: none;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            border-left: 4px solid transparent;
+        }
+
+        .sidebar-links a:hover {
+            background: rgba(66, 133, 244, 0.05);
+            color: #4285F4;
+            border-left: 4px solid #4285F4;
+            padding-left: 30px;
+        }
+
+        .sidebar-links a.active {
+            background: rgba(66, 133, 244, 0.1);
+            color: #4285F4;
+            border-left: 4px solid #4285F4;
+        }
+
+        .sidebar-links a i {
+            width: 24px;
+            text-align: center;
+            color: #666;
+        }
+
+        .sidebar-links a:hover i,
+        .sidebar-links a.active i {
+            color: #4285F4;
+        }
+
+        .sidebar-cta {
+            padding: 20px;
+            border-top: 1px solid #eee;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            background: white;
+        }
+
+        .sidebar-btn {
+            padding: 14px;
+            border-radius: 8px;
+            font-weight: 600;
+            text-decoration: none;
+            text-align: center;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .sidebar-btn.whatsapp {
+            background: linear-gradient(135deg, #25D366, #128C7E);
+            color: white;
+        }
+
+        .sidebar-btn.phone {
+            background: #4285F4;
+            color: white;
+            border: none;
+        }
+
+        .sidebar-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Overlay */
+        .sidebar-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 1001;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+        }
+
+        .sidebar-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        /* HERO SECTION */
+        .about-hero {
+            background: linear-gradient(135deg, #1a237e 0%, #283593 50%, #3949ab 100%);
+            color: var(--white);
+            padding: 120px 20px 100px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            margin-top: 60px;
+        }
+
+        .about-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 80%, rgba(66, 133, 244, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(52, 168, 83, 0.1) 0%, transparent 50%);
+            z-index: 0;
+        }
+
+        .about-hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .about-hero h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .about-hero h1 span {
+            display: block;
+            font-size: 2rem;
+            font-weight: 600;
+            color: var(--accent);
+            margin-top: 10px;
+        }
+
+        .about-hero p {
+            font-size: 1.3rem;
+            color: rgba(255, 255, 255, 0.95);
+            max-width: 800px;
+            margin: 0 auto 40px;
+            font-weight: 300;
+        }
+
+        .hero-cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            padding: 18px 36px;
+            border-radius: var(--radius);
+            font-weight: 600;
+            font-size: 16px;
+            text-decoration: none;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            min-width: 220px;
+            box-shadow: var(--shadow);
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--secondary), #2E8B57);
+            color: var(--white);
+        }
+
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: var(--white);
+        }
+
+        .btn:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .btn i {
+            font-size: 1.2rem;
+        }
+
+        /* UZMANLIK ALANLARI */
+        .expertise-section {
+            padding: 100px 20px;
+            background: var(--white);
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            color: var(--dark);
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.1rem;
+            color: var(--gray);
+            max-width: 700px;
+            margin: 0 auto 60px;
+        }
+
+        .expertise-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .expertise-card {
+            background: var(--white);
+            border-radius: var(--radius);
+            padding: 40px 30px;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--gray-light);
+            text-align: center;
+            transition: var(--transition);
+            border-top: 5px solid transparent;
+        }
+
+        .expertise-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .expertise-card.google-ads {
+            border-top-color: var(--primary);
+        }
+
+        .expertise-card.full-stack {
+            border-top-color: var(--secondary);
+        }
+
+        .expertise-card.seo {
+            border-top-color: var(--accent);
+        }
+
+        .expertise-card.ui-ux {
+            border-top-color: var(--danger);
+        }
+
+        .expertise-icon {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 25px;
+            font-size: 2rem;
+            color: white;
+        }
+
+        .expertise-card.google-ads .expertise-icon {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+        }
+
+        .expertise-card.full-stack .expertise-icon {
+            background: linear-gradient(135deg, var(--secondary), #2E8B57);
+        }
+
+        .expertise-card.seo .expertise-icon {
+            background: linear-gradient(135deg, var(--accent), #F9AB00);
+        }
+
+        .expertise-card.ui-ux .expertise-icon {
+            background: linear-gradient(135deg, var(--danger), #D93025);
+        }
+
+        .expertise-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: var(--dark);
+        }
+
+        .expertise-description {
+            color: var(--gray);
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        .expertise-list {
+            list-style: none;
+            text-align: left;
+            margin-top: 20px;
+        }
+
+        .expertise-list li {
+            margin-bottom: 10px;
+            padding-left: 25px;
+            position: relative;
+            color: var(--gray-dark);
+        }
+
+        .expertise-list li:before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--primary);
+            font-weight: bold;
+        }
+
+        /* EKİP */
+        .team-section {
+            padding: 100px 20px;
+            background: var(--light);
+        }
+
+        .team-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .team-member {
+            background: var(--white);
+            border-radius: var(--radius);
+            padding: 40px 30px;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--gray-light);
+            text-align: center;
+            transition: var(--transition);
+        }
+
+        .team-member:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .member-icon {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin: 0 auto 25px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            color: white;
+            font-weight: 700;
+        }
+
+        .member-1 .member-icon {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+        }
+
+        .member-2 .member-icon {
+            background: linear-gradient(135deg, var(--secondary), #2E8B57);
+        }
+
+        .member-3 .member-icon {
+            background: linear-gradient(135deg, var(--accent), #F9AB00);
+        }
+
+        .member-name {
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: var(--dark);
+        }
+
+        .member-title {
+            color: var(--primary);
+            font-weight: 600;
+            margin-bottom: 20px;
+            font-size: 1rem;
+        }
+
+        .member-bio {
+            color: var(--gray);
+            margin-bottom: 25px;
+            line-height: 1.6;
+        }
+
+        .member-skills {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .skill-tag {
+            background: var(--light);
+            color: var(--gray-dark);
+            padding: 8px 16px;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        /* ÇALIŞMA SÜRECİ */
+        .process-section {
+            padding: 100px 20px;
+            background: var(--white);
+        }
+
+        .process-container {
+            max-width: 900px;
+            margin: 50px auto 0;
+            position: relative;
+        }
+
+        .process-container::before {
+            content: '';
+            position: absolute;
+            top: 40px;
+            left: 50px;
+            right: 50px;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            z-index: 0;
+        }
+
+        @media (max-width: 768px) {
+            .process-container::before {
+                display: none;
+            }
+        }
+
+        .process-step {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 50px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .step-number {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            font-weight: 700;
+            flex-shrink: 0;
+            margin-right: 30px;
+            box-shadow: 0 10px 30px rgba(66, 133, 244, 0.2);
+        }
+
+        .step-content {
+            background: var(--white);
+            border-radius: var(--radius);
+            padding: 30px;
+            box-shadow: var(--shadow);
+            flex: 1;
+            border: 1px solid var(--gray-light);
+        }
+
+        .step-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: var(--dark);
+        }
+
+        .step-description {
+            color: var(--gray);
+            line-height: 1.7;
+        }
+
+        /* BÜTÇE KORUMA VAADİ */
+        .budget-section {
+            padding: 100px 20px;
+            background: var(--light);
+        }
+
+        .budget-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: var(--white);
+            border-radius: var(--radius);
+            padding: 60px;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--gray-light);
+            text-align: center;
+        }
+
+        .budget-container h2 {
+            font-size: 2rem;
+            margin-bottom: 30px;
+            color: var(--primary);
+        }
+
+        .budget-container p {
+            color: var(--gray-dark);
+            line-height: 1.8;
+            margin-bottom: 30px;
+            font-size: 1.1rem;
+        }
+
+        .budget-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .budget-feature {
+            text-align: center;
+            padding: 30px;
+            border-radius: var(--radius-sm);
+            background: var(--light);
+            border: 1px solid var(--gray-light);
+            transition: var(--transition);
+        }
+
+        .budget-feature:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow);
+        }
+
+        .budget-feature i {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+
+        .budget-feature h4 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            color: var(--dark);
+        }
+
+        .budget-feature p {
+            font-size: 0.95rem;
+            margin-bottom: 0;
+        }
+
+        /* CTA SECTION */
+        .cta-section {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            padding: 100px 20px;
+            text-align: center;
+            color: white;
+            border-radius: var(--radius);
+            margin: 80px auto;
+            max-width: 1200px;
+        }
+
+        .cta-section h2 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+        }
+
+        .cta-section p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 40px;
+            opacity: 0.9;
+        }
+
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        /* FLOATING CTA */
+        .floating-cta {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 1000;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .floating-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            transition: var(--transition);
+            text-decoration: none;
+            font-size: 1.8rem;
+        }
+
+        .floating-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .floating-whatsapp {
+            background: linear-gradient(135deg, #25D366, #128C7E);
+            color: white;
+            animation: pulse 2s infinite;
+        }
+
+        .floating-phone {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: white;
+        }
+
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+            }
+            70% {
+                box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+            }
+        }
+
+        /* FOOTER */
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 60px 20px 30px;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 30px;
+        }
+
+        .footer-logo {
+            font-size: 1.8rem;
+            font-weight: 800;
+            background: linear-gradient(90deg, #4285F4, #34A853, #FBBC05, #EA4335);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .footer-contact {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            margin: 20px 0;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .contact-item i {
+            color: var(--accent);
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 30px;
+            margin: 20px 0;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: var(--accent);
+        }
+
+        .copyright {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.9rem;
+            width: 100%;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .about-hero {
+                padding: 100px 20px 80px;
+                margin-top: 60px;
+            }
+            
+            .about-hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .about-hero h1 span {
+                font-size: 1.5rem;
+            }
+            
+            .about-hero p {
+                font-size: 1.1rem;
+            }
+            
+            .btn {
+                min-width: 100%;
+                padding: 16px 24px;
+            }
+            
+            .hero-cta-buttons, .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .process-step {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+            
+            .step-number {
+                margin-right: 0;
+                margin-bottom: 20px;
+            }
+            
+            .budget-container {
+                padding: 30px 20px;
+            }
+            
+            .floating-cta {
+                bottom: 20px;
+                right: 20px;
+            }
+            
+            .floating-btn {
+                width: 55px;
+                height: 55px;
+                font-size: 1.6rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .about-hero h1 {
+                font-size: 2rem;
+            }
+            
+            .expertise-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .team-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 <body>
 
@@ -936,9 +962,6 @@ footer {
 <!-- Sidebar Menü -->
 <div class="sidebar-menu" id="sidebarMenu">
     <div class="sidebar-header">
-        <div class="logo">
-            <a href="/">ADS Reklam Vermek</a>
-        </div>
         <button class="sidebar-close" id="sidebarClose">
             <i class="fas fa-times"></i>
         </button>
@@ -974,410 +997,395 @@ footer {
 
 <!-- HERO SECTION -->
 <section class="about-hero">
-  <div class="about-hero-content">
-    <h1>Google Ads Uzmanları Olarak <span>10+ Yıllık Deneyim ve Başarı Hikayesi</span></h1>
-    <p>2015 yılından bu yana, yüzlerce işletmenin dijital pazarlama stratejilerini yönetiyor, Google Ads reklamlarıyla rekabette öne çıkmalarını sağlıyoruz. Teknoloji, insan ve stratejiyi birleştirerek müşterilerimize maksimum ROI sağlıyoruz.</p>
-    
-    <div class="hero-stats">
-      <div class="hero-stat">
-        <div class="hero-stat-number">10+</div>
-        <div class="hero-stat-label">Yıllık Deneyim</div>
-      </div>
-      <div class="hero-stat">
-        <div class="hero-stat-number">250+</div>
-        <div class="hero-stat-label">Mutlu Müşteri</div>
-      </div>
-      <div class="hero-stat">
-        <div class="hero-stat-number">%62</div>
-        <div class="hero-stat-label">Ortalama ROI Artışı</div>
-      </div>
-      <div class="hero-stat">
-        <div class="hero-stat-number">150M+</div>
-        <div class="hero-stat-label">Yönetilen Reklam Bütçesi</div>
-      </div>
+    <div class="about-hero-content">
+        <h1>Google Ads Uzmanları Olarak <span>10+ Yıllık Teknoloji ve Dijital Pazarlama Deneyimi</span></h1>
+        <p>Full-Stack Development, SEO uzmanlığı ve Conversion odaklı UI/UX tasarım bilgimizle, Google Ads kampanyalarınızı teknolojinin sınırlarını zorlayarak yönetiyoruz. Her kuruşunuz maksimum ROI için çalışsın.</p>
+        <div class="hero-cta-buttons">
+            <a href="https://wa.me/905303158752?text=Merhaba,%20Google%20Ads%20uzmanlığınız%20hakkında%20bilgi%20almak%20istiyorum." class="btn btn-primary"><i class="fab fa-whatsapp"></i> Ücretsiz Danışmanlık</a>
+            <a href="tel:05422360983" class="btn btn-secondary"><i class="fas fa-phone-alt"></i> Hemen Arayın</a>
+        </div>
     </div>
-  </div>
 </section>
 
-<!-- HAKKIMIZDA İÇERİK -->
-<main class="about-content">
-  <!-- MISYON VİZYON -->
-  <section class="about-section">
-    <h2 class="section-title">Misyonumuz & Vizyonumuz</h2>
-    <p class="section-subtitle">Google Ads alanında Türkiye'nin önde gelen uzman ekibi olarak, işletmelerin dijital dönüşüm yolculuğunda yanlarındayız.</p>
+<!-- UZMANLIK ALANLARI -->
+<section class="expertise-section">
+    <h2 class="section-title">Çok Yönlü Uzmanlık Alanlarımız</h2>
+    <p class="section-subtitle">Sadece Google Ads değil, dijital pazarlamanın tüm bileşenlerinde 10+ yıllık deneyim</p>
     
-    <div class="mission-vision">
-      <div class="mission-card">
-        <div class="card-icon">
-          <i class="fas fa-bullseye"></i>
+    <div class="expertise-grid">
+        <!-- GOOGLE ADS -->
+        <div class="expertise-card google-ads">
+            <div class="expertise-icon">
+                <i class="fas fa-chart-line"></i>
+            </div>
+            <h3 class="expertise-title">Google Ads Uzmanlığı</h3>
+            <p class="expertise-description">İşletmenizin bütçesini koruyarak, en yüksek dönüşümü sağlayacak reklam stratejileri geliştiriyoruz.</p>
+            <ul class="expertise-list">
+                <li>Arama Ağı Reklamları Optimizasyonu</li>
+                <li>Görüntülü Reklam Ağı Yönetimi</li>
+                <li>Shopping Reklamları</li>
+                <li>YouTube Video Reklamları</li>
+                <li>Remarketing Kampanyaları</li>
+                <li>ROI Odaklı Bütçe Yönetimi</li>
+            </ul>
         </div>
-        <h3 class="card-title">Misyonumuz</h3>
-        <div class="card-content">
-          <p>İşletmelerin Google Ads reklamlarından maksimum verim almalarını sağlamak, reklam bütçelerini akıllıca yönetmek ve sürdürülebilir büyüme sağlamak. Müşterilerimizin dijital pazarlama yatırımlarını en yüksek getiriye dönüştürmek için sürekli optimizasyon, analiz ve strateji geliştiriyoruz.</p>
-        </div>
-      </div>
-      
-      <div class="vision-card">
-        <div class="card-icon">
-          <i class="fas fa-eye"></i>
-        </div>
-        <h3 class="card-title">Vizyonumuz</h3>
-        <div class="card-content">
-          <p>2025 yılına kadar Türkiye'nin en güvenilir ve başarılı Google Ads yönetim ajansı olmak. Sektördeki yenilikleri takip ederek, yapay zeka ve makine öğrenimi teknolojilerini reklam yönetim süreçlerimize entegre etmek. Global standartlarda hizmet veren, referans gösterilen bir marka olmak.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-  
-  <!-- HİKAYEMİZ -->
-  <section class="about-section">
-    <h2 class="section-title">Hikayemiz</h2>
-    <p class="section-subtitle">Küçük bir ekip olarak başladığımız yolculuğumuz, bugün Türkiye'nin dört bir yanındaki işletmelere ulaştı.</p>
-    
-    <div style="max-width: 900px; margin: 50px auto 0;">
-      <div style="background: var(--white); border-radius: var(--radius); padding: 50px 40px; box-shadow: var(--shadow); border: 1px solid var(--gray-light);">
-        <p style="color: var(--gray); line-height: 1.8; margin-bottom: 30px; font-size: 1.1rem;">
-          2015 yılında, Google Ads'in gücünü fark eden ve bu alanda uzmanlaşmaya karar veren iki arkadaş olarak başladı her şey. İlk müşterimiz yerel bir restorandı. Onların reklam bütçesini %40 verimlilikle yöneterek, aylık cirolarında %25 artış sağladık.
-        </p>
         
-        <p style="color: var(--gray); line-height: 1.8; margin-bottom: 30px; font-size: 1.1rem;">
-          Başarı hikayelerimiz kulaktan kulağa yayıldıkça, ekibimizi büyüttük. Bugün, 10 kişilik uzman ekibimizle, e-ticaret sitelerinden yerel işletmelere, B2B firmalardan startup'lara kadar geniş bir yelpazede hizmet veriyoruz.
-        </p>
+        <!-- FULL-STACK DEVELOPMENT -->
+        <div class="expertise-card full-stack">
+            <div class="expertise-icon">
+                <i class="fas fa-code"></i>
+            </div>
+            <h3 class="expertise-title">Full-Stack Development</h3>
+            <p class="expertise-description">Teknik altyapınızı güçlendiriyor, reklam performansını artıracak teknolojik çözümler sunuyoruz.</p>
+            <ul class="expertise-list">
+                <li>Conversion Tracking Sistemleri</li>
+                <li>API Entegrasyonları</li>
+                <li>Veri Analizi ve Raporlama</li>
+                <li>Otomasyon Scriptleri</li>
+                <li>Teknik SEO Optimizasyonu</li>
+                <li>Performans İyileştirmeleri</li>
+            </ul>
+        </div>
         
-        <p style="color: var(--gray); line-height: 1.8; font-size: 1.1rem;">
-          En büyük gururumuz, 5 yıldan uzun süredir birlikte çalıştığımız müşterilerimiz. Onların büyümesine tanık olmak ve bu büyümede küçük de olsa bir payımızın olması, bizi her gün daha iyisini yapmaya motive ediyor.
-        </p>
-      </div>
+        <!-- SEO UZMANLIĞI -->
+        <div class="expertise-card seo">
+            <div class="expertise-icon">
+                <i class="fas fa-search"></i>
+            </div>
+            <h3 class="expertise-title">SEO Uzmanlığı</h3>
+            <p class="expertise-description">Organik trafik ve PPC'nin sinerjisinden yararlanarak, markanızın online görünürlüğünü maksimize ediyoruz.</p>
+            <ul class="expertise-list">
+                <li>Teknik SEO Audit</li>
+                <li>Anahtar Kelime Stratejisi</li>
+                <li>Backlink Analizi</li>
+                <li>İçerik Optimizasyonu</li>
+                <li>Local SEO</li>
+                <li>SEO + PPC Entegrasyonu</li>
+            </ul>
+        </div>
+        
+        <!-- UI/UX DESIGN -->
+        <div class="expertise-card ui-ux">
+            <div class="expertise-icon">
+                <i class="fas fa-paint-brush"></i>
+            </div>
+            <h3 class="expertise-title">Conversion UI/UX Design</h3>
+            <p class="expertise-description">Kullanıcı deneyimini dönüşüme odaklayan tasarımlarla, tıklamaları satışa dönüştürüyoruz.</p>
+            <ul class="expertise-list">
+                <li>Landing Page Optimizasyonu</li>
+                <li>A/B Test Tasarımları</li>
+                <li>Kullanıcı Davranış Analizi</li>
+                <li>Conversion Funnel Optimizasyonu</li>
+                <li>Mobil Kullanıcı Deneyimi</li>
+                <li>Heatmap ve Session Recording</li>
+            </ul>
+        </div>
     </div>
-  </section>
-  
-  <!-- EKİBİMİZ -->
-  <section class="about-section team-section">
+</section>
+
+<!-- EKİP -->
+<section class="team-section">
     <h2 class="section-title">Uzman Ekibimiz</h2>
-    <p class="section-subtitle">Google Ads'in her alanında uzmanlaşmış, deneyimli ekibimizle tanışın.</p>
+    <p class="section-subtitle">10+ yıllık deneyime sahip, her biri alanında uzman ekibimizle tanışın</p>
     
     <div class="team-container">
-      <!-- UZMAN 1 -->
-      <div class="team-member">
-        <div class="member-photo">
-          <span>MA</span>
+        <!-- UZMAN 1 -->
+        <div class="team-member member-1">
+            <div class="member-icon">
+                <i class="fas fa-chart-line"></i>
+            </div>
+            <h3 class="member-name">Google Ads Stratejisti</h3>
+            <div class="member-title">PPC & Performance Marketing Uzmanı</div>
+            <div class="member-bio">
+                12 yıllık Google Ads deneyimi. 500+ kampanya yönetti, ortalama %62 ROI artışı sağladı. Google Ads, Analytics ve Conversion Tracking alanlarında uzman.
+            </div>
+            <div class="member-skills">
+                <span class="skill-tag">Google Ads</span>
+                <span class="skill-tag">ROI Optimizasyonu</span>
+                <span class="skill-tag">Bütçe Yönetimi</span>
+                <span class="skill-tag">A/B Testing</span>
+            </div>
         </div>
-        <h3 class="member-name">Mehmet Akın</h3>
-        <div class="member-title">Kurucu & Google Ads Uzmanı</div>
-        <div class="member-bio">
-          12 yıllık dijital pazarlama deneyimi. Google Ads, Analytics ve Conversion Tracking alanlarında uzman. 500'den fazla kampanya yönetti.
+        
+        <!-- UZMAN 2 -->
+        <div class="team-member member-2">
+            <div class="member-icon">
+                <i class="fas fa-code"></i>
+            </div>
+            <h3 class="member-name">Full-Stack Developer</h3>
+            <div class="member-title">Teknoloji & Otomasyon Uzmanı</div>
+            <div class="member-bio">
+                10+ yıllık full-stack development deneyimi. Python, JavaScript, API entegrasyonları ve veri analizi konusunda uzman. Reklam optimizasyonu için özel scriptler geliştiriyor.
+            </div>
+            <div class="member-skills">
+                <span class="skill-tag">Python</span>
+                <span class="skill-tag">JavaScript</span>
+                <span class="skill-tag">API Entegrasyon</span>
+                <span class="skill-tag">Veri Analizi</span>
+            </div>
         </div>
-        <div class="member-skills">
-          <span class="skill-tag">Google Ads</span>
-          <span class="skill-tag">Analytics</span>
-          <span class="skill-tag">ROI Optimizasyonu</span>
+        
+        <!-- UZMAN 3 -->
+        <div class="team-member member-3">
+            <div class="member-icon">
+                <i class="fas fa-paint-brush"></i>
+            </div>
+            <h3 class="member-name">UI/UX & SEO Uzmanı</h3>
+            <div class="member-title">Conversion & User Experience</div>
+            <div class="member-bio">
+                8 yıllık SEO ve UI/UX deneyimi. Conversion rate optimizasyonu, landing page tasarımı ve teknik SEO konularında uzman. Tıklamaları satışa dönüştürüyor.
+            </div>
+            <div class="member-skills">
+                <span class="skill-tag">UI/UX Design</span>
+                <span class="skill-tag">SEO</span>
+                <span class="skill-tag">Conversion Rate</span>
+                <span class="skill-tag">Landing Pages</span>
+            </div>
         </div>
-      </div>
-      
-      <!-- UZMAN 2 -->
-      <div class="team-member">
-        <div class="member-photo">
-          <span>AS</span>
-        </div>
-        <h3 class="member-name">Ayşe Sarı</h3>
-        <div class="member-title">Strateji Direktörü</div>
-        <div class="member-bio">
-          8 yıllık SEO ve PPC deneyimi. E-ticaret ve B2B sektörlerinde uzman. Google sertifikalı reklam uzmanı.
-        </div>
-        <div class="member-skills">
-          <span class="skill-tag">PPC Stratejisi</span>
-          <span class="skill-tag">E-ticaret</span>
-          <span class="skill-tag">A/B Test</span>
-        </div>
-      </div>
-      
-      <!-- UZMAN 3 -->
-      <div class="team-member">
-        <div class="member-photo">
-          <span>CD</span>
-        </div>
-        <h3 class="member-name">Can Demir</h3>
-        <div class="member-title">Teknik Analiz Uzmanı</div>
-        <div class="member-bio">
-          Veri analizi ve otomasyon konusunda uzman. Python ve Google Scripts ile reklam optimizasyonu yapıyor. 6 yıllık deneyim.
-        </div>
-        <div class="member-skills">
-          <span class="skill-tag">Veri Analizi</span>
-          <span class="skill-tag">Otomasyon</span>
-          <span class="skill-tag">Scripting</span>
-        </div>
-      </div>
     </div>
-  </section>
-  
-  <!-- DEĞERLERİMİZ -->
-  <section class="about-section">
-    <h2 class="section-title">Değerlerimiz</h2>
-    <p class="section-subtitle">Çalışma prensiplerimiz ve iş ahlakımız, başarımızın temel taşlarıdır.</p>
-    
-    <div class="values-container">
-      <!-- DEĞER 1 -->
-      <div class="value-card value-1">
-        <div class="value-icon">
-          <i class="fas fa-chart-line"></i>
+</section>
+
+<!-- BÜTÇE KORUMA VAADİ -->
+<section class="budget-section">
+    <div class="budget-container">
+        <h2>Her Kuruşunuz Korunsun, Maksimum ROI Elde Edin</h2>
+        <p>
+            <strong>Google Ads'te en büyük endişeniz bütçenizin boşa gitmesi mi?</strong> Biz tam da bu nedenle buradayız. 
+            10+ yıllık teknoloji ve dijital pazarlama deneyimimizle, reklam bütçenizi akıllıca yönetiyor, 
+            her kuruşunuzun maksimum getiri sağlamasını garanti ediyoruz.
+        </p>
+        <p>
+            Sadece reklam vermiyoruz; <strong>teknik altyapınızı analiz ediyor, kullanıcı deneyiminizi optimize ediyor, 
+            conversion funnel'ınızı güçlendiriyoruz.</strong> Full-stack developer, SEO uzmanı ve UI/UX designer 
+            bakış açılarımızla, Google Ads kampanyalarınızı 360 derece yönetiyoruz.
+        </p>
+        
+        <div class="budget-features">
+            <div class="budget-feature">
+                <i class="fas fa-shield-alt"></i>
+                <h4>Bütçe Koruma Garantisi</h4>
+                <p>Reklam bütçenizi dikkatlice yönetiyor, gereksiz harcamaları önlüyoruz.</p>
+            </div>
+            <div class="budget-feature">
+                <i class="fas fa-rocket"></i>
+                <h4>Maksimum ROI Odaklı</h4>
+                <p>Her kampanyayı ROI artışına göre optimize ediyor, verimliliği maksimuma çıkarıyoruz.</p>
+            </div>
+            <div class="budget-feature">
+                <i class="fas fa-cogs"></i>
+                <h4>Teknik Optimizasyon</h4>
+                <p>Full-stack bilgimizle teknik altyapınızı reklam performansı için optimize ediyoruz.</p>
+            </div>
+            <div class="budget-feature">
+                <i class="fas fa-chart-bar"></i>
+                <h4>Detaylı Raporlama</h4>
+                <p>Her kuruşun nereye gittiğini ve ne getirdiğini şeffaf bir şekilde gösteriyoruz.</p>
+            </div>
         </div>
-        <h3 class="value-title">Performans Odaklılık</h3>
-        <div class="value-description">
-          Tüm kararlarımızı veriye dayalı alıyoruz. ROI ve KPI'lar bizim için en önemli ölçütlerdir. Başarıyı sadece tıklama sayısıyla değil, gerçek dönüşümlerle ölçüyoruz.
-        </div>
-      </div>
-      
-      <!-- DEĞER 2 -->
-      <div class="value-card value-2">
-        <div class="value-icon">
-          <i class="fas fa-handshake"></i>
-        </div>
-        <h3 class="value-title">Şeffaflık</h3>
-        <div class="value-description">
-          Müşterilerimizle tam şeffaflık içinde çalışıyoruz. Haftalık detaylı raporlar, bütçe kullanımı ve performans metrikleri konusunda sürekli bilgilendirme yapıyoruz.
-        </div>
-      </div>
-      
-      <!-- DEĞER 3 -->
-      <div class="value-card value-3">
-        <div class="value-icon">
-          <i class="fas fa-lightbulb"></i>
-        </div>
-        <h3 class="value-title">Yenilikçilik</h3>
-        <div class="value-description">
-          Dijital pazarlama sürekli değişen bir alan. Yeni teknolojileri, trendleri ve Google güncellemelerini yakından takip ediyor, stratejilerimizi sürekli güncelliyoruz.
-        </div>
-      </div>
-      
-      <!-- DEĞER 4 -->
-      <div class="value-card value-4">
-        <div class="value-icon">
-          <i class="fas fa-users"></i>
-        </div>
-        <h3 class="value-title">İş Birliği</h3>
-        <div class="value-description">
-          Müşterilerimizi iş ortağı olarak görüyoruz. Süreç boyunca aktif iletişim halinde kalıyor, kararları birlikte alıyoruz. Ortak başarı bizim için en büyük motivasyon.
-        </div>
-      </div>
     </div>
-  </section>
-  
-  <!-- ÇALIŞMA SÜRECİMİZ -->
-  <section class="about-section">
-    <h2 class="section-title">Çalışma Sürecimiz</h2>
-    <p class="section-subtitle">Google Ads yönetimi için izlediğimiz 5 adımlı profesyonel süreç</p>
+</section>
+
+<!-- ÇALIŞMA SÜRECİ -->
+<section class="process-section">
+    <h2 class="section-title">Profesyonel Çalışma Sürecimiz</h2>
+    <p class="section-subtitle">Google Ads kampanyalarınızı nasıl yönettiğimizi keşfedin</p>
     
     <div class="process-container">
-      <!-- ADIM 1 -->
-      <div class="process-step">
-        <div class="step-number">1</div>
-        <div class="step-content">
-          <h3 class="step-title">Keşif ve Analiz</h3>
-          <div class="step-description">
-            İşletmenizi, hedef kitlenizi ve rakiplerinizi detaylı analiz ediyoruz. SWOT analizi yaparak, Google Ads stratejiniz için sağlam bir temel oluşturuyoruz.
-          </div>
+        <!-- ADIM 1 -->
+        <div class="process-step">
+            <div class="step-number">1</div>
+            <div class="step-content">
+                <h3 class="step-title">Teknik ve Stratejik Analiz</h3>
+                <div class="step-description">
+                    Web sitenizin teknik altyapısını, conversion funnel'ınızı ve rakiplerinizi analiz ediyoruz. 
+                    Full-stack developer bakış açımızla, teknik iyileştirme fırsatlarını belirliyoruz.
+                </div>
+            </div>
         </div>
-      </div>
-      
-      <!-- ADIM 2 -->
-      <div class="process-step">
-        <div class="step-number">2</div>
-        <div class="step-content">
-          <h3 class="step-title">Strateji Geliştirme</h3>
-          <div class="step-description">
-            Anahtar kelime araştırması, reklam metni oluşturma, teklif stratejisi ve bütçe planlaması yapıyoruz. Size özel bir yol haritası hazırlıyoruz.
-          </div>
+        
+        <!-- ADIM 2 -->
+        <div class="process-step">
+            <div class="step-number">2</div>
+            <div class="step-content">
+                <h3 class="step-title">Bütçe ve ROI Planlaması</h3>
+                <div class="step-description">
+                    İşletmenizin bütçesine uygun, maksimum ROI sağlayacak bir reklam stratejisi oluşturuyoruz. 
+                    Her kuruşun nereye gideceğini ve ne getireceğini önceden planlıyoruz.
+                </div>
+            </div>
         </div>
-      </div>
-      
-      <!-- ADIM 3 -->
-      <div class="process-step">
-        <div class="step-number">3</div>
-        <div class="step-content">
-          <h3 class="step-title">Kampanya Kurulumu</h3>
-          <div class="step-description">
-            Reklam kampanyalarınızı kuruyor, dönüşüm takibini entegre ediyoruz. Reklamlarınızı aynı gün yayına alıyoruz.
-          </div>
+        
+        <!-- ADIM 3 -->
+        <div class="process-step">
+            <div class="step-number">3</div>
+            <div class="step-content">
+                <h3 class="step-title">Teknolojik Entegrasyon</h3>
+                <div class="step-description">
+                    Gelişmiş tracking sistemleri, API entegrasyonları ve otomasyon scriptleri kuruyoruz. 
+                    Teknolojik altyapınızı reklam performansınızı artıracak şekilde güçlendiriyoruz.
+                </div>
+            </div>
         </div>
-      </div>
-      
-      <!-- ADIM 4 -->
-      <div class="process-step">
-        <div class="step-number">4</div>
-        <div class="step-content">
-          <h3 class="step-title">Sürekli Optimizasyon</h3>
-          <div class="step-description">
-            Haftalık performans analizleri yapıyor, A/B testler uyguluyoruz. Negatif anahtar kelimeleri ekliyor, teklifleri optimize ediyoruz.
-          </div>
+        
+        <!-- ADIM 4 -->
+        <div class="process-step">
+            <div class="step-number">4</div>
+            <div class="step-content">
+                <h3 class="step-title">Sürekli Optimizasyon</h3>
+                <div class="step-description">
+                    Günlük performans takibi, A/B testleri ve teknik iyileştirmelerle kampanyalarınızı sürekli optimize ediyoruz. 
+                    UI/UX uzmanlığımızla conversion rate'lerinizi artırıyoruz.
+                </div>
+            </div>
         </div>
-      </div>
-      
-      <!-- ADIM 5 -->
-      <div class="process-step">
-        <div class="step-number">5</div>
-        <div class="step-content">
-          <h3 class="step-title">Raporlama ve Geliştirme</h3>
-          <div class="step-description">
-            Aylık detaylı raporlar sunuyor, performansı değerlendiriyoruz. Stratejimizi sürekli geliştirerek, ROI'nizi maksimize ediyoruz.
-          </div>
-        </div>
-      </div>
     </div>
-  </section>
-  
-  <!-- CTA SECTION -->
-  <section class="cta-section">
-    <h2>Ekibimizle Tanışmaya Hazır mısınız?</h2>
-    <p>Google Ads uzmanlarımızla ücretsiz danışmanlık için hemen iletişime geçin. İşletmenize özel strateji belirleyelim.</p>
+</section>
+
+<!-- CTA SECTION -->
+<section class="cta-section">
+    <h2>Teknoloji ve Dijital Pazarlamanın Gücünü Birleştirelim</h2>
+    <p>10+ yıllık full-stack development, SEO ve UI/UX deneyimimizle Google Ads kampanyalarınızı yönetelim. Bütçeniz korunsun, ROI'niz artsın.</p>
     <div class="cta-buttons">
-      <a href="https://wa.me/905303158752" class="btn btn-primary"><i class="fab fa-whatsapp"></i> WhatsApp'tan Yazın</a>
-      <a href="tel:05422360983" class="btn btn-secondary"><i class="fas fa-phone-alt"></i> 0542 236 09 83</a>
+        <a href="https://wa.me/905303158752?text=Merhaba,%20Google%20Ads%20uzmanlığınız%20ve%20teknoloji%20deneyiminiz%20hakkında%20bilgi%20almak%20istiyorum." class="btn btn-primary"><i class="fab fa-whatsapp"></i> Teknoloji + Google Ads Danışmanlığı</a>
+        <a href="tel:05422360983" class="btn btn-secondary"><i class="fas fa-phone-alt"></i> 0542 236 09 83</a>
     </div>
-  </section>
-</main>
+</section>
 
 <!-- FLOATING CTA -->
 <div class="floating-cta">
-  <a href="https://wa.me/905303158752" class="floating-btn floating-whatsapp">
-    <i class="fab fa-whatsapp"></i>
-  </a>
-  <a href="tel:05422360983" class="floating-btn floating-phone">
-    <i class="fas fa-phone-alt"></i>
-  </a>
+    <a href="https://wa.me/905303158752" class="floating-btn floating-whatsapp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+    <a href="tel:05422360983" class="floating-btn floating-phone">
+        <i class="fas fa-phone-alt"></i>
+    </a>
 </div>
 
 <!-- FOOTER -->
 <footer>
-  <div class="footer-content">
-    <div class="footer-logo">ADS Reklam Vermek</div>
-    
-    <div class="footer-contact">
-      <div class="contact-item">
-        <i class="fas fa-phone-alt"></i>
-        <span>0542 236 09 83</span>
-      </div>
-      <div class="contact-item">
-        <i class="fas fa-envelope"></i>
-        <span>info@adsreklamvermek.com</span>
-      </div>
-      <div class="contact-item">
-        <i class="fas fa-clock"></i>
-        <span>Haftanın Her Günü 09:00-22:00</span>
-      </div>
+    <div class="footer-content">
+        <div class="footer-logo">ADS Reklam Vermek</div>
+        
+        <div class="footer-contact">
+            <div class="contact-item">
+                <i class="fas fa-phone-alt"></i>
+                <span>0542 236 09 83</span>
+            </div>
+            <div class="contact-item">
+                <i class="fas fa-envelope"></i>
+                <span>info@adsreklamvermek.com</span>
+            </div>
+            <div class="contact-item">
+                <i class="fas fa-clock"></i>
+                <span>Haftanın Her Günü 09:00-22:00</span>
+            </div>
+        </div>
+        
+        <div class="footer-links">
+            <a href="/">Ana Sayfa</a>
+            <a href="/#paketler">Paketler</a>
+            <a href="/hakkimizda">Hakkımızda</a>
+            <a href="/iletisim">İletişim</a>
+        </div>
+        
+        <div class="copyright">
+            © 2025 ADS Reklam Vermek. Tüm hakları saklıdır. | Google Ads Yönetimi + Teknoloji Danışmanlığı
+        </div>
     </div>
-    
-    <div class="footer-links">
-      <a href="/">Ana Sayfa</a>
-      <a href="/#paketler">Paketler</a>
-      <a href="/hakkimizda">Hakkımızda</a>
-      <a href="/iletisim">İletişim</a>
-      <a href="#">Gizlilik Politikası</a>
-      <a href="#">KVKK</a>
-    </div>
-    
-    <div class="copyright">
-      © 2025 ADS Reklam Vermek. Tüm hakları saklıdır. | Google Ads Yönetimi ve Danışmanlık Hizmetleri
-    </div>
-  </div>
 </footer>
 
 <script>
 // Hamburger Menü JavaScript
 document.addEventListener('DOMContentLoaded', function() {
-  const menuToggle = document.getElementById('menuToggle');
-  const sidebarMenu = document.getElementById('sidebarMenu');
-  const sidebarClose = document.getElementById('sidebarClose');
-  const sidebarOverlay = document.getElementById('sidebarOverlay');
-  
-  // Menü aç
-  if (menuToggle) {
-    menuToggle.addEventListener('click', function() {
-      this.classList.toggle('active');
-      sidebarMenu.classList.toggle('active');
-      sidebarOverlay.classList.toggle('active');
-      document.body.style.overflow = 'hidden';
-    });
-  }
-  
-  // Menü kapat
-  function closeMenu() {
-    menuToggle.classList.remove('active');
-    sidebarMenu.classList.remove('active');
-    sidebarOverlay.classList.remove('active');
-    document.body.style.overflow = '';
-  }
-  
-  if (sidebarClose) {
-    sidebarClose.addEventListener('click', closeMenu);
-  }
-  
-  if (sidebarOverlay) {
-    sidebarOverlay.addEventListener('click', closeMenu);
-  }
-  
-  // Menü linklerine tıklayınca menüyü kapat
-  const sidebarLinks = document.querySelectorAll('.sidebar-links a');
-  sidebarLinks.forEach(link => {
-    link.addEventListener('click', closeMenu);
-  });
-  
-  // ESC tuşu ile menüyü kapat
-  document.addEventListener('keydown', function(e) {
-    if (e.key === 'Escape') {
-      closeMenu();
+    const menuToggle = document.getElementById('menuToggle');
+    const sidebarMenu = document.getElementById('sidebarMenu');
+    const sidebarClose = document.getElementById('sidebarClose');
+    const sidebarOverlay = document.getElementById('sidebarOverlay');
+    
+    // Menü aç
+    if (menuToggle) {
+        menuToggle.addEventListener('click', function() {
+            this.classList.toggle('active');
+            sidebarMenu.classList.toggle('active');
+            sidebarOverlay.classList.toggle('active');
+            document.body.style.overflow = 'hidden';
+        });
     }
-  });
+    
+    // Menü kapat
+    function closeMenu() {
+        if (menuToggle) menuToggle.classList.remove('active');
+        if (sidebarMenu) sidebarMenu.classList.remove('active');
+        if (sidebarOverlay) sidebarOverlay.classList.remove('active');
+        document.body.style.overflow = '';
+    }
+    
+    if (sidebarClose) {
+        sidebarClose.addEventListener('click', closeMenu);
+    }
+    
+    if (sidebarOverlay) {
+        sidebarOverlay.addEventListener('click', closeMenu);
+    }
+    
+    // Menü linklerine tıklayınca menüyü kapat
+    const sidebarLinks = document.querySelectorAll('.sidebar-links a');
+    sidebarLinks.forEach(link => {
+        link.addEventListener('click', closeMenu);
+    });
+    
+    // ESC tuşu ile menüyü kapat
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+            closeMenu();
+        }
+    });
 });
 
 // Smooth scroll for anchor links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-  anchor.addEventListener('click', function(e) {
-    e.preventDefault();
-    
-    const targetId = this.getAttribute('href');
-    if(targetId === '#') return;
-    
-    const targetElement = document.querySelector(targetId);
-    if(targetElement) {
-      window.scrollTo({
-        top: targetElement.offsetTop - 80,
-        behavior: 'smooth'
-      });
-    }
-  });
+    anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        
+        const targetId = this.getAttribute('href');
+        if(targetId === '#') return;
+        
+        const targetElement = document.querySelector(targetId);
+        if(targetElement) {
+            window.scrollTo({
+                top: targetElement.offsetTop - 80,
+                behavior: 'smooth'
+            });
+        }
+    });
 });
 
-// Add animation on scroll
-const observerOptions = {
-  threshold: 0.1,
-  rootMargin: '0px 0px -50px 0px'
-};
-
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('animated');
-    }
-  });
-}, observerOptions);
-
-// Observe elements to animate
-document.querySelectorAll('.mission-card, .vision-card, .team-member, .value-card, .process-step').forEach(el => {
-  observer.observe(el);
+// Expertise card hover effects
+document.querySelectorAll('.expertise-card').forEach(card => {
+    card.addEventListener('mouseenter', function() {
+        const icon = this.querySelector('.expertise-icon');
+        icon.style.transform = 'scale(1.1)';
+        icon.style.transition = 'transform 0.3s ease';
+    });
+    
+    card.addEventListener('mouseleave', function() {
+        const icon = this.querySelector('.expertise-icon');
+        icon.style.transform = 'scale(1)';
+    });
 });
 
-// Team member hover effect
+// Team member hover effects
 document.querySelectorAll('.team-member').forEach(member => {
-  member.addEventListener('mouseenter', function() {
-    const photo = this.querySelector('.member-photo');
-    photo.style.transform = 'scale(1.1)';
-    photo.style.transition = 'transform 0.3s ease';
-  });
-  
-  member.addEventListener('mouseleave', function() {
-    const photo = this.querySelector('.member-photo');
-    photo.style.transform = 'scale(1)';
-  });
+    member.addEventListener('mouseenter', function() {
+        const icon = this.querySelector('.member-icon');
+        icon.style.transform = 'scale(1.1) rotate(5deg)';
+        icon.style.transition = 'transform 0.3s ease';
+    });
+    
+    member.addEventListener('mouseleave', function() {
+        const icon = this.querySelector('.member-icon');
+        icon.style.transform = 'scale(1) rotate(0deg)';
+    });
 });
 </script>
 </body>
