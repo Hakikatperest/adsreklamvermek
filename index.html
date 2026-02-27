@@ -524,14 +524,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         }
 
         /* ANA İÇERİK */
-      @media (max-width: 768px) {
-    .main-content {
-        padding: 40px 20px;
-    }
-}
-    max-width: 1400px;
-    margin: 0 auto;
-}
+        .main-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
 
         .content-container {
             display: grid;
@@ -561,97 +558,89 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             color: var(--dark);
             line-height: 1.3;
         }
-        .full-width {
-    max-width: 100%;
-    margin-bottom: 60px;
-}
-        .pricing-gradient-section {
-    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 50%, #3b82f6 100%);
-        padding: 40px 20px;
-    border-radius: var(--radius);
-        margin: 60px 0;
-    position: relative;
-    overflow: hidden;
-    box-shadow: 0 30px 80px rgba(0,0,0,0.15);
-}
-        .pricing-gradient-section {
-    max-width: 1200px;
-    margin: 120px auto;
-}
-       
-@media (max-width: 768px) {
-
-    .pricing-gradient-section {
-        max-width: 100%;
-        margin: 60px -20px;
-        border-radius: 0;
-    }
-
-    .case-study-section {
-        margin: 40px -20px;
-        border-radius: 0;
-    }
-
-}
         
-/* Arka plan soft ışık efekti */
-.pricing-gradient-section::before {
-    content: "";
-    position: absolute;
-    top: -100px;
-    right: -100px;
-    width: 400px;
-    height: 400px;
-    background: radial-gradient(circle, rgba(255,255,255,0.15), transparent 70%);
-    z-index: 0;
-}
+        .full-width {
+            max-width: 100%;
+            margin-bottom: 60px;
+        }
+        
+        .pricing-gradient-section {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 50%, #3b82f6 100%);
+            padding: 60px 20px;
+            margin: 80px 0;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 30px 80px rgba(0,0,0,0.15);
+            width: 100%;
+        }
+        
+        .case-study-section {
+            background: linear-gradient(135deg, #f5f7fa 0%, #e9ecf2 100%);
+            padding: 60px 20px;
+            margin: 80px 0;
+            border: 1px solid var(--gray-light);
+            position: relative;
+            overflow: hidden;
+            width: 100%;
+        }
+        
+        /* Her iki tam genişlik bölüm için içerik merkezleme */
+        .pricing-gradient-section .pricing-gradient-content,
+        .case-study-section .case-study-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+        
+        /* Arka plan soft ışık efekti */
+        .pricing-gradient-section::before {
+            content: "";
+            position: absolute;
+            top: -100px;
+            right: -100px;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(255,255,255,0.15), transparent 70%);
+            z-index: 0;
+        }
+        
+        .case-study-section::before {
+            content: "📊";
+            font-size: 150px;
+            position: absolute;
+            right: 10px;
+            bottom: -30px;
+            opacity: 0.1;
+            transform: rotate(-10deg);
+            z-index: 1;
+        }
 
-.pricing-gradient-content {
-    position: relative;
-    z-index: 2;
-}
+        .pricing-gradient-section h2 {
+            color: white;
+            font-size: 2.4rem;
+            margin-bottom: 20px;
+            font-weight: 800;
+        }
 
-.pricing-gradient-section h2 {
-    color: white;
-    font-size: 2.4rem;
-    margin-bottom: 20px;
-    font-weight: 800;
-}
+        .pricing-gradient-section p {
+            color: rgba(255,255,255,0.9);
+            font-size: 1.1rem;
+            margin-bottom: 40px;
+        }
 
-.pricing-gradient-section p {
-    color: rgba(255,255,255,0.9);
-    font-size: 1.1rem;
-    margin-bottom: 40px;
-}
+        /* Masaüstü için tablo daha premium */
+        .pricing-gradient-section .price-table {
+            background: white;
+            border-radius: var(--radius-sm);
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+        }
 
-/* Masaüstü için tablo daha premium */
-.pricing-gradient-section .price-table {
-    background: white;
-    border-radius: var(--radius-sm);
-    overflow: hidden;
-    box-shadow: 0 20px 60px rgba(0,0,0,0.2);
-}
-
-.pricing-gradient-section .price-table th {
-background: linear-gradient(135deg, #1a73e8, #4285F4);    color: white;
-}
-
-.pricing-gradient-section .highlight-box {
-    background: rgba(255,255,255,0.1);
-    border-left: 4px solid var(--accent);
-    color: white;
-}
-
-.pricing-gradient-section .highlight-box h4 {
-    color: var(--accent);
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-    .pricing-gradient-section {
-        padding: 50px 20px;
-    }
-}
+        .pricing-gradient-section .price-table th {
+            background: linear-gradient(135deg, #1a73e8, #4285F4);
+            color: white;
+        }
 
         .section-subtitle {
             font-size: 1.1rem;
@@ -708,6 +697,20 @@ background: linear-gradient(135deg, #1a73e8, #4285F4);    color: white;
             padding: 25px;
             margin: 30px 0;
             border-radius: 0 var(--radius) var(--radius) 0;
+        }
+        
+        .pricing-gradient-section .highlight-box {
+            background: rgba(255,255,255,0.1);
+            border-left: 4px solid var(--accent);
+            color: white;
+        }
+        
+        .pricing-gradient-section .highlight-box h4 {
+            color: var(--accent);
+        }
+        
+        .pricing-gradient-section .highlight-box p {
+            color: rgba(255,255,255,0.9);
         }
 
         .highlight-box h4 {
@@ -788,29 +791,9 @@ background: linear-gradient(135deg, #1a73e8, #4285F4);    color: white;
         }
 
         /* YENI: CASE STUDY / REFERANS KUTUSU STILLERI */
-        .case-study-section {
-            background: linear-gradient(135deg, #f5f7fa 0%, #e9ecf2 100%);
-            border-radius: var(--radius);
-            padding: 40px;
-            margin: 50px 0 40px 0;
-            border: 1px solid var(--gray-light);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .case-study-section::before {
-            content: "📊";
-            font-size: 150px;
-            position: absolute;
-            right: 10px;
-            bottom: -30px;
-            opacity: 0.1;
-            transform: rotate(-10deg);
-        }
-
         .case-study-title {
-            font-size: 1.8rem;
-            font-weight: 700;
+            font-size: 2.4rem;
+            font-weight: 800;
             margin-bottom: 20px;
             color: var(--dark);
             display: flex;
@@ -820,7 +803,7 @@ background: linear-gradient(135deg, #1a73e8, #4285F4);    color: white;
 
         .case-study-title i {
             color: var(--primary);
-            font-size: 2rem;
+            font-size: 2.5rem;
         }
 
         .case-study-grid {
@@ -1273,6 +1256,19 @@ background: linear-gradient(135deg, #1a73e8, #4285F4);    color: white;
             .case-study-grid {
                 grid-template-columns: 1fr;
             }
+            
+            .pricing-gradient-section,
+            .case-study-section {
+                margin-left: -20px;
+                margin-right: -20px;
+                border-radius: 0;
+                padding: 40px 20px;
+            }
+            
+            .pricing-gradient-section h2,
+            .case-study-title {
+                font-size: 1.8rem;
+            }
         }
 
         @media (max-width: 480px) {
@@ -1286,6 +1282,10 @@ background: linear-gradient(135deg, #1a73e8, #4285F4);    color: white;
             
             .price-table th, .price-table td {
                 padding: 12px 15px;
+            }
+            
+            .case-study-title {
+                font-size: 1.5rem;
             }
         }
     </style>
@@ -1387,30 +1387,29 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </section>
 
 <!-- ANA İÇERİK -->
-    <main class="main-content">
+<main class="main-content">
 
-    <!-- FULL WIDTH BLOK -->
+    <!-- FULL WIDTH BLOK - article içinde değil -->
     <article class="article-content full-width">
-            <h2 class="section-title">2026'te Google Ads ile Tanışın: Reklam Vermenin Akıllı Yolu</h2>
-            <p class="section-subtitle"><strong>Google reklam verme</strong> işlemi, işletmenizin online görünürlüğünü artırmak ve potansiyel müşterilere ulaşmak için en etkili yöntemlerden biridir. Bu kapsamlı rehberde, <strong>Google a reklam nasıl verilir</strong>, <strong>Google reklam verme ücreti</strong> ne kadar, ve <strong>Google reklam verme fiyatları 2026</strong> hakkında tüm detayları bulacaksınız.</p>
-            
-            <!-- YENI: GÖRSEL + ALT TAG -->
-            <img src="https://www.adsreklamvermek.com/images/google-reklam-vermek-rehber.webp" 
-                 alt="Google reklam vermek isteyenler için profesyonel Google Ads yönetimi rehberi ve 2026 güncel fiyatlar" 
-                 class="content-image"
-                 loading="lazy">
-            <div class="image-caption">Google Ads profesyonel yönetim ile dönüşümlerinizi artırın</div>
-            
-            <!-- BÖLÜM 1 -->
-         </article>
+        <h2 class="section-title">2026'te Google Ads ile Tanışın: Reklam Vermenin Akıllı Yolu</h2>
+        <p class="section-subtitle"><strong>Google reklam verme</strong> işlemi, işletmenizin online görünürlüğünü artırmak ve potansiyel müşterilere ulaşmak için en etkili yöntemlerden biridir. Bu kapsamlı rehberde, <strong>Google a reklam nasıl verilir</strong>, <strong>Google reklam verme ücreti</strong> ne kadar, ve <strong>Google reklam verme fiyatları 2026</strong> hakkında tüm detayları bulacaksınız.</p>
         
+        <!-- YENI: GÖRSEL + ALT TAG -->
+        <img src="https://www.adsreklamvermek.com/images/google-reklam-vermek-rehber.webp" 
+             alt="Google reklam vermek isteyenler için profesyonel Google Ads yönetimi rehberi ve 2026 güncel fiyatlar" 
+             class="content-image"
+             loading="lazy">
+        <div class="image-caption">Google Ads profesyonel yönetim ile dönüşümlerinizi artırın</div>
+    </article>
+    
     <div class="content-container">
-    <article class="article-content">
+        <article class="article-content">
+            <!-- BÖLÜM 1 -->
             <section class="content-section" id="nedir">
                 <h2>Google Reklam Vermek Nedir?</h2>
                 <p><strong>Google reklam ver</strong>mek, Google'ın arama sonuçlarında ve partner web sitelerinde işletmenizin reklamlarını göstermesidir. <strong>Google Ads</strong> platformu üzerinden yapılan bu reklamlar, hedef kitlenizin arama yaptığı anahtar kelimelere göre gösterilir. Bu sayede, ürün veya hizmetinizi arayan potansiyel müşterilere doğrudan ulaşabilirsiniz.</p>
-                    <div class="highlight-box">
-    <h4><i class="fas fa-lightbulb"></i> Önemli Not:</h4>
+                <div class="highlight-box">
+                    <h4><i class="fas fa-lightbulb"></i> Önemli Not:</h4>
                     <p><strong>Google ilan vermek istiyorum</strong> diyenlerin %78'i ilk 3 ayda pozitif ROI elde ediyor. Doğru strateji ile <strong>Google reklam verme</strong> işlemi işletmenize ciddi müşteri kazandırabilir.</p>
                 </div>
                 
@@ -1466,122 +1465,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 </div>
             </section>
             
-            <!-- BÖLÜM 3 -->
-            <section class="pricing-gradient-section" id="ucretler">
-    <div class="pricing-gradient-content">
-        <h2>Google Reklam Verme Ücretleri 2026</h2>
-        <p>
-            Google reklam verme fiyatları 2026 yılında sektör, rekabet ve hedefleme yapısına göre değişmektedir.
-            Ortalama tıklama başı maliyetler ve önerilen bütçeler aşağıdadır.
-        </p>
-                <p><strong>Google reklam verme fiyatları 2026</strong> birçok faktöre bağlı olarak değişir. <strong>Google a reklam vermek kaç tl</strong> sorusunun net bir cevabı yoktur, ancak sektörel ortalamaları şu şekildedir:</p>
-                
-                <table class="price-table">
-                    <thead>
-                        <tr>
-                            <th>Sektör</th>
-                            <th>Ortalama Tıklama Başı Ücret</th>
-                            <th>Aylık Minimum Bütçe</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td><strong>Taksi Reklamları</strong></td>
-                            <td>3 TL - 15 TL</td>
-                            <td>5.000 TL</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Nakliyeci Reklamları</strong></td>
-                            <td>30 TL - 50 TL</td>
-                            <td>8.000 TL</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Beyaz Eşya Servis Reklamları</strong></td>
-                            <td>10 TL - 50 TL</td>
-                            <td>8.000 TL</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Oto Kurtarıcı Reklamları</strong></td>
-                            <td>10 TL - 80 TL</td>
-                            <td>7.000 TL</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Masaj Spa Salon Reklamları</strong></td>
-                            <td>5 TL - 20 TL</td>
-                            <td>8.000 TL</td>
-                        </tr>
-                    </tbody>
-                </table>
-                <div class="highlight-box">
-                    <h4><i class="fas fa-calculator"></i> Google Tıklama Başı Fiyatları Nasıl Belirlenir?</h4>
-                    <p><strong>Google tıklama başı fiyatları</strong> şu faktörlere göre değişir: Rekabet yoğunluğu, sektör, anahtar kelime kalitesi, reklam kalite puanı, teklif stratejisi ve coğrafi konum. <strong>Google a ilan vermek</strong> istiyorsanız, doğru anahtar kelime seçimi maliyetleri %40'a kadar düşürebilir.</p>
-       </div>
-                    <div style="text-align:center; margin-top:40px;">
-            <a href="https://wa.me/905303158752" class="btn btn-primary">
-                <i class="fab fa-whatsapp"></i> Bütçe Analizi İstiyorum
-            </a>
-        </div>
-
-    </div>
-</section>
-            
-            <!-- BÖLÜM 4: CASE STUDY / REFERANS BÖLÜMÜ - YENİ -->
-            <section class="case-study-section" id="case-studies">
-                <div class="case-study-title">
-                    <i class="fas fa-chart-line"></i> Gerçek Müşterilerimizden Başarı Hikayeleri
-                </div>
-                <p>Profesyonel Google Ads yönetimimizle işletmelerin dönüşümlerini nasıl artırdığımızı görün.</p>
-                
-                <div class="case-study-grid">
-                    <!-- Case Study 1 -->
-                    <div class="case-study-card">
-                        <h4>🏢 Nakliyat Firması</h4>
-                        <div class="case-study-stats">
-                            <div class="stat-item">
-                                <div class="stat-value">18 TL → 9 TL</div>
-                                <div class="stat-label">Tıklama Maliyeti</div>
-                            </div>
-                            <div class="stat-item">
-                                <div class="stat-value">12 → 46</div>
-                                <div class="stat-label">Aylık Dönüşüm</div>
-                            </div>
-                        </div>
-                        <div class="stat-badge">Maliyet %50 Düştü</div>
-                        <div class="testimonial">
-                            "ADS Reklam Vermek sayesinde reklam bütçemizi yarıya indirip 4 kat daha fazla müşteriye ulaştık."
-                        </div>
-                        <div class="testimonial-author">- Murat Y., Nakliyat Firması Sahibi</div>
-                    </div>
-                    
-                    <!-- Case Study 2 -->
-                    <div class="case-study-card">
-                        <h4>🛍️ E-Ticaret (Moda)</h4>
-                        <div class="case-study-stats">
-                            <div class="stat-item">
-                                <div class="stat-value">8 TL → 4.5 TL</div>
-                                <div class="stat-label">Tıklama Maliyeti</div>
-                            </div>
-                            <div class="stat-item">
-                                <div class="stat-value">3.2x</div>
-                                <div class="stat-label">ROAS Artışı</div>
-                            </div>
-                        </div>
-                        <div class="stat-badge">Yatırım Getirisi %320</div>
-                        <div class="testimonial">
-                            "Alışveriş reklamları optimizasyonu ile satışlarımız 3 katına çıktı. Kesinlikle tavsiye ederim."
-                        </div>
-                        <div class="testimonial-author">- Ayşe K., Online Mağaza Sahibi</div>
-                    </div>
-                </div>
-
-                <!-- Mini Referans Logoları (Güven Artırıcı) -->
-                <div style="display: flex; justify-content: center; gap: 30px; margin-top: 20px; opacity: 0.7; flex-wrap: wrap;">
-                    <span style="display: flex; align-items: center; gap: 5px;"><i class="fas fa-check-circle" style="color: var(--secondary);"></i> 50+ Mutlu Müşteri</span>
-                    <span style="display: flex; align-items: center; gap: 5px;"><i class="fas fa-check-circle" style="color: var(--secondary);"></i> 5+ Yıl Deneyim</span>
-                    <span style="display: flex; align-items: center; gap: 5px;"><i class="fas fa-check-circle" style="color: var(--secondary);"></i> Google Partner</span>
-                </div>
-            </section>
-            
             <!-- BÖLÜM 5 (eski 4) -->
             <section class="content-section" id="faydalar">
                 <h2>Google Reklam Vermenin Faydaları</h2>
@@ -1617,6 +1500,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 <p>Gerçek: Temel seviyede <strong>Google da reklam nasıl verilir</strong> öğrenmek kolaydır. Uzman yönetimle çok daha verimli sonuçlar alınır.</p>
             </section>
         </article>
+        
         <!-- SAĞ SÜTUN - SIDEBAR -->
         <aside class="sidebar">
             <!-- HIZLI İLETİŞİM -->
@@ -1688,6 +1572,123 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </aside>
     </div>
 </main>
+
+<!-- PRICING SECTION - .article-content dışında, tam genişlik -->
+<section class="pricing-gradient-section" id="ucretler">
+    <div class="pricing-gradient-content">
+        <h2>Google Reklam Verme Ücretleri 2026</h2>
+        <p>
+            Google reklam verme fiyatları 2026 yılında sektör, rekabet ve hedefleme yapısına göre değişmektedir.
+            Ortalama tıklama başı maliyetler ve önerilen bütçeler aşağıdadır.
+            <strong>Google reklam verme fiyatları 2026</strong> birçok faktöre bağlı olarak değişir. <strong>Google a reklam vermek kaç tl</strong> sorusunun net bir cevabı yoktur, ancak sektörel ortalamaları şu şekildedir:
+        </p>
+        
+        <table class="price-table">
+            <thead>
+                <tr>
+                    <th>Sektör</th>
+                    <th>Ortalama Tıklama Başı Ücret</th>
+                    <th>Aylık Minimum Bütçe</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Taksi Reklamları</strong></td>
+                    <td>3 TL - 15 TL</td>
+                    <td>5.000 TL</td>
+                </tr>
+                <tr>
+                    <td><strong>Nakliyeci Reklamları</strong></td>
+                    <td>30 TL - 50 TL</td>
+                    <td>8.000 TL</td>
+                </tr>
+                <tr>
+                    <td><strong>Beyaz Eşya Servis Reklamları</strong></td>
+                    <td>10 TL - 50 TL</td>
+                    <td>8.000 TL</td>
+                </tr>
+                <tr>
+                    <td><strong>Oto Kurtarıcı Reklamları</strong></td>
+                    <td>10 TL - 80 TL</td>
+                    <td>7.000 TL</td>
+                </tr>
+                <tr>
+                    <td><strong>Masaj Spa Salon Reklamları</strong></td>
+                    <td>5 TL - 20 TL</td>
+                    <td>8.000 TL</td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="highlight-box">
+            <h4><i class="fas fa-calculator"></i> Google Tıklama Başı Fiyatları Nasıl Belirlenir?</h4>
+            <p><strong>Google tıklama başı fiyatları</strong> şu faktörlere göre değişir: Rekabet yoğunluğu, sektör, anahtar kelime kalitesi, reklam kalite puanı, teklif stratejisi ve coğrafi konum. <strong>Google a ilan vermek</strong> istiyorsanız, doğru anahtar kelime seçimi maliyetleri %40'a kadar düşürebilir.</p>
+        </div>
+        <div style="text-align:center; margin-top:40px;">
+            <a href="https://wa.me/905303158752" class="btn btn-primary">
+                <i class="fab fa-whatsapp"></i> Bütçe Analizi İstiyorum
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- CASE STUDY SECTION - .article-content dışında, tam genişlik -->
+<section class="case-study-section" id="case-studies">
+    <div class="case-study-content">
+        <div class="case-study-title">
+            <i class="fas fa-chart-line"></i> Gerçek Müşterilerimizden Başarı Hikayeleri
+        </div>
+        <p>Profesyonel Google Ads yönetimimizle işletmelerin dönüşümlerini nasıl artırdığımızı görün.</p>
+        
+        <div class="case-study-grid">
+            <!-- Case Study 1 -->
+            <div class="case-study-card">
+                <h4>🏢 Nakliyat Firması</h4>
+                <div class="case-study-stats">
+                    <div class="stat-item">
+                        <div class="stat-value">18 TL → 9 TL</div>
+                        <div class="stat-label">Tıklama Maliyeti</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-value">12 → 46</div>
+                        <div class="stat-label">Aylık Dönüşüm</div>
+                    </div>
+                </div>
+                <div class="stat-badge">Maliyet %50 Düştü</div>
+                <div class="testimonial">
+                    "ADS Reklam Vermek sayesinde reklam bütçemizi yarıya indirip 4 kat daha fazla müşteriye ulaştık."
+                </div>
+                <div class="testimonial-author">- Murat Y., Nakliyat Firması Sahibi</div>
+            </div>
+            
+            <!-- Case Study 2 -->
+            <div class="case-study-card">
+                <h4>🛍️ E-Ticaret (Moda)</h4>
+                <div class="case-study-stats">
+                    <div class="stat-item">
+                        <div class="stat-value">8 TL → 4.5 TL</div>
+                        <div class="stat-label">Tıklama Maliyeti</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-value">3.2x</div>
+                        <div class="stat-label">ROAS Artışı</div>
+                    </div>
+                </div>
+                <div class="stat-badge">Yatırım Getirisi %320</div>
+                <div class="testimonial">
+                    "Alışveriş reklamları optimizasyonu ile satışlarımız 3 katına çıktı. Kesinlikle tavsiye ederim."
+                </div>
+                <div class="testimonial-author">- Ayşe K., Online Mağaza Sahibi</div>
+            </div>
+        </div>
+
+        <!-- Mini Referans Logoları (Güven Artırıcı) -->
+        <div style="display: flex; justify-content: center; gap: 30px; margin-top: 20px; opacity: 0.7; flex-wrap: wrap;">
+            <span style="display: flex; align-items: center; gap: 5px;"><i class="fas fa-check-circle" style="color: var(--secondary);"></i> 50+ Mutlu Müşteri</span>
+            <span style="display: flex; align-items: center; gap: 5px;"><i class="fas fa-check-circle" style="color: var(--secondary);"></i> 5+ Yıl Deneyim</span>
+            <span style="display: flex; align-items: center; gap: 5px;"><i class="fas fa-check-circle" style="color: var(--secondary);"></i> Google Partner</span>
+        </div>
+    </div>
+</section>
 
 <!-- CTA SECTION -->
 <section class="cta-section">
@@ -1864,7 +1865,8 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 // Add active class to current section in viewport
-const sections = document.querySelectorAll('.content-section, .pricing-gradient-section');const observerOptions = {
+const sections = document.querySelectorAll('.content-section, .pricing-gradient-section');
+const observerOptions = {
     threshold: 0.3,
     rootMargin: '0px 0px -50px 0px'
 };
