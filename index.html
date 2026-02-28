@@ -403,10 +403,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         /* FULL WIDTH SECTION ORTALAMA FIX */
 .pricing-gradient-section,
 .case-study-section {
-    width: 100%;
-    margin: 80px auto;
-    padding-left: 20px;
-    padding-right: 20px;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    width: 100vw;
     display: flex;
     justify-content: center;
 }
@@ -415,7 +417,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 .case-study-content {
     width: 100%;
     max-width: 1200px;
-    margin: 0 auto;
+    padding: 0 20px;
 }
 
         /* BREADCRUMB */
