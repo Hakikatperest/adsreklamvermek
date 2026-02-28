@@ -1369,38 +1369,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <a href="/">
             <i class="fas fa-home"></i> Ana Sayfa
         </a>
-        <a href="#" class="has-submenu" id="servicesMenu">
-            <i class="fas fa-rocket"></i> Hizmetlerimiz <i class="fas fa-chevron-down submenu-icon"></i>
+        
+        <!-- Hizmetlerimiz ve Blog Yazıları kaldırıldı -->
+        
+        <a href="/hakkimizda">
+            <i class="fas fa-info-circle"></i> Hakkımızda
         </a>
-        <div class="submenu" id="servicesSubmenu">
-            <a href="https://www.adsreklamvermek.com/hizmetlerimiz/google-ads-reklam-yo%CC%88netimi.html">
-                <i class="fas fa-ad"></i> Google Ads Reklam Yönetimi
-            </a>
-            <a href="https://www.adsreklamvermek.com/hizmetlerimiz/google-ads-sahte-tiklama-engelleme">
-                <i class="fas fa-shield-alt"></i> Google Ads Sahte Tıklama Engelleme
-            </a>
-        </div>
-       <!-- YENİ BLOG MENÜSÜ -->
-<a href="#" class="has-submenu" id="blogMenu">
-    <i class="fas fa-blog"></i> Blog Yazıları 
-    <i class="fas fa-chevron-down submenu-icon"></i>
-</a>
-
-<div class="submenu" id="blogSubmenu">
-    <a href="https://www.adsreklamvermek.com/blog/ads-hesabim-askiya-alindi.html">
-        <i class="fas fa-file-alt"></i> Ads Hesabım Askıya Alındı
-    </a>
-    <a href="https://www.adsreklamvermek.com/blog/google-reklamlarim-yayinlanmiyor-cozumu.html">
-        <i class="fas fa-file-alt"></i> Google Reklamlarım Yayınlanmıyor
-    </a>
-</div>
-
-<a href="/hakkimizda">
-    <i class="fas fa-info-circle"></i> Hakkımızda
-</a>
-<a href="/iletisim">
-    <i class="fas fa-envelope"></i> İletişim
-</a>
+        <a href="/iletisim">
+            <i class="fas fa-envelope"></i> İletişim
+        </a>
     </div>
 
     <div class="sidebar-cta">
@@ -1933,8 +1910,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         
         <div class="footer-links">
             <a href="/">Ana Sayfa</a>
-            <a href="/hizmetlerimiz/google-ads-reklam-yo%CC%88netimi.html">Google Ads Reklam Yönetimi</a>
-            <a href="/hizmetlerimiz/google-ads-sahte-tiklama-engelleme">Google Ads Sahte Tıklama Engelleme</a>
             <a href="/hakkimizda">Hakkımızda</a>
             <a href="/iletisim">İletişim</a>
         </div>
@@ -1999,29 +1974,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
     
-    // Hizmetlerimiz submenu toggle
-    const servicesMenu = document.getElementById('servicesMenu');
-    const servicesSubmenu = document.getElementById('servicesSubmenu');
-    
-    if (servicesMenu && servicesSubmenu) {
-        servicesMenu.addEventListener('click', function(e) {
-            e.preventDefault();
-            this.classList.toggle('active');
-            servicesSubmenu.classList.toggle('active');
-        });
-    }
-    
-    // Blog submenu toggle
-    const blogMenu = document.getElementById('blogMenu');
-    const blogSubmenu = document.getElementById('blogSubmenu');
-    
-    if (blogMenu && blogSubmenu) {
-        blogMenu.addEventListener('click', function(e) {
-            e.preventDefault();
-            this.classList.toggle('active');
-            blogSubmenu.classList.toggle('active');
-        });
-    }
 });
 
 // FAQ Toggle
