@@ -1304,7 +1304,18 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                 font-size: 1.8rem;
             }
         }
-
+@media (max-width: 768px) {
+    .pricing-gradient-section,
+    .case-study-section {
+        position: static;
+        left: auto;
+        right: auto;
+        margin-left: -20px;
+        margin-right: -20px;
+        width: auto;
+        transform: none;
+    }
+}
         @media (max-width: 480px) {
             .google-hero h1 {
                 font-size: 1.8rem;
