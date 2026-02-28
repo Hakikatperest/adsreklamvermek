@@ -1305,15 +1305,19 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             }
         }
 @media (max-width: 768px) {
+
     .pricing-gradient-section,
     .case-study-section {
-        position: static;
-        left: auto;
-        right: auto;
-        margin-left: -20px;
-        margin-right: -20px;
-        width: auto;
-        transform: none;
+        width: 100%;
+        max-width: 100%;
+        margin: 60px 0;
+        padding: 40px 20px;
+        border-radius: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        overflow-x: hidden;
     }
 }
         @media (max-width: 480px) {
